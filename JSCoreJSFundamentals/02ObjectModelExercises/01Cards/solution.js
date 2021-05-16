@@ -36,8 +36,7 @@ function solve() {
             
             document.getElementById('history').textContent += `[${leftSpan.textContent} vs ${rightSpan.textContent}] `;
             // let historyElement = document.getElementById('history');
-            // historyElement.textContent += `[${leftSpan.textContent}] vs [${rightSpan.textContent}] `;
-            
+            // historyElement.textContent += `[${leftSpan.textContent}] vs [${rightSpan.textContent}] `;            
 
             leftSpan.textContent = '';
             rightSpan.textContent = '';
