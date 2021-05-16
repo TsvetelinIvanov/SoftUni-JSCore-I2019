@@ -22,5 +22,4 @@ function solve() {
         case 'company': resultElement.textContent = `Have a nice flight with ${company}.`; break;
         case 'all': resultElement.textContent = `Mr/Ms, ${name}, your flight number ${flight} is from ${airport[1]} to ${airport[2]}. Have a nice flight with ${company}.`; break;
     }
-
 }
