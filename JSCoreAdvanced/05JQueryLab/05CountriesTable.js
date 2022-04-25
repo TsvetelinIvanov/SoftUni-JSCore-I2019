@@ -110,9 +110,9 @@ function initializeTable(){
         $coutriesTableLinks.css("display", "inline");
 
         let $tablleRous = $('#countriesTable tr');
-        let $firsDataRow = $($tablleRous[2]);        
-        //let $firsDataRow = $($('#countriesTable tr')[2]);
-        $firsDataRow.find('a:contains("Up")').css("display", "none");
+        let $firstDataRow = $($tablleRous[2]);        
+        //let $firstDataRow = $($('#countriesTable tr')[2]);
+        $firstDataRow.find('a:contains("Up")').css("display", "none");
 
         let $lastDataRow = $($tablleRous[$tablleRous.length - 1]);
         //let $lastDataRow = $($('#countriesTable tr')[$tablleRous.length - 1]);
