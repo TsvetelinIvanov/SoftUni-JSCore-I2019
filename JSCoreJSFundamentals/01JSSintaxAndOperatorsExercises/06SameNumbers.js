@@ -6,6 +6,7 @@ function checkEqualDigits(inputNumber){
         if (numberString[0] !== numberString[i]){
             areEqualDigits = false;
         }
+        
         digitsSum += Number(numberString[i]);
     }
 
