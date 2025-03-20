@@ -10,6 +10,7 @@ let walkMinutes = Math.floor((walkTimeInSeconds % 3600) / 60);
 let walkSeconds = Math.round((walkTimeInSeconds % 3600) % 60);
 //let walkSeconds = (walkTimeInSeconds % 3600) % 60;
 //let walkSeconds = Math.floor((walkTimeInSeconds % 3600) % 60);
+
 let walkHoursString;
 if (walkHours < 10){
     walkHoursString = `0${walkHours}`;
@@ -17,6 +18,7 @@ if (walkHours < 10){
 else{
     walkHoursString = `${walkHours}`;
 }
+
 let walkMinutesString;
 if (walkMinutes < 10){
     walkMinutesString = `0${walkMinutes}`;
@@ -24,6 +26,7 @@ if (walkMinutes < 10){
 else{
     walkMinutesString = `${walkMinutes}`;
 }
+
 let walkSecondsString;
 if (walkSeconds < 10){
     walkSecondsString = `0${walkSeconds}`;
