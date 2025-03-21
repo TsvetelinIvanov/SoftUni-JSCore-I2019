@@ -1,12 +1,25 @@
-function solve(num1, num2, operator){
+function solve(number1, number2, operator){
     let result;
     switch(operator){
-        case '+': result = num1 + num2; break;
-            case '-': result = num1 - num2; break;
-            case '*': result = num1 * num2; break;
-            case '/': result = num1 / num2; break;
-            case '%': result = num1 % num2; break;
-            case '**': result = num1 ** num2; break;
+        case '+':
+            result = number1 + number2;
+            break;
+        case '-':
+            result = number1 - number2;
+            break;
+        case '*':
+            result = number1 * number2;
+            break;
+        case '/':
+            result = number1 / number2;
+            break;
+        case '%':
+            result = number1 % number2;
+            break;
+        case '**':
+            result = number1 ** number2;
+            break;
     }
+    
     console.log(result);
 }
