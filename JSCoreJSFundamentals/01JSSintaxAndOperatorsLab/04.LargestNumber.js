@@ -1,13 +1,14 @@
-function solve(num1, num2, num3){
+function solve(number1, number2, number3){
     let result;
-    if (num1 > num2 && num1 > num3){
-        result = num1;
+    if (number1 > number2 && number1 > number3){
+        result = number1;
     }
-    else if (num2 > num1 && num2 > num3){
-        result = num2;
+    else if (number2 > number1 && number2 > number3){
+        result = number2;
     }
-    else if (num3 > num1 && num3 > num2){
-        result = num3;
+    else if (number3 > number1 && number3 > number2){
+        result = number3;
     }
+    
     console.log(`The largest number is ${result}.`);
 }
