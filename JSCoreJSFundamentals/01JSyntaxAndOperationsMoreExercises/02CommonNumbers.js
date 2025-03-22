@@ -1,8 +1,8 @@
-function findCommonNumbers(arr1, arr2, arr3){
+function findCommonNumbers(array1, array2, array3){
     let commonNumbers = [];
-    for (let i = 0; i < arr1.length; i++){
-        if (arr2.includes(arr1[i]) && arr3.includes(arr1[i])){
-            commonNumbers.push(arr1[i]);
+    for (let i = 0; i < array1.length; i++){
+        if (array2.includes(array1[i]) && array3.includes(array1[i])){
+            commonNumbers.push(array1[i]);
         }
     }
     
