@@ -20,9 +20,9 @@ function solve() {
             rightSpan.textContent = card.name;
         }
        
-            if(spans[0].textContent && spans[2].textContent){
-            let winner;
-            let looser;
+        if(spans[0].textContent && spans[2].textContent){
+        let winner;
+        let looser;
             if(+leftSpan.textContent > +rightSpan.textContent){
                 winner = document.querySelector(`#player1Div img[name='${leftSpan.textContent}']`);
                 looser = document.querySelector(`#player2Div img[name='${rightSpan.textContent}']`);
