@@ -21,6 +21,40 @@ body {
     flex-wrap: wrap;
 }
 
+main:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+input,
+button {
+    vertical-align: top;
+}
+
+input {
+    width: 20%;
+    font-size: 20px;
+}
+
+input[type="button"],
+button {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7em;
+    margin: 1rem 0 1rem 0;
+    border: none;
+    color: white;
+    background: #234465;
+    border-radius: 5px;
+    outline: none;
+}
+
+.cards {
+    width: 60%;
+    float: left;
+    padding: 3rem;
+}
+
 #main {
     background: url(images/background.png) no-repeat center center;
     height: 100vh;
@@ -41,6 +75,16 @@ body {
 #problem-name {
     font-family: "Lato", sans-serif;
     color: white;
+    font-weight: bold;
+}
+
+#result {
+    text-align: center;
+}
+
+#result:nth-child(2), #history {
+    font-size: 44px;
+    padding: 11px;
     font-weight: bold;
 }
 
@@ -71,24 +115,10 @@ body {
     padding: 1rem 0 1rem 1rem;
 }
 
-main:after {
-    display: block;
-    content: '';
-    clear: both;
+#exercise {
+    margin: 0 auto;
+    text-align: center;
 }
-
-input[type="button"],
-button {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.7em;
-    margin: 1rem 0 1rem 0;
-    border: none;
-    color: white;
-    background: #234465;
-    border-radius: 5px;
-    outline: none;
-}
-
 
 #chatChronology {
     display: inline-block;
@@ -97,24 +127,6 @@ button {
     margin-left: 1%;
     margin-right: 1%;
 }
-
-
-input,
-button {
-    vertical-align: top;
-}
-
-input {
-    width: 20%;
-    font-size: 20px;
-}
-
-#exercise {
-    margin: 0 auto;
-    text-align: center;
-	
-}
-
 
 #exercise p {
     border-bottom: 1px solid white;
@@ -129,20 +141,4 @@ input {
 
 #exercise div {
     border-bottom: 1px solid #234465;
-}
-
-.cards {
-    width: 60%;
-    float: left;
-    padding: 3rem;
-}
-
-#result {
-    text-align: center;
-}
-
-#result:nth-child(2), #history {
-    font-size: 44px;
-    padding: 11px;
-    font-weight: bold;
 }
