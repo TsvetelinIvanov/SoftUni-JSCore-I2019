@@ -7,6 +7,7 @@ function solve() {
         optionBinary.textContent = 'Binary';
         optionBinary.value = 'binary';
         menuElement.appendChild(optionBinary);
+    
         let optionHexadecimal = document.createElement('option');
         optionHexadecimal.textContent = 'Hexadecimal';
         optionHexadecimal.value = 'hexadecimal';
@@ -20,5 +21,4 @@ function solve() {
         document.getElementById('result').value = convertedNumber;
         inputNumberElement.value = '';
     }
-
 }
