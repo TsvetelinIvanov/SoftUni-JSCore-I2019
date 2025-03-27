@@ -1,4 +1,4 @@
-function buyFruits(fruit, weightInGramsString, pricePerKilogramString){
+function buyFruits(fruit, weightInGramsString, pricePerKilogramString) {
     let weightInKilograms = Number(weightInGramsString) / 1000;
     let pricePerKilogram = Number(pricePerKilogramString);
     let price = weightInKilograms * pricePerKilogram;
