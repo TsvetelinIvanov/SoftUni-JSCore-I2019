@@ -1,4 +1,4 @@
-function showFlightData(arr){
+function showFlightData(arr) {
     let type = arr[0];
     let townName = arr[1];
     let time = arr[2];
