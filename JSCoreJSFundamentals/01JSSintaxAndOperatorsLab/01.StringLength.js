@@ -1,4 +1,4 @@
-function solve(array1, array2, array3){
+function solve(array1, array2, array3) {
     let sumLength;
     let averageLength;
     let firstArgumentLength = array1.length;
