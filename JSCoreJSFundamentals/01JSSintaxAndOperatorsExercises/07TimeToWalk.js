@@ -1,4 +1,4 @@
-function calculateTimeToWalk(stepsNumber, footprintLengthInMeters, speedInKilometersPerHour){
+function calculateTimeToWalk(stepsNumber, footprintLengthInMeters, speedInKilometersPerHour) {
 let pathInMeters = stepsNumber * footprintLengthInMeters;
 let pauseTimeInSeconds = Math.floor(pathInMeters / 500) * 60;
 let pathInKilometers = pathInMeters / 1000;
@@ -12,26 +12,26 @@ let walkSeconds = Math.round((walkTimeInSeconds % 3600) % 60);
 //let walkSeconds = Math.floor((walkTimeInSeconds % 3600) % 60);
 
 let walkHoursString;
-if (walkHours < 10){
+if (walkHours < 10) {
     walkHoursString = `0${walkHours}`;
 }
-else{
+else {
     walkHoursString = `${walkHours}`;
 }
 
 let walkMinutesString;
-if (walkMinutes < 10){
+if (walkMinutes < 10) {
     walkMinutesString = `0${walkMinutes}`;
 }
-else{
+else {
     walkMinutesString = `${walkMinutes}`;
 }
 
 let walkSecondsString;
-if (walkSeconds < 10){
+if (walkSeconds < 10) {
     walkSecondsString = `0${walkSeconds}`;
 }
-else{
+else {
     walkSecondsString = `${walkSeconds}`;
 }
 
