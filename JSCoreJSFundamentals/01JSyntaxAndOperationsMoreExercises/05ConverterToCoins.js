@@ -1,8 +1,8 @@
-function convertToCoins(amount, coinsArray){
+function convertToCoins(amount, coinsArray) {
     let orderedCoinsArray = coinsArray.sort((a,b) => b - a);
     let convertedCoins = [];
-    for(let coin of orderedCoinsArray){
-        while(amount >= coin){
+    for (let coin of orderedCoinsArray) {
+        while (amount >= coin) {
             convertedCoins.push(coin);
             amount -= coin;
         }
