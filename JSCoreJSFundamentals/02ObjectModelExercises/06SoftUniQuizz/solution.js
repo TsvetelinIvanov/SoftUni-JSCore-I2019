@@ -11,15 +11,15 @@ function solve() {
 	    let parent = button.parentNode;
 	    let inputElements = Array.from(parent.getElementsByTagName('input'));
 	    inputElements.forEach(input => {
-		if(input.checked === true){
+		if (input.checked === true) {
 		    hiddenSectionsCount++;
 		    let answer = input.value;
-		    if (rightAnswers.includes(answer)){
+		    if (rightAnswers.includes(answer)) {
 			rightAnswersCount++;
 		    }
 
-		    if (button.textContent === 'Get the results'){
-			if (rightAnswersCount === 3){
+		    if (button.textContent === 'Get the results') {
+			if (rightAnswersCount === 3) {
 			    resultElement.textContent = `You are recognized as top SoftUni fan!`;
 			} else {
 			    resultElement.textContent = `You have ${rightAnswersCount} right answers`;
