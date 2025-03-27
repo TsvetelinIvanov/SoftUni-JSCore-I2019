@@ -1,38 +1,38 @@
-function calculateDrinkPrices(orders){
+function calculateDrinkPrices(orders) {
     let income = 0;
-    for(let i = 0; i < orders.length; i++){
+    for(let i = 0; i < orders.length; i++) {
         let price = 0;
         
         let order = orders[i].split(", ");
         let money = Number(order[0]);
         let drink = order[1];
-        if (drink === "tea"){
+        if (drink === "tea") {
             price = 0.80;
         }
-        else if (drink === "coffee"){
-            if (order[2] === "caffeine"){
+        else if (drink === "coffee") {
+            if (order[2] === "caffeine") {
                 price = 0.80;
             }
-            else if (order[2] === "decaf"){
+            else if (order[2] === "decaf") {
                 price = 0.90;
             }
         }
 
-        if (order.includes("milk")){
+        if (order.includes("milk")) {
             price += 0.10;            
             //price += Math.round((price * 0.1) * 10) / 10;
         }
 
         let sugarCount = Number(order[order.length - 1]);
-        if (sugarCount > 0){
+        if (sugarCount > 0) {
             price += 0.10;
         }
 
-        if (money >= price){
+        if (money >= price) {
             console.log(`You ordered ${drink}. Price: ${price.toFixed(2)}$ Change: ${(money - price).toFixed(2)}$`);
             income += price;
         }
-        else{
+        else {
             console.log(`Not enough money for ${drink}. Need ${(price - money).toFixed(2)}$ more.`);
         }
     }
