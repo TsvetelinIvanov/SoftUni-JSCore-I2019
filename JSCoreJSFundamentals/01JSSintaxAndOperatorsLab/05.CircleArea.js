@@ -1,7 +1,7 @@
-function solve(input){
+function solve(input) {
     let result = 0;
     let inputType = typeof(input);
-    if (inputType === "number"){
+    if (inputType === "number") {
         result = Math.pow(input, 2) * Math.PI;
         console.log(result.toFixed(2));
     }
