@@ -1,4 +1,4 @@
-function solve(n, m){
+function solve(n, m) {
     let number1 = Number(n);
     let number2 = Number(m);
     let result = 0;
