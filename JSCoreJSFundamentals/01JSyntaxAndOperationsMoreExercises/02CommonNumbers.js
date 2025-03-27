@@ -1,7 +1,7 @@
-function findCommonNumbers(array1, array2, array3){
+function findCommonNumbers(array1, array2, array3) {
     let commonNumbers = [];
-    for (let i = 0; i < array1.length; i++){
-        if (array2.includes(array1[i]) && array3.includes(array1[i])){
+    for (let i = 0; i < array1.length; i++) {
+        if (array2.includes(array1[i]) && array3.includes(array1[i])) {
             commonNumbers.push(array1[i]);
         }
     }
@@ -9,7 +9,7 @@ function findCommonNumbers(array1, array2, array3){
     commonNumbers = commonNumbers.sort();
 
     let commonNumbersSum = 0;
-    for (let i = 0; i < commonNumbers.length; i++){
+    for (let i = 0; i < commonNumbers.length; i++) {
         commonNumbersSum += commonNumbers[i];
     }
 
@@ -17,10 +17,10 @@ function findCommonNumbers(array1, array2, array3){
     
     let commonNumbersMedian = 0;
     let middle = Math.floor((commonNumbers.length - 1) / 2)
-    if ((commonNumbers.length - 1) % 2 === 0){
+    if ((commonNumbers.length - 1) % 2 === 0) {
         commonNumbersMedian = commonNumbers[middle];
     }
-    else{
+    else {
         commonNumbersMedian = (commonNumbers[middle] + commonNumbers[middle + 1]) / 2.0;
     }
 
