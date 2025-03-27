@@ -1,15 +1,15 @@
-function extractPerfectNumbers(numbers){
+function extractPerfectNumbers(numbers) {
     let perfectNumbers = [];
-    for (let number of numbers){
+    for (let number of numbers) {
         let lastDivisor = Math.floor(number / 2);
         let divisorsSum = 0;
-        for (let i = 1; i <= lastDivisor; i++){
+        for (let i = 1; i <= lastDivisor; i++) {
             if (number % i === 0){
                 divisorsSum += i;
             }
         }
 
-        if(number === divisorsSum){
+        if (number === divisorsSum){
             perfectNumbers.push(number);
         }
     }
@@ -17,7 +17,7 @@ function extractPerfectNumbers(numbers){
     if (perfectNumbers.length >= 1){
         console.log(perfectNumbers.join(", "));
     }
-    else{
+    else {
         console.log("No perfect number");
     }
 }
