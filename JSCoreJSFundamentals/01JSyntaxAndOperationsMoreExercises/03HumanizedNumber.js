@@ -1,36 +1,36 @@
-function humanizeNumbersInText(inputString){
+function humanizeNumbersInText(inputString) {
     let inputArray = inputString.split(/[., ]+/);
     //console.log(inputArray);
     inputArray = inputArray.filter(w => w.length > 0);
     //console.log(inputArray);
     let numbers = []; 
-    for(let word of inputArray){
+    for (let word of inputArray) {
         let number = Number(word);
-        if(!Number.isNaN(number)){
+        if (!Number.isNaN(number)) {
             numbers.push(number);
         }
     }     
     //console.log(numbers);
    
-    for(let number of numbers){
+    for (let number of numbers) {
         numberString = number.toString();                
         let lastDiditString = numberString[numberString.length - 1];        
         let lastButOneDigitString = numberString[numberString.length - 2];
         
-        if (numberString.length > 1 && lastButOneDigitString == 1){
+        if (numberString.length > 1 && lastButOneDigitString == 1) {
             number = `${number}th`
         }
-        else if(lastDiditString == 1)
+        else if (lastDiditString == 1)
         {
             number = `${number}st`;
         }
-        else if(lastDiditString == 2){
+        else if (lastDiditString == 2) {
             number = `${number}nd`;
         }
-        else if(lastDiditString == 3){
+        else if (lastDiditString == 3) {
             number = `${number}rd`
         }
-        else{
+        else {
             number = `${number}th`
         }
 
