@@ -8,11 +8,11 @@ function solve() {
         let span = document.createElement('span');
         let p = document.createElement('p');
         let senderButtonName = event.target.name;
-        if (senderButtonName === 'myBtn'){
+        if (senderButtonName === 'myBtn') {
             span.textContent = 'Me';
             p.textContent = document.getElementById('myChatBox').value;
             div.style.textAlign = 'left';
-        } else if (senderButtonName === 'peshoBtn'){
+        } else if (senderButtonName === 'peshoBtn') {
             span.textContent = 'Pesho';
             p.textContent = document.getElementById('peshoChatBox').value;
             div.style.textAlign = 'right';
