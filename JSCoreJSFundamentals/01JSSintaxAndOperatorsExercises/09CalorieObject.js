@@ -1,6 +1,6 @@
-function showCaloriesFromFood(arr){
+function showCaloriesFromFood(arr) {
     let caloryObject = {};
-    for (let i = 0; i < arr.length; i += 2){
+    for (let i = 0; i < arr.length; i += 2) {
         let caloryObjectKey = arr[i];
         let caloryObjectValue = arr[i + 1];
         caloryObject[caloryObjectKey] = Number(caloryObjectValue);
