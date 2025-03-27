@@ -13,7 +13,7 @@ function solve() {
         optionHexadecimal.value = 'hexadecimal';
         menuElement.appendChild(optionHexadecimal);
 
-    function convert(){        
+    function convert() {        
         let selectedOption = menuElement.options[menuElement.selectedIndex].value;
         let numberSystem = {binary:2, decimal:10, hexadecimal:16};
         let convertedNumber = (inputNumberElement.value >>> 0).toString(numberSystem[selectedOption]).toUpperCase();
