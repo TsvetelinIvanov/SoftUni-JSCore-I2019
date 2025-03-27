@@ -1,9 +1,9 @@
-function checkEqualDigits(inputNumber){
+function checkEqualDigits(inputNumber) {
     let numberString = inputNumber.toString();
     let digitsSum = 0;
     let areEqualDigits = true;
-    for (let i = 0; i < numberString.length; i++){
-        if (numberString[0] !== numberString[i]){
+    for (let i = 0; i < numberString.length; i++) {
+        if (numberString[0] !== numberString[i]) {
             areEqualDigits = false;
         }
         
