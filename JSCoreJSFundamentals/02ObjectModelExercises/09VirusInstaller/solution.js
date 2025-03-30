@@ -19,7 +19,7 @@ function solve() {
         exerciseContainer.style.display = 'none';
     }
 
-    function showFirstStep(){
+    function showFirstStep() {
         contentElement.style.backgroundImage = 'none';
         //contentElement.style.display = 'none';
         firstStepDiv.style.display = 'block';
@@ -27,13 +27,12 @@ function solve() {
         nextButton.addEventListener('click', showSecondStep);
     }
 
-    function showSecondStep(){
+    function showSecondStep() {
         let inputs = document.querySelectorAll('input');
         let agreeInput = inputs[0];
         let disagreeInput = inputs[1];
         if (disagreeInput.checked){
-
-        } else if (agreeInput.checked){
+        } else if (agreeInput.checked) {
             firstStepDiv.style.display = 'none';
             secondStepDiv.style.display = 'block';
             nextButton.removeEventListener('click', showSecondStep);
@@ -45,7 +44,7 @@ function solve() {
         }
     }
 
-    function showThirdStep(){
+    function showThirdStep() {
         secondStepDiv.style.display = 'none';
         thirdStepDiv.style.display = 'block';
         nextButton.style.display = 'none';
