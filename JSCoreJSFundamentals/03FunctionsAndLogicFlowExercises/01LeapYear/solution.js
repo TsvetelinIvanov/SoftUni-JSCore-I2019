@@ -2,12 +2,13 @@ function leapYear() {
     let button = document.querySelector('#exercise>button');
     button.addEventListener('click', checkYear);
 
-    function checkYear(){
+    function checkYear() {
         let input = document.querySelector('#exercise>input');
         let outputText = '';
-        if (checkLeapYear(Number(input.value))){
+        if (checkLeapYear(Number(input.value))) {
             outputText = 'Leap Year';
-        } else {
+        } 
+        else {
             outputText = 'Not Leap Year'
         }
 
@@ -22,7 +23,7 @@ function leapYear() {
         input.value = '';
     }
 
-    function checkLeapYear(year){
+    function checkLeapYear(year) {
         return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
     }
 }
