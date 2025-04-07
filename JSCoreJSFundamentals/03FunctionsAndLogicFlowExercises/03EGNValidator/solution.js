@@ -23,7 +23,6 @@ function validate() {
                 egnSum += Number(egn[i]) * Number(weights[i]);
             }
 
-
             let validCheckNumber = egnSum % 11;
             if (validCheckNumber > 9) {
                 validCheckNumber = 0;
