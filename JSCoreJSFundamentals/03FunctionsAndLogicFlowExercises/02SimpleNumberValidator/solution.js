@@ -1,7 +1,7 @@
 function validate() {
     document.querySelector('#exercise>fieldset>div>button').addEventListener('click', checkValidNumber);
 
-    function checkValidNumber(){
+    function checkValidNumber() {
         let input = document.querySelector('#exercise>fieldset>div>input').value;
         let lastDigit = Number(input[input.length - 1]);
         let weightArray = [2, 4, 8, 5, 10, 9, 7, 3, 6];
@@ -20,7 +20,8 @@ function validate() {
         let response = document.getElementById('response');
         if (lastDigit === reminder) {
             response.textContent = 'This number is Valid!';
-        } else {
+        }
+        else {
             response.textContent = 'This number is NOT Valid!';
         }
     }
