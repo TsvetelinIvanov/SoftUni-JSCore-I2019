@@ -2,7 +2,7 @@ function solve() {
     let button = document.querySelector('button');
     button.addEventListener('click', addCards);
 
-    function addCards(){
+    function addCards() {
         let cardValues = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
         let fromCardInputElement = document.getElementById('from');
         let toCardInputElement = document.getElementById('to');
@@ -10,14 +10,15 @@ function solve() {
         let cardsSectionElement = document.getElementById('cards');
         let fromCardIndex = cardValues.indexOf(fromCardInputElement.value);
         let toCardIndex = cardValues.indexOf(toCardInputElement.value);
+        
         let cardSuit = '';
-        if(cardSuitSelectElement.value.includes('Hearts')){
+        if (cardSuitSelectElement.value.includes('Hearts')) {
             cardSuit = '&hearts;';
-        } else if(cardSuitSelectElement.value.includes('Spades')){
+        } else if(cardSuitSelectElement.value.includes('Spades')) {
             cardSuit = '&spades;';
-        } else if(cardSuitSelectElement.value.includes('Diamonds')){
+        } else if(cardSuitSelectElement.value.includes('Diamonds')) {
             cardSuit = '&diamond;';
-        } else if(cardSuitSelectElement.value.includes('Clubs')){
+        } else if(cardSuitSelectElement.value.includes('Clubs')) {
             cardSuit = '&clubs;';
         }
 
