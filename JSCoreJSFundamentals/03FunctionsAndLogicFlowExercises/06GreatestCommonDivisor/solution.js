@@ -4,11 +4,12 @@ function greatestCD() {
     let result = document.getElementById('result');
 
     function gcd(a, b) {
-        if ( ! b) {
+        if (!b) {
             return a;
         }
 
         return gcd(b, a % b);
     }
-result.innerHTML = gcd(num1, num2);
+    
+    result.innerHTML = gcd(num1, num2);
 }
