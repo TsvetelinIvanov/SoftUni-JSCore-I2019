@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-family: "PT sans", sans-serif;
     font-size: 24px;
     color: #234465;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -21,13 +21,7 @@ body{
     flex-wrap: wrap;
 }
 
-main: after{
-    display: block;
-    content:'';
-    clear: both;
-}
-
-input[type="button"]{
+input[type="button"] {
     padding: 0.3rem 0.5rem;
     font-size: 0.7em;
     margin: 1rem 0 1rem 0;
@@ -38,7 +32,7 @@ input[type="button"]{
     outline: none;
 }
 
-button{
+button {
     background: #234465;
     color: white;
     border: none;
@@ -47,7 +41,7 @@ button{
     border-radius: 10px;
 }
 
-table{
+table {
     margin: 0 auto;
     border: 1px solid #234465;
     width: 50%;
@@ -56,103 +50,109 @@ table{
     margin-bottom: 1%;
 }
 
-table thead th{
+table thead th {
     border: 1px solid #234465;
 }
 
-table td{
+table td {
     border: 1px solid #234465;
 }
 
-table input{
+table input {
     font-size: 12pt;
     width: 30%;
 }
 
-table td:nth-child(even){
+table tfoot td {
+    text-align: center;
+}
+
+table td:nth-child(even) {
     padding-left: 2%;
 }
 
-table td:nth-child(odd){
+table td:nth-child(odd) {
     text-align: right;
     padding-right: 2%;
 }
 
-table tfoot td{
-    text-align: center;
+main:afte {
+    display: block;
+    content:'';
+    clear: both;
 }
 
-#main{   
+#main {   
     background: url(images/background.png) no-repeat center center;
     background-size: cover;
     height: 100vh;
 }
 
-#navigation{
+#navigation {
     background: #234465;
     display: inline-block;
     padding: 0.5rem;
     width: 100%;
 }
 
-#navigation-text{
+#navigation-text {
     display: inline-block;
 }
 
-#lecture-name, #problem-name{
+#lecture-name, #problem-name {
     font-family: "Lato", sans-serif;
     color: white;
     font-weight: bold;
 }
 
-#lecture-name{    
+#lecture-name {    
     font-size: 28px;    
     margin-bottom: 0.8rem;
 }
 
-#problem-name{    
+#problem-name {    
     font-size: 22px;
     color: white;    
 }
 
-#logo-img{
+#logo-img {
     width: 17%;
     float: right;
     padding: 0.5rem 0.5rem 0 0;
 }
 
-#softUni-person-img{
+#softUni-person-img {
     width: 30%;
     padding: 0;
     float: left;    
 }
 
-#exercise{   
+#exercise {   
     width: 70%;
     float: left;
     padding: 1rem 0 1rem 1rem;
 }
 
-#footer{
+#footer {
     background: #234465;
     padding: 0.5rem;
     margin-top: auto;
 }
 
-#footer-text{
+#footer-text {
     color: white;
     text-align: center;
 }
 
-#check-judge{
+#check-judge {
     color: #FD9F00;
 }
 
-#male, #female{
+#male, #female {
     width: auto;
 }
 
-#egn{
+#egn {
     width: 50%;
     margin: 0 auto;
     text-align: center;
@@ -160,6 +160,6 @@ table tfoot td{
     font-size: 36px;
 }
 
-#exercise div{
+#exercise div {
     text-align: center;
 }
