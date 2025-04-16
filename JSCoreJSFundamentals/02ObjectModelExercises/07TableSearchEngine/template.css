@@ -21,12 +21,6 @@ body {
     flex-wrap: wrap;
 }
 
-main:after {
-    display: block;
-    content:'';
-    clear: both;
-}
-
 input[type="button"], button {
     padding: 0.3rem 0.5rem;
     font-size: 0.7em;
@@ -49,13 +43,19 @@ th, td {
 }
 
 table input {
-	font-size: 24px;
-	color: #234465;
+    font-size: 24px;
+    color: #234465;
+}
+
+main:after {
+    display: block;
+    content:'';
+    clear: both;
 }
 
 .select {
-	background-color: green;
-	color: white;
+    background-color: green;
+    color: white;
 }
 
 #main {
