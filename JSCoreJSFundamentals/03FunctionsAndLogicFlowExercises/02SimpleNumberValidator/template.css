@@ -1,40 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-family: "PT sans", sans-serif;
     font-size: 24px;
     color: #234465;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     margin: 0;
     min-height: 100vh;
     flex-wrap: wrap;
 }
-
-main: after{
-    display: block;
-    content:'';
-    clear: both;
-}
-
-fieldset{
+fieldset {
     width: 60%;
 }
-fieldset input{
+
+fieldset input {
     font-size: 24px;
 }
 
-fieldset button{
+fieldset button {
     font-size: 21px;
     background: #234465;
     color: white;
@@ -43,58 +37,64 @@ fieldset button{
     border-radius: 10px;
 }
 
-#main{
+main:after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+#main {
     background: url(images/background.png) no-repeat center center;
     background-size: cover;
     height: 100vh;
 }
 
-#navigation{
+#navigation {
     background: #234465;
     display: inline-block;
     padding: 0.5rem;
     width: 100%;
 }
 
-#navigation-text{
+#navigation-text {
     display: inline-block;
 }
 
-#lecture-name, #problem-name{
+#lecture-name, #problem-name {
     font-family: "Lato", sans-serif;
     color: white;
     font-weight: bold;
 }
 
-#lecture-name{
+#lecture-name {
     font-size: 28px;
     margin-bottom: 0.8rem;
 }
 
-#problem-name{
+#problem-name {
     font-size: 22px;
     color: white;
 }
 
-#logo-img{
+#logo-img {
     width: 17%;
     float: right;
     padding: 0.5rem 0.5rem 0 0;
 }
 
-#softUni-person-img{
+#softUni-person-img {
     width: 30%;
     padding: 0;
     float: left;
 }
 
-#exercise{
+#exercise {
     width: 70%;
     float: left;
     padding: 1rem 0 1rem 1rem;
 }
 
-#response{
+#response {
     font-weight: bold;
     text-decoration: underline;
 }
