@@ -21,12 +21,6 @@ body {
     flex-wrap: wrap;
 }
 
-main:after {
-    display: block;
-    content: '';
-    clear: both;
-}
-
 input,
 button {
     vertical-align: top;
@@ -53,6 +47,12 @@ button {
     width: 60%;
     float: left;
     padding: 3rem;
+}
+
+main:after {
+    display: block;
+    content: '';
+    clear: both;
 }
 
 #main {
