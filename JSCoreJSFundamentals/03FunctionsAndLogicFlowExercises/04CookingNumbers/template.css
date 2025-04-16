@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-family: "PT sans", sans-serif;
     font-size: 24px;
     color: #234465;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -21,13 +21,7 @@ body{
     flex-wrap: wrap;
 }
 
-main: after{
-    display: block;
-    content:'';
-    clear: both;
-}
-
-input[type="button"]{
+input[type="button"] {
     padding: 0.3rem 0.5rem;
     font-size: 0.7em;
     margin: 1rem 0 1rem 0;
@@ -47,24 +41,30 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-#main{   
+main:after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+#main {   
     background: url(images/background.png) no-repeat center center;
     background-size: cover;
     height: 100vh;
 }
 
-#navigation{
+#navigation {
     background: #234465;
     display: inline-block;
     padding: 0.5rem;
     width: 100%;
 }
 
-#navigation-text{
+#navigation-text {
     display: inline-block;
 }
 
-#lecture-name, #problem-name{
+#lecture-name, #problem-name {
     font-family: "Lato", sans-serif;
     color: white;
     font-weight: bold;
@@ -75,30 +75,30 @@ input::-webkit-inner-spin-button {
     margin-bottom: 0.8rem;    
 }
 
-#problem-name{    
+#problem-name {    
     font-size: 22px;
     color: white;    
 }
 
-#logo-img{
+#logo-img {
     width: 17%;
     float: right;
     padding: 0.5rem 0.5rem 0 0;
 }
 
-#softUni-person-img{
+#softUni-person-img {
     width: 30%;
     padding: 0;
     float: left;    
 }
 
-#exercise{   
+#exercise {   
     width: 70%;
     float: left;
     padding: 1rem 0 1rem 1rem;
 }
 
-#footer{
+#footer {
     background: #234465;
     padding: 0.5rem;
     margin-top: auto;
@@ -109,21 +109,21 @@ input::-webkit-inner-spin-button {
     text-align: center;
 }
 
-#check-judge{
+#check-judge {
     color: #FD9F00;
 }
 
-#exercise{
+#exercise {
     text-align: center;
 }
 
-#exercise input{
+#exercise input {
     font-size: 24px;
     text-align: center;
     border:2px solid #234465;
 }
 
-#exercise button{
+#exercise button {
     padding: 0.3rem 0.5rem;
     font-size: 0.7em;
     margin: 1rem 0 1rem 0;
@@ -134,7 +134,7 @@ input::-webkit-inner-spin-button {
     outline: none;
 }
 
-#exercise p{
+#exercise p {
     font-size: 48px;
     word-wrap: break-word;
 }
