@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     font-family: "PT sans", sans-serif;
     font-size: 24px;
     color: #234465;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -21,13 +21,7 @@ body{
     flex-wrap: wrap;
 }
 
-main: after{
-    display: block;
-    content:'';
-    clear: both;
-}
-
-input[type="button"]{
+input[type="button"] {
     padding: 0.3rem 0.5rem;
     font-size: 0.7em;
     margin: 1rem 0 1rem 0;
@@ -38,85 +32,91 @@ input[type="button"]{
     outline: none;
 }
 
-input[type="text"]{
+input[type="text"] {
     width: 40%;
     padding: 0.1rem;
     background: transparent;
     font-size: 22px;   
 }
 
-#main{   
+main:after {
+    display: block;
+    content:'';
+    clear: both;
+}
+
+#main {   
     background: url(background.png) no-repeat center center;
     background-size: cover;
 }
 
-#navigation{
+#navigation {
     background: #234465;
     display: inline-block;
     padding: 0.5rem;
 }
 
-#navigation-text{
+#navigation-text {
     display: inline-block;
 }
 
-#lecture-name, #problem-name{
+#lecture-name, #problem-name {
     font-family: "Lato", sans-serif;
     color: white;
     font-weight: bold;
 }
 
-#lecture-name{    
+#lecture-name {    
     font-size: 28px;    
     margin-bottom: 0.8rem;    
 }
 
-#problem-name{    
+#problem-name {    
     font-size: 22px;
     color: white;    
 }
 
-#logo-img{
+#logo-img {
     width: 17%;
     float: right;
     padding: 0.5rem 0.5rem 0 0;
 }
 
-#softUni-person-img{
+#softUni-person-img {
     width: 30%;
     padding: 0;
     float: left;    
 }
 
-#exercise{   
+#exercise {   
     width: 70%;
     float: left;
     padding: 1rem 0 1rem 1rem;
 }
 
-#footer{
+#footer {
     background: #234465;
     padding: 0.5rem;
     margin-top: auto;
 }
 
-#footer-text{
+#footer-text {
     color: white;
     text-align: center;
 }
 
-#check-judge{
+#check-judge {
     color: #FD9F00;
 }
 
-#exercise > form > div:nth-child(1) > label{
+#exercise > form > div:nth-child(1) {
+    margin-bottom: 0.7rem;
+}
+
+#exercise > form > div:nth-child(1) > label {
     padding-right: 1.73rem;  
 }
 
-#exercise > form > div:nth-child(2) > label{
+#exercise > form > div:nth-child(2) > label {
     padding-right: 0.5rem;  
-}
-
-#exercise > form > div:nth-child(1){
-    margin-bottom: 0.7rem;
 }
