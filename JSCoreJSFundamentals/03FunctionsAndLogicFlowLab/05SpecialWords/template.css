@@ -21,6 +21,30 @@ body {
     flex-wrap: wrap;
 }
 
+input[type="button"] {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7em;
+    margin: 1rem 0 1rem 0;
+    border: none;
+    color: white;
+    background: #234465;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="text"] {
+    width: 40%;
+    padding: 0.1rem;
+    background: transparent;
+    font-size: 22px;
+}
+
+main:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
 #main {
     background: url(./images/background.png) no-repeat center center;
     background-size: cover;
@@ -71,59 +95,30 @@ body {
     padding: 1rem 0 1rem 1rem;
 }
 
-main:after {
-    display: block;
-    content: '';
-    clear: both;
-}
-
 #check-judge {
     color: #FD9F00;
 }
 
-input[type="button"] {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.7em;
-    margin: 1rem 0 1rem 0;
-    border: none;
-    color: white;
-    background: #234465;
-    border-radius: 5px;
-    outline: none;
-}
-
-input[type="text"] {
-    width: 40%;
-    padding: 0.1rem;
-    background: transparent;
-    font-size: 22px;
+#exercise>form>div {
+    margin-bottom: 0.5rem;
 }
 
 #exercise>form>div:nth-child(1)>label {
     padding-right: 1.7rem;
-
 }
 
 #exercise>form>div:nth-child(2)>label {
     padding-right: 0.5rem;
-
 }
 
 #exercise>form>div:nth-child(3)>label {
     padding-right: 2.5rem;
-
 }
 
 #exercise>form>div:nth-child(4)>label {
     padding-right: 1.35rem;
-
 }
 
 #exercise>form>div:nth-child(5)>label {
     padding-right: 2.15rem;
-
-}
-
-#exercise>form>div {
-    margin-bottom: 0.5rem;
 }
