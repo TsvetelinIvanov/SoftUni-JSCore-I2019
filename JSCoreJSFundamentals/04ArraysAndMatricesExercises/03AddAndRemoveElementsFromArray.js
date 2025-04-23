@@ -1,16 +1,19 @@
-function addAndRemoveElements(arr){
-    let resultArr = arr.reduce((acc, el, idx) =>{
-        if (el === 'add'){
-            acc.push(idx + 1);
-        } else if (el === 'remove'){
-            acc.pop();
+function addAndRemoveElements(arr) {
+    let resultArr = arr.reduce((actual, element, index) => {
+        if (element === 'add') {
+            actual.push(index + 1);
         }
-        return acc;
+        else if (element === 'remove') {
+            actual.pop();
+        }
+        
+        return actual;
     }, []);
 
-    if (resultArr.length > 0){
+    if (resultArr.length > 0) {
         console.log(resultArr.join('\n'));
-    } else {
+    }
+    else {
         console.log('Empty');
     }
 }
