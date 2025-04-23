@@ -1,6 +1,6 @@
-function rotateArray(arr){
-    let rotationCount = Number(arr.pop());
-    for (let i = 0; i < rotationCount % arr.length; i++) {
+function rotateArray(arr) {
+    let rotationsCount = Number(arr.pop());
+    for (let i = 0; i < rotationsCount % arr.length; i++) {
         arr.unshift(arr.pop());        
     }
 
