@@ -1,10 +1,11 @@
-function extractNondecreasingSubsecuence(arr){
+function extractNondecreasingSubsecuence(arr) {
     let last = -Infinity;
     let nondecreasingArr =  arr.reduce((acc, el) => {
         if (el >= last) {
             acc.push(el);
             last = el;
         }
+        
         return acc;
     }, []);
 
