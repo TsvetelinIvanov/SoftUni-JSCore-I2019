@@ -1,11 +1,12 @@
-function doSpiralMatrix(rows, cols){
-    let totalCellsCount = rows * cols;
+function doSpiralMatrix(rowsCount, colsCount) {
+    let totalCellsCount = rowsCount * colsCount;
     let spiralMatrix = [];
-    for (let i = 0; i < rows; i++) {
+    for (let i = 0; i < rowsCount; i++) {
         let rowArray = [];
-        for (let j = 0; j < cols; j++) {
+        for (let j = 0; j < colsCount; j++) {
             rowArray.push(0);            
         }
+        
         spiralMatrix.push(rowArray);                
     }
     
@@ -13,38 +14,42 @@ function doSpiralMatrix(rows, cols){
     let col = 0;
     let step = 0;
     for (let i = 0; i < totalCellsCount;) {
-        while(col + step < cols){
+        while (col + step < colsCount) {
             i++;
             spiralMatrix[row][col] = i;
             col++;
         }
+        
         col--;
         row++;
-        while(row + step < rows){
+        while (row + step < rows) {
             i++;
             spiralMatrix[row][col] = i;
             row++;
         }
+        
         row--;
         col--;
-        while(col >= step){
+        while (col >= step) {
             i++;
             spiralMatrix[row][col] = i;
             col--;
         }
+        
         col++;
         row--;
         step++;
-        while(row >= step){
+        while (row >= step) {
             i++;
             spiralMatrix[row][col] = i;
             row--;
         }
+        
         row++;
         col++;                
     }
 
-    for (let rowArray of spiralMatrix){
+    for (let rowArray of spiralMatrix) {
         console.log(rowArray.join(' '));
     }
 }
