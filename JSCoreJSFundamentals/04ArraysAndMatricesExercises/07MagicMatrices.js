@@ -1,13 +1,15 @@
-function checkIfMatrixIsMagic(matrix){
+function checkIfMatrixIsMagic(matrix) {
     let firstRowSum = 0;
     for (let row = 0; row < matrix.length; row++) {
         let rowSum = 0;
         for (let col = 0; col < matrix[row].length; col++) {
             rowSum += matrix[row][col];                                   
         }
-        if (row === 0){
+        
+        if (row === 0) {
             firstRowSum = rowSum;
-        } else if (firstRowSum !== rowSum){
+        }
+        else if (firstRowSum !== rowSum){
             return false;
         }         
     }
@@ -17,6 +19,7 @@ function checkIfMatrixIsMagic(matrix){
         for (let row = 0; row < matrix.length; row++) {
            colSum += matrix[row][col];            
         }
+        
         if (firstRowSum !== colSum){
             return false;
         }        
