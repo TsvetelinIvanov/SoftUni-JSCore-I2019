@@ -9,7 +9,7 @@ function checkDiagonalsAndPrintMatrix(stringArray) {
                 firstDiagonalSum += matrix[row][col];                
             }
 
-            if (col === matrix[row].length - 1 - row){
+            if (col === matrix[row].length - 1 - row) {
                 secondDiagonalSum += matrix[row][col];
             }
         }
