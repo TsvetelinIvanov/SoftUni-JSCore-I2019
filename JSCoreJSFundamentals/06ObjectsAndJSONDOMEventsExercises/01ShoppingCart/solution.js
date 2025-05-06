@@ -10,6 +10,7 @@ function solve() {
             if (!products.hasOwnProperty(productName)) {
                 products[productName] = 0;
             }
+            
             products[productName] += productPrice;
         })
     }
@@ -22,6 +23,7 @@ function solve() {
             if (!productsList.includes(productName)) {
                 productsList.push(productName);
             }
+            
             totalPrice += products[productName];
         }
 
