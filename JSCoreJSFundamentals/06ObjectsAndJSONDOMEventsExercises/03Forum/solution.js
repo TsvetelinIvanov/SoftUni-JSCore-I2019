@@ -7,6 +7,7 @@ function solve() {
             email: document.getElementsByClassName('user-info')[0].children[5].value,
             topics: Array.from(document.getElementsByClassName('topics')[0].children).filter(ch => ch.checked).map(ch => ch.value)
         }
+        
         let tr = document.createElement('tr');
         let tdUsername = document.createElement('td');
         tdUsername.innerHTML = user.username;
