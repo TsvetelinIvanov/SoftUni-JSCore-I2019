@@ -26,6 +26,41 @@ h1 {
     text-decoration: underline;
 }
 
+input[type="text"],
+input[type="password"] {
+    border: 2px solid gray;
+    width: 200px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #acabab;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+main:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.topics {
+    display: inline;
+}
+
 #main {
     background: url(images/background.png) no-repeat center center;
     background-size: cover;
@@ -77,12 +112,6 @@ h1 {
     padding: 1rem 0 1rem 1rem;
 }
 
-main:after {
-    display: block;
-    content: '';
-    clear: both;
-}
-
 #year {
     border: 1px solid black;
     width: 30%;
@@ -116,34 +145,4 @@ main:after {
     border-radius: 10px;
     font-weight: bold;
     margin-top: 10px;
-}
-
-input[type="text"],
-input[type="password"] {
-    border: 2px solid gray;
-    width: 200px;
-    border-radius: 5px;
-    height: 30px;
-}
-
-.topics {
-    display: inline;
-}
-
-
-table {
-    border-collapse: collapse;
-    margin-top: 20px;
-    width: 100%;
-}
-
-td,
-th {
-    border: 1px solid #acabab;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #eeeeee;
 }
