@@ -29,8 +29,7 @@
             <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
         </main>
         <footer>
-            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
-            </p>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span></p>
         </footer>
     </div>
     <script>
@@ -39,13 +38,14 @@
         });
         function addStudents() {
             //let students = document.getElementById("input").value.split("\n");
-            //let obj = students.filter(x => x != "").map(line => {
-            // let currentStudent = line.split(" ")
-            // return {
-            // firstName: currentStudent[0],
-            // secondName: currentStudent[1],
-            // grade: parseFloat(currentStudent[2])
-            //   };
+            //let obj = students.filter(s => s != "").map(line => {
+            //    let currentStudent = line.split(" ")
+            
+            //    return {
+            //        firstName: currentStudent[0],
+            //        secondName: currentStudent[1],
+            //        grade: parseFloat(currentStudent[2])
+            //    };
             //});
             let students = document.getElementById("input").value.split("\n");
             let result = [];
@@ -57,15 +57,16 @@
                 obj["grade"] = Number(info[2]);
                 result.push(obj);
             }
-            let resultStr = "";
-            resultStr += "Students are: ";
-            resultStr += result.map(x => x["first name"] + " " + x["second name"]).join(", ");
-            // resultStr += obj.map(x => `${x.firstName} ${x.secondName}).join(", ");
-            resultStr += "\n";
-            resultStr += "Average grade: " + (result.map(x => x["grade"]).reduce((a, b) => a + b) / result.length).toFixed(2);
-            // resultStr += "Average grade: " + (obj.map(x => x.grade).reduce((a, b) => a + b) / obj.length).toFixed(2);
-            document.getElementById("result").innerHTML = resultStr;
-            //document.getElementById("result").value = resultStr;
+            
+            let resultString = "";
+            resultString += "Students are: ";
+            resultString += result.map(s => s["first name"] + " " + s["second name"]).join(", ");
+            // resultString += obj.map(s => `${s.firstName} ${s.secondName}).join(", ");
+            resultString += "\n";
+            resultString += "Average grade: " + (result.map(s => s["grade"]).reduce((a, b) => a + b) / result.length).toFixed(2);
+            // resultString += "Average grade: " + (obj.map(s => s.grade).reduce((a, b) => a + b) / obj.length).toFixed(2);
+            document.getElementById("result").innerHTML = resultString;
+            //document.getElementById("result").value = resultString;
         }
     </script>
 </body>
