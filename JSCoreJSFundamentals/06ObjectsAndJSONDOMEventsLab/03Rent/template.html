@@ -33,8 +33,7 @@
             <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
         </main>
         <footer>
-            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
-            </p>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span></p>
         </footer>
     </div>
     <script>
@@ -53,6 +52,7 @@
                 };
             });
             let resultElement = document.getElementById("result ");
+            //result.forEach(f => resultElement.value += `In the flat ${f.flat} family ${f.family} has to pay ${f.rent}\n`);
             Result.forEach(f => resultElement.value += `In the flat ${f.flat} family ${f.family} has to pay ${f.rent}\n`);
             resultElement.value += "Total rent paid:  " + rents.map(Number).reduce((a, b) => a + b);
         }
