@@ -31,8 +31,7 @@
             <img id="softUni-person-img" src="./images/cw_2_New_Logo.png" alt="softUni-person">
         </main>
         <footer>
-            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span>
-            </p>
+            <p id="footer-text">Check your solution here: <span id="check-judge">Link to judge</span></p>
         </footer>
     </div>
     <script>
@@ -40,22 +39,26 @@
             event.preventDefault()
         });
         function extractInfo() {
-            let inputObj = JSON.parse(document.getElementById("input").value);
+            let inputObject = JSON.parse(document.getElementById("input").value);
             let command = document.getElementById("command").value.split(" ");
             let resultElement = document.getElementById("result");
             if (command[0] == "value") {
-                if (inputObj[command[2]]) {
-                    resultElement.value = "Value: " + inputObj[command[2]];
-                } else {
+                if (inputObject[command[2]]) {
+                    resultElement.value = "Value: " + inputObject[command[2]];
+                }
+                else {
                     resultElement.value = "No such item ";
                 }
-            } else if (command[0] == "typeof") {
-                if (inputObj[command[1]]) {
-                    resultElement.value = "Type: " + typeof inputObj[command[1]];
-                } else {
+            }
+            else if (command[0] == "typeof") {
+                if (inputObject[command[1]]) {
+                    resultElement.value = "Type: " + typeof inputObject[command[1]];
+                }
+                else {
                     resultElement.value = "No such item ";
                 }
-            } else {
+            }
+            else {
                 resultElement.value = "Invalid command";
             }
         }
