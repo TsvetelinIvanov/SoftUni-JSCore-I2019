@@ -6,6 +6,7 @@ function makeFromJSONtoHTMLTable(inputString) {
         for (let key in object) {
             outputString += `<th>${key}</th>`;
         }
+        
         outputString += '</tr>\n';
         break;
     }
@@ -21,8 +22,10 @@ function makeFromJSONtoHTMLTable(inputString) {
                 value = value.replace(/"/g, '&quot;');
                 value = value.replace(/'/g, '&#39;');                
             }
+            
             outputString += `<td>${value}</td>`;
         }
+        
         outputString += '</tr>\n';
     }
 
