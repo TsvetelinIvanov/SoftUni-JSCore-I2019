@@ -1,8 +1,8 @@
-function takeScoreInHTMLTable(inputString){
+function takeScoreInHTMLTable(inputString) {
     let inputArray = JSON.parse(inputString);
     
     let outputString = '<table>\n<tr><th>name</th><th>score</th></tr>\n';
-    for(let object of inputArray){
+    for (let object of inputArray) {
         let name = object.name.replace(/&/g, '&amp;');
         name = name.replace(/</g, '&lt;');
         name = name.replace(/>/g, '&gt;');
