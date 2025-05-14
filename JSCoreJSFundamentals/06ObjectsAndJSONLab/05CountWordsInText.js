@@ -1,10 +1,10 @@
-function countWords(text){
+function countWords(text) {
     text = text[0];
     let splitedText = text.split(/\W+/g).filter(w => w !== '');
     let wordCounts = {};
     for (let i = 0; i < splitedText.length; i++) {
         let word = splitedText[i];
-        if (!(word in wordCounts)){
+        if (!(word in wordCounts)) {
             wordCounts[word] = 0;
         }
         
