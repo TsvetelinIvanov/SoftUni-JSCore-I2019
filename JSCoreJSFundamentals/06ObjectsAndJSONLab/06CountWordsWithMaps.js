@@ -1,10 +1,10 @@
-function countAndShowWords(text){
+function countAndShowWords(text) {
     text = text[0];
     let splitedText = text.split(/\W+/g).filter(w => w !== '');
     let wordCounts = {};
     for (let i = 0; i < splitedText.length; i++) {
         let word = splitedText[i].toLowerCase();
-        if (!(word in wordCounts)){
+        if (!(word in wordCounts)) {
             wordCounts[word] = 0;
         }
         
@@ -12,7 +12,7 @@ function countAndShowWords(text){
     }
 
     let outputArray = [];
-    for(let key in wordCounts){
+    for (let key in wordCounts){
         outputArray.push(`'${key}' -> ${wordCounts[key]} times`);
     }
 
