@@ -1,9 +1,9 @@
-function extractUniqueWords(stringArray){
+function extractUniqueWords(stringArray) {
     let uniqueWords = [];
     for (let i = 0; i < stringArray.length; i++) {
         let sentence = stringArray[i].toLowerCase().split(/\W+/).filter(w => w !== '');
-        for(let word of sentence){
-            if(!uniqueWords.includes(word)){
+        for (let word of sentence) {
+            if(!uniqueWords.includes(word)) {
                 uniqueWords.push(word);
             }
         }
