@@ -1,15 +1,15 @@
-function calculateProductsIncomeForTown(dataArray){
+function calculateProductsIncomeForTown(dataArray) {
     let towns = {};
     
-    for(let townData of dataArray){        
+    for(let townData of dataArray) {        
         let [townName, productName, productIncomeData] = townData.split(' -> ');        
         let productIncome = productIncomeData.split(' : ').map(Number).reduce((a, b) => a * b);
 
-        if (!towns.hasOwnProperty(townName)){
+        if (!towns.hasOwnProperty(townName)) {
             towns[townName] = {};
         }
         
-        if (!towns[townName].hasOwnProperty(productName)){
+        if (!towns[townName].hasOwnProperty(productName)) {
             towns[townName][productName] = 0;
         }
 
@@ -17,12 +17,13 @@ function calculateProductsIncomeForTown(dataArray){
     }
 
     let outputString = '';
-    for(let town in towns){
+    for(let town in towns) {
         outputString += `Town - ${town}\n`;
-        for(let product in towns[town]){
+        for(let product in towns[town]) {
             outputString += `$$$${product} : ${towns[town][product]}\n`;
         }
     }
+    
     outputString = outputString.substring(0, outputString.length - 1);
 
     console.log(outputString)
