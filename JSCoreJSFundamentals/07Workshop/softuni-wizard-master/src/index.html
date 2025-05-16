@@ -12,7 +12,6 @@
         <div class="game-area"></div>
         <div class="game-over hide">Game Over ;(</div>
     </div>
-
     <script>
         const gameStart = document.querySelector('.game-start');
         const gameArea = document.querySelector('.game-area');
@@ -97,7 +96,6 @@
             bugs.forEach(bug => {
                 bug.x -= game.speed * 3;
                 bug.style.left = bug.x + 'px';
-
                 if (bug.x + bugs.offsetWidth <= 0) {
                     bug.parentElement.removeChild(bug);
                 }
@@ -108,7 +106,6 @@
             clouds.forEach(cloud => {
                 cloud.x -= game.speed;
                 cloud.style.left = cloud.x + 'px';
-
                 if (cloud.x + clouds.offsetWidth <= 0) {
                     cloud.parentElement.removeChild(cloud);
                 }
@@ -119,7 +116,6 @@
             fireBalls.forEach(fireBall => {
                 fireBall.x += game.speed * game.fireBallMultiplier;
                 fireBall.style.left = fireBall.x + 'px';
-
                 if (fireBall.x + fireBall.offsetWidth > gameArea.offsetWidth) {
                     fireBall.parentElement.removeChild(fireBall)
                 }
@@ -135,15 +131,19 @@
             if (keys.ArrowUp && player.y > 0) {
                 player.y -= game.speed * game.movingMultiplier; 
             }
+            
             if (keys.ArrowDown && isInAir){
                 player.y += game.speed * game.movingMultiplier;
             }
+            
             if (keys.ArrowLeft && player.x > 0) {
                 player.x -= game.speed * game.movingMultiplier;
             }
+            
             if (keys.ArrowRight && player.x + player.width < gameArea.offsetWidth) {
                 player.x += game.speed * game.movingMultiplier;
             }
+            
             if (keys.Space && timestamp - player.lastTimeFiredFireball > game.fireInterval) {
                 wizard.classList.add('wizard-fire');
                 addFireBall(player);
@@ -204,6 +204,7 @@
             fireBall.style.top = (player.y + player.height / 3 - 5) + 'px';
             fireBall.x = player.x + player.width;
             fireBall.style.left = fireBall.x + 'px';
+            
             gameArea.appendChild(fireBall);
         }
 
