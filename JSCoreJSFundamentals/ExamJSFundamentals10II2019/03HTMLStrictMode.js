@@ -10,14 +10,13 @@ function extractText(stringArray) {
         }
 
         let [startTag, endTag] = [line.match(startTagPattern), line.match(endTagPattern)];
-        if(startTag[0] !== endTag[0].replace('/', '')){
+        if (startTag[0] !== endTag[0].replace('/', '')) {
             continue;
         }
 
         line = line.replace(/<\w+>/g, '');
         line = line.replace(/<\/\w+>/g, '');
         textArray.push(line);
-
     }
 
     let text = textArray.join(' ');
@@ -25,7 +24,7 @@ function extractText(stringArray) {
     return text;
 }
 
-// function extractText(stringArray){
+// function extractText(stringArray) {
 //     console.log(stringArray.filter(s => /^<(\w+)>.+<(\/\1)>$/.test(s)).map(s => s.replace(/<\/?\w+>/g, '')).join(' '));
 // }
 
