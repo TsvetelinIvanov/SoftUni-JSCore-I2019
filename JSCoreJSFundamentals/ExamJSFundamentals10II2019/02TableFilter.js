@@ -1,63 +1,70 @@
-function showWantedData(matrixTable, command){
+function showWantedData(matrixTable, command) {
     let commandArray = command.split(/\s+/);
     //let commandArray = command.split(/[ ]+/);
     //let commandArray = command.split(' ');    
 
-    switch(commandArray[0]){
-        case 'hide': hide(matrixTable, commandArray); break;
-        case 'sort': sortTable(matrixTable, commandArray); break;
-        case 'filter': filterTable(matrixTable, commandArray); break;
+    switch(commandArray[0]) {
+        case 'hide':
+            hide(matrixTable, commandArray);
+            break;
+        case 'sort':
+            sortTable(matrixTable, commandArray);
+            break;
+        case 'filter':
+            filterTable(matrixTable, commandArray);
+            break;
     }
 
-    function hide(table, commandArray){
+    function hide(table, commandArray) {
         let indexToDelete = table[0].indexOf(commandArray[1]);
-        for(let row of table){
+        for (let row of table) {
             row = row.splice(indexToDelete, 1);
         }
 
         printTable(table);
     }
 
-    function sortTable(table, commandArray){
+    function sortTable(table, commandArray) {
         let searchedHeadingIndex = table[0].indexOf(commandArray[1]);
         let newTable = [];        
-        let valueToSort = [];
+        let valuesToSort = [];
         for (let i = 0; i < table.length; i++) {
-            if(i !== 0){
-                valueToSort.push(table[i][searchedHeadingIndex]);              
-            } else {
+            if (i !== 0) {
+                valuesToSort.push(table[i][searchedHeadingIndex]);              
+            }
+            else {
                 newTable.push(table[i]);
             }         
         }
 
-        valueToSort.sort();
-        for(let sortingValue of valueToSort){
+        valuesToSort.sort();
+        for (let sortingValue of valuesToSort) {
             for (let i = 0; i < table.length; i++) {
-                if(i !== 0){                
+                if (i !== 0) {                
                     table[i].forEach((v, index) => {                    
-                        if(index === searchedHeadingIndex && v === sortingValue){                     
+                        if (index === searchedHeadingIndex && v === sortingValue){                     
                             newTable.push(table[i]);
                         }
                     })
                 }                
             }
-
         }
         
         printTable(newTable);
     }
 
-    function filterTable(table, commandArray){
+    function filterTable(table, commandArray) {
         let searchedHeadingIndex = table[0].indexOf(commandArray[1]);
         let newTable = [];
         for (let i = 0; i < table.length; i++) {
-            if(i !== 0){                
+            if (i !== 0) {                
                 table[i].forEach((v, index) => {                    
-                    if(index === searchedHeadingIndex && v === commandArray[2]){                     
+                    if (index === searchedHeadingIndex && v === commandArray[2]) {                     
                         newTable.push(table[i]);
                     }
                 })
-            } else {
+            }
+            else {
                 newTable.push(table[i]);
             }         
         }
@@ -65,8 +72,8 @@ function showWantedData(matrixTable, command){
         printTable(newTable);
     }
 
-    function printTable (table){
-        for(let row of table){
+    function printTable(table) {
+        for (let row of table) {
             console.log(row.join(' | '));
         }
     }
