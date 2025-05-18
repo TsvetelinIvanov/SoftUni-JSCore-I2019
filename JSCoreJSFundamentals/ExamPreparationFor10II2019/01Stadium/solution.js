@@ -13,24 +13,26 @@ function solve() {
     let summaryButton = summaryElement.children[0];
     summaryButton.addEventListener('click', showSummary);
 
-    function clickButton(event){
+    function clickButton(event) {
         let button = event.target;
         let seatNumber = Number(button.textContent);
         let sector = String.fromCharCode(Number(button.parentNode.cellIndex) + 65);
         let zone = button.parentNode.parentNode.parentNode.parentNode.parentNode.className;
-        if(button.style.backgroundColor === ''){
+        if (button.style.backgroundColor === '') {
             summary.fans++;
             
-            if(zone !== 'VIP'){
+            if (zone !== 'VIP') {
                 summary.profit += teamTicketPrices[sector];
-            } else {
+            }
+            else {
                 summary.profit += vipTicketPrices[sector];
             }
 
             button.style.backgroundColor = 'rgb(255, 0, 0)';
-            outputTextarea.value += ` Seat ${seatNumber} in zone ${zone} sector ${sector} was taken.\n`;
-        } else {
-            outputTextarea.value += ` Seat ${seatNumber} in zone ${zone} sector ${sector} is unavailable.\n`;
+            outputTextarea.value +=`Seat ${seatNumber} in zone ${zone} sector ${sector} was taken.\n`;
+        }
+        else {
+            outputTextarea.value +=`Seat ${seatNumber} in zone ${zone} sector ${sector} is unavailable.\n`;
         }        
     }
 
