@@ -36,7 +36,7 @@ function solve() {
         }        
     }
 
-    function showSummary(){
+    function showSummary() {
         let summarySpan = summaryElement.children[1];
         summarySpan.textContent = `${summary.profit} leva, ${summary.fans} fans.`;
     }
