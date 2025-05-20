@@ -4,7 +4,7 @@ function solve() {
     let button = document.getElementsByTagName('button')[0];
     button.addEventListener('click', extract);
 
-    function extract(){
+    function extract() {
         let inputString = inputElement.value;
         let charactersToTakeCountString = /[0-9]+/.exec(inputString)[0];
         // let stringToTake = inputString.substr(0, Number(charactersToTakeCountString));
