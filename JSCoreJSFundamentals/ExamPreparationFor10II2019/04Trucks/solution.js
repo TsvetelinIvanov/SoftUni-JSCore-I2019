@@ -20,12 +20,12 @@ function solve() {
     goToWorkButton.addEventListener('click', goToWork);
     endOfTheShiftButton.addEventListener('click', showEndOfShiftInfo);
 
-    function addNewTruck(){
+    function addNewTruck() {
         let plateNumber = document.getElementById('newTruckPlateNumber').value; 
         let tires = document.getElementById('newTruckTiresCondition').value.split(' ').map(Number);
         
-        //if(!truckObject[plateNumber]){
-        if(!truckObject.hasOwnProperty(plateNumber)){
+        //if(!truckObject[plateNumber]) {
+        if(!truckObject.hasOwnProperty(plateNumber)) {
             truckObject[plateNumber] = {tires, distance: 0};
         }
 
@@ -34,7 +34,7 @@ function solve() {
         truckDiv.appendChild(truck);
     }
 
-    function addNewTires(){
+    function addNewTires() {
         let tires = document.getElementById('newTiresCondition').value.split(' ').map(Number);        
         truckObject.backupTireSets.push(tires);
 
@@ -43,18 +43,19 @@ function solve() {
         tireDiv.appendChild(tireSet);
     }
 
-    function goToWork(){
+    function goToWork() {
         let plateNumber = document.getElementById('workPlateNumber').value;
         let distance = Number(document.getElementById('distance').value);
-        if(truckObject.hasOwnProperty(plateNumber)){
-            let results = areTiresGoodEnogh(truckObject[plateNumber].tires, distance);
-            if(results.finalResult){
+        if(truckObject.hasOwnProperty(plateNumber)) {
+            let results = areTiresGoodEnough(truckObject[plateNumber].tires, distance);
+            if (results.finalResult){
                 truckObject[plateNumber].distance += distance;
                 truckObject[plateNumber].tires = results.testedTires;
-            } else if (truckObject.backupTireSets.length > 0){
+            }
+            else if (truckObject.backupTireSets.length > 0) {
                 let backupSet = truckObject.backupTireSets[0];
-                let results = areTiresGoodEnogh(backupSet, distance);
-                if(results.finalResult){
+                let results = areTiresGoodEnough(backupSet, distance);
+                if (results.finalResult) {
                     truckObject[plateNumber].distance += distance;
                     truckObject[plateNumber].tires = results.testedTires;
                     truckObject.backupTireSets.shift();
@@ -64,33 +65,34 @@ function solve() {
             }
         }
     }
-   
-    function showEndOfShiftInfo(){
-        Object.keys(truckObject).filter(plateNumber => plateNumber !== 'backupTireSets').forEach(plate => {
-            outputTextarea.value += `Truck ${plate} has traveled ${truckObject[plate].distance}.\n`;
-        });
 
-        outputTextarea.value += `You have ${truckObject.backupTireSets.length} sets of tires left.\n`;
-    }   
-
-    function areTiresGoodEnogh(tires, disnance){
+    function areTiresGoodEnough(tires, disnance) {
         let parsedDistance = disnance /1000;
         let result = {testedTires: [], finalResult: false};
         tires.forEach(tire => {
             result.testedTires.push(tire - parsedDistance);
         });
 
-        if(result.testedTires.every(t => t >= 0)){
+        if (result.testedTires.every(t => t >= 0)) {
             result.finalResult = true;
         }
         
         return result;
     }
+   
+    function showEndOfShiftInfo() {
+        Object.keys(truckObject).filter(plateNumber => plateNumber !== 'backupTireSets').forEach(plate => {
+            outputTextarea.value += `Truck ${plate} has traveled ${truckObject[plate].distance}.\n`;
+        });
 
-    function createElement(type, text, className){
+        outputTextarea.value += `You have ${truckObject.backupTireSets.length} sets of tires left.\n`;
+    }
+
+    function createElement(type, text, className) {
         let element = document.createElement(type);
         element.textContent = text;
         element.classList.add(className);
+        
         return element;
     }
 }
