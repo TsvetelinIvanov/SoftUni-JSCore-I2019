@@ -1,12 +1,11 @@
-function getArgumentsInfo(){
+function getArgumentsInfo() {
     let typeCounts = {};
     for (let i = 0; i < arguments.length; i++) {
         let argument = arguments[i];
         let type = typeof arguments[i];
-
         console.log(type + ': ' + argument);
         
-        if(!typeCounts[type]){
+        if (!typeCounts[type]) {
             typeCounts[type] = 0;
         }
 
@@ -14,12 +13,13 @@ function getArgumentsInfo(){
     }
 
     let sortedTypeCounts = [];
-    for(let type in typeCounts){
+    for (let type in typeCounts) {
         sortedTypeCounts.push([type, typeCounts[type]]);
     }
+    
     sortedTypeCounts.sort((a, b) => b[1] - a[1]);
 
-    for(let typeAndCount of sortedTypeCounts){
+    for (let typeAndCount of sortedTypeCounts) {
         console.log(typeAndCount[0] + ' = ' + typeAndCount[1]);
     }
 }
