@@ -1,11 +1,12 @@
-function add(number){
+function add(number) {
     let sum = number;
-    function sumNumbers(num){
+    function sumNumbers(num) {
         sum += num;
+        
         return sumNumbers;
     }
 
-    sumNumbers.toString = function (){
+    sumNumbers.toString = function () {
         return sum;
     };    
 
