@@ -1,12 +1,13 @@
 let breakfastRobot = (
     //In Judge must be paste without this above
-    function makeBreakfast(){
+    function makeBreakfast() {
         let microelementStock = {
             protein: 0,
             carbohydrate: 0,
             fat: 0,
             flavour: 0
         };
+        
         let recipes = {
             apple/*'apple'*/: {
                 carbohydrate: 1,
@@ -36,44 +37,45 @@ let breakfastRobot = (
 
         return readCommand;        
 
-        function readCommand(commandString){
+        function readCommand(commandString) {
             let commandLine = commandString.split(' ');
             let command = commandLine[0];
-            switch(command){
+            switch(command) {
                 case 'restock':
-                let microelement = commandLine[1];
-                let microelementQuantity = Number(commandLine[2]);
-                return restock(microelement, microelementQuantity);
+                    let microelement = commandLine[1];
+                    let microelementQuantity = Number(commandLine[2]);
+                    return restock(microelement, microelementQuantity);
                 case 'prepare':
-                let breakfast = commandLine[1];
-                let breakfastQuantity = commandLine[2];
-                return prepare(breakfast, breakfastQuantity);
+                    let breakfast = commandLine[1];
+                    let breakfastQuantity = commandLine[2];
+                    return prepare(breakfast, breakfastQuantity);
                 case 'report':
-                return report();
+                    return report();
             }
         }
 
-        function restock(microelement, quantity){
+        function restock(microelement, quantity) {
             microelementStock[microelement] += Number(quantity);
+            
             return 'Success';
         }
 
-        function prepare(recipe, quantity){
+        function prepare(recipe, quantity) {
             let breakfast = recipes[recipe];
-            for(let microelement in breakfast){
-                if (microelementStock[microelement] < breakfast[microelement] * Number(quantity)){
+            for (let microelement in breakfast) {
+                if (microelementStock[microelement] < breakfast[microelement] * Number(quantity)) {
                     return `Error: not enough ${microelement} in stock`;
                 }
             }
 
             Object.keys(breakfast).forEach(microelement => microelementStock[microelement] -= breakfast[microelement] * Number(quantity));
+            
             return 'Success';
         }
 
-        function report(){
+        function report() {
             return `protein=${microelementStock.protein} carbohydrate=${microelementStock.carbohydrate} fat=${microelementStock.fat} flavour=${microelementStock.flavour}`;
         }
-
         
     }//In Judge must be paste without this below
 )() //This IIFE is for local tests
@@ -81,7 +83,7 @@ let breakfastRobot = (
 console.log(breakfastRobot('restock flavour 50'))
 console.log(breakfastRobot('prepare coke 4'))
 console.log(breakfastRobot('report'))
-console.log('Next Test: make another tests in comments!')
+console.log('Next Test: Perform another tests in comments!')
 
 // console.log(breakfastRobot('restock carbohydrate 10'))
 // console.log(breakfastRobot('restock flavour 10'))
@@ -89,7 +91,7 @@ console.log('Next Test: make another tests in comments!')
 // console.log(breakfastRobot('restock fat 10'))
 // console.log(breakfastRobot('prepare burger 1'))
 // console.log(breakfastRobot('report'))
-// console.log('Next Test: make another tests in comments!')
+// console.log('Next Test: Perform another tests in comments!')
 
 // console.log(breakfastRobot('prepare cheverme 1'))
 // console.log(breakfastRobot('restock protein 10'))
