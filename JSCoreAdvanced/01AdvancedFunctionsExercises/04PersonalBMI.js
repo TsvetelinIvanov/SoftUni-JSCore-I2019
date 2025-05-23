@@ -1,4 +1,4 @@
-function getPersonalBMI(name, age, weight, height){
+function getPersonalBMI(name, age, weight, height) {
     let bmi = Math.round(weight / (height / 100) / (height / 100));
     let personalBMI = {
         name: name,
@@ -11,18 +11,21 @@ function getPersonalBMI(name, age, weight, height){
     };
     
     let status = '';
-    if(bmi < 18.5){
+    if (bmi < 18.5) {
         status = 'underweight';
-    } else if(bmi < 25){
+    }
+    else if (bmi < 25) {
         status = 'normal';
-    } else if(bmi < 30){
+    }
+    else if (bmi < 30) {
         status = 'overweight';
-    } else if(bmi >= 30){
+    }
+    else if (bmi >= 30) {
         status = 'obese';
     }
 
     personalBMI.status = status;
-    if(status === 'obese'){
+    if (status === 'obese') {
         personalBMI.recommendation = 'admission required';
     }
 
