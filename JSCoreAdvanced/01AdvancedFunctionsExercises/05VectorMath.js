@@ -1,29 +1,34 @@
-//In Judge must be paste only the function without variable
+//In Judge must be paste only the function without the variable
 let vectorProduct = (function() {
-    function add(firstVector, secondVector){
+    function add(firstVector, secondVector) {
         let addedVector = [];
         addedVector[0] = firstVector[0] + secondVector[0];
         addedVector[1] = firstVector[1] + secondVector[1];
+        
         return addedVector;
     }
 
-    function multiply(vector, scalar){
+    function multiply(vector, scalar) {
         let scalaredVector = [vector[0] * scalar, vector[1] * scalar];
+        
         return scalaredVector;
     }
 
-    function length(vector){
-        let vectorLength = Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1])
+    function length(vector) {
+        let vectorLength = Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1]);
+        
         return vectorLength;
     }
 
-    function dot(firstVector, secondVector){
+    function dot(firstVector, secondVector) {
         let vectorsDotProduct = firstVector[0] * secondVector[0] + firstVector[1] * secondVector[1];
+        
         return vectorsDotProduct;
     }
 
-    function cross(firstVector, secondVector){
+    function cross(firstVector, secondVector) {
         let vectorsCrossProduct = firstVector[0] * secondVector[1] - firstVector[1] * secondVector[0];
+        
         return vectorsCrossProduct;
     }
 
