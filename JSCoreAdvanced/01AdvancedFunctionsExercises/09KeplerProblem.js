@@ -1,9 +1,9 @@
-function calculateEccentricAnomaly(currentMeanAnomaly, orbitalEccenrticity){
+function calculateEccentricAnomaly(currentMeanAnomaly, orbitalEccenrticity) {
     let eccentricalAnomaly = approximate(currentMeanAnomaly, orbitalEccenrticity, 0);
     console.log(Number(eccentricalAnomaly.toFixed(9)));
 
-    function approximate(meanAnomaly, orbitalEccenrticity, seriesCount){
-        if(Math.abs(currentMeanAnomaly - (meanAnomaly - orbitalEccenrticity * Math.sign(meanAnomaly))) < 1e-9 || seriesCount > 200) {
+    function approximate(meanAnomaly, orbitalEccenrticity, seriesCount) {
+        if (Math.abs(currentMeanAnomaly - (meanAnomaly - orbitalEccenrticity * Math.sign(meanAnomaly))) < 1e-9 || seriesCount > 200) {
             return meanAnomaly;
         }
 
