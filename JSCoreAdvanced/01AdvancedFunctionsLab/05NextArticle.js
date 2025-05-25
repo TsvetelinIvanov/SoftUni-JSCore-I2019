@@ -1,14 +1,13 @@
 function getArticleGenerator(articles) {
     let containerDiv = document.getElementById('content');
 
-    return function (){
-        if(articles.length > 0){
+    return function() {
+        if (articles.length > 0) {
             let article = document.createElement('article');
             article.textContent = articles.shift();
             containerDiv.appendChild(article);            
         }
-    }
-    
+    }    
 }
 
 getArticleGenerator([
