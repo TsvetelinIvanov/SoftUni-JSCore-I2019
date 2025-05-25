@@ -1,4 +1,4 @@
-function manipulateString(inputArray){   
+function manipulateString(inputArray) {   
     let closure = (function () {
         let outputString = '';
         return {
@@ -9,7 +9,7 @@ function manipulateString(inputArray){
         }
     })();
 
-    for(let inputRow of inputArray){
+    for (let inputRow of inputArray) {
         let [command, value] = inputRow.split(' ');
         closure[command](value);
     }    
