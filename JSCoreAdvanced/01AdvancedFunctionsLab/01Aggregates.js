@@ -1,4 +1,4 @@
-function aggregate(numbers){
+function aggregate(numbers) {
     let sum = numbers.reduce((a, b) => a + b);
     let min = numbers.reduce((a, b) => Math.min(a, b));
     let max = numbers.reduce((a,b) => Math.max(a, b));
