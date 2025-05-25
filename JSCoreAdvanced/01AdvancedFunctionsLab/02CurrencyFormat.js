@@ -1,5 +1,5 @@
-function getCurrencyFormatterAndMakeDollarFormatter(currencyFormatter){
-    function makeDollarFormatter(value){
+function getCurrencyFormatterAndMakeDollarFormatter(currencyFormatter) {
+    function makeDollarFormatter(value) {
         return currencyFormatter(',', '$', true, value);
     };
 
@@ -17,6 +17,10 @@ console.log(dollarFormatter(1/4))
 function currencyFormatter(separator, symbol, symbolFirst, value) {
     let result = Math.trunc(value) + separator;
     result += value.toFixed(2).substr(-2,2);
-    if (symbolFirst) return symbol + ' ' + result;
-    else return result + ' ' + symbol;
+    if (symbolFirst) {
+        return symbol + ' ' + result;
+    }
+    else {
+        return result + ' ' + symbol;
+    }
 }
