@@ -1,4 +1,4 @@
-function findMaxElement(numbers){
+function findMaxElement(numbers) {
     return Math.max(...numbers)
 }
 
