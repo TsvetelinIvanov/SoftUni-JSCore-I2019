@@ -101,12 +101,12 @@ describe('createCalculator() - adds and substracts numbers', function() {
         expect(value).to.be.equal(8);
     });
     
-    it('should return NaN for add(string)', function(){
+    it('should return NaN for add(string)', function() {
         calculator.add('hi');
         let value = calculator.get();
         expect(value).to.be.NaN;
     });
-    it('should return NaN for subtract(string)', function(){
+    it('should return NaN for subtract(string)', function() {
         calculator.subtract('hi');
         let value = calculator.get();
         expect(value).to.be.NaN;
