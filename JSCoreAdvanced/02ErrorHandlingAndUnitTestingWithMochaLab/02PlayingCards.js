@@ -1,4 +1,4 @@
-function makeCard(cardFace, cardSuit){
+function makeCard(cardFace, cardSuit) {
     let cardFaces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
     let cardSuits = {
         'S': '\u2660',
@@ -7,11 +7,11 @@ function makeCard(cardFace, cardSuit){
         'C': '\u2663'
     };
 
-    if (!cardFaces.includes(cardFace)){
+    if (!cardFaces.includes(cardFace)) {
         throw new Error('Invalid card face: ' + cardFace);
     }
 
-    if (!Object.keys(cardSuits).includes(cardSuit)){
+    if (!Object.keys(cardSuits).includes(cardSuit)) {
         throw new Error('Invalid card suit: ' + cardSuit);
     }
 
