@@ -1,13 +1,13 @@
-function takeSubSum(arr, startIndex, endIndex){
-    // if (!Array.isArray(arr)){
+function takeSubSum(arr, startIndex, endIndex) {
+    // if (!Array.isArray(arr)) {
     //     return NaN;
     // }
 
-    if (startIndex < 0){
+    if (startIndex < 0) {
         startIndex = 0;
     }
 
-    if (endIndex > arr.length - 1){
+    if (endIndex > arr.length - 1) {
         endIndex = arr.length - 1;
     }
 
