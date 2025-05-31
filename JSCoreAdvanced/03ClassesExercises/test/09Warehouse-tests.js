@@ -1,4 +1,4 @@
-//  100/100 in Judge but the second zero test didn't past - local all is OK
+//  100/100 in Judge but the second zero test didn't past - locally all is OK
 let expect = require('chai').expect;
 let Warehouse = require('../09Warehouse').Warehouse;
 //In Judge must be paste without this above
@@ -129,7 +129,7 @@ describe('Warehouse', function () {
     });
 
     describe('scrapeAProduct', function () {        
-        it('should throw for non existing type', function () {
+        it('should throw for inexistant type', function () {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 6);
@@ -138,13 +138,13 @@ describe('Warehouse', function () {
             }).to.throw('orange do not exists');
         });
 
-        it('should give correct result for less than available quantity', function(){
+        it('should give correct result for less than available quantity', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
             expect(JSON.stringify(warehouse.scrapeAProduct('bannana', 5))).to.be.equal('{"bannana":1,"apple":3}');
         });
-        it('should give 0 for more than available quantity', function(){
+        it('should give 0 for more than available quantity', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
@@ -259,7 +259,7 @@ describe('Warehouse', function () {
 
     describe('occupiedCapacity', function () {
         let warehouse;
-        beforeEach(function(){
+        beforeEach(function() {
             warehouse = new Warehouse(10);
         });
 
@@ -300,10 +300,10 @@ describe('Warehouse', function () {
             }).to.throw('orange do not exists');
         });
 
-        it('should give correct result for less than available quantity', function(){            
+        it('should give correct result for less than available quantity', function() {            
             expect(JSON.stringify(warehouse.scrapeAProduct('banana', 3))).to.be.equal('{"banana":1,"apple":1}');
         });
-        it('should give 0 for more than available quantity', function(){            
+        it('should give 0 for more than available quantity', function() {            
             expect(JSON.stringify(warehouse.scrapeAProduct('banana', 5))).to.be.equal('{"banana":0,"apple":1}');
         });
     });
