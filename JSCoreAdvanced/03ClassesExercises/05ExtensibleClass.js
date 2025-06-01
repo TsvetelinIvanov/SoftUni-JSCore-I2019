@@ -1,15 +1,15 @@
 let extensible = //in Judge must be paste only the IIFE
-(function extendClass(){
+(function extendClass() {
     let counter = 0;
-    class Extensible{
-        constructor(){
+    class Extensible {
+        constructor() {
             this.id = counter;
             counter++;
         }
 
-        extend(template){
-            for(let property in template){
-                if(typeof template[property] === 'function'){
+        extend(template) {
+            for (let property in template) {
+                if (typeof template[property] === 'function') {
                     Extensible.prototype[property] = template[property];
                     //this.prototype[property] = template[property];
                     //Object.getPrototypeOf(this)[property] = template[property];
@@ -20,12 +20,13 @@ let extensible = //in Judge must be paste only the IIFE
             }
         }
     }
+    
     return Extensible;
 })()
 
-let obj1 = new extensible();
-let obj2 = new extensible();
-let obj3 = new extensible();
-console.log(obj1.id);
-console.log(obj2.id);
-console.log(obj3.id);
+let object1 = new extensible();
+let object2 = new extensible();
+let object3 = new extensible();
+console.log(object1.id);
+console.log(object2.id);
+console.log(object3.id);
