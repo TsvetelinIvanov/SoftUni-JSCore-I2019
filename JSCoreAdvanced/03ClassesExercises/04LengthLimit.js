@@ -1,31 +1,33 @@
-class Stringer{
-    constructor(innerString, innerLength){
+class Stringer {
+    constructor(innerString, innerLength) {
         this.innerString = innerString;
         this._innerLength = innerLength;
     }
 
-    get innerLength(){return this._innerLength;}
-    set innerLength(innerLength){
+    get innerLength() { return this._innerLength; }
+    set innerLength(innerLength) {
         //innerLength = Number(innerLength);
-        if (innerLength < 0){
+        if (innerLength < 0) {
             innerLength = 0;
         }
+        
         this._innerLength = innerLength;
     }
 
-    increase(length){
+    increase(length) {
         this.innerLength += length;
     }
 
-    decrease(length){
+    decrease(length) {
         this.innerLength -= length;
     }
 
-    toString(){
+    toString() {
         let stringToReturn = this.innerString.substr(0, this.innerLength);
-        if (this.innerString.length > this.innerLength){
+        if (this.innerString.length > this.innerLength) {
             stringToReturn += '...';
         }
+        
         return stringToReturn;
     }
 }
