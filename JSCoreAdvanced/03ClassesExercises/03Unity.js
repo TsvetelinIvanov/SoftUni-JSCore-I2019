@@ -1,21 +1,22 @@
-class Rat{
-    constructor(name){
+class Rat {
+    constructor(name) {
         this.name = name;
         this.unitedRats = [];
     }
 
-    unite(rat){
-        if(rat instanceof Rat){
+    unite(rat) {
+        if (rat instanceof Rat) {
             this.unitedRats.push(rat);
         }
     }
 
-    getRats(){
+    getRats() {
         return this.unitedRats;
     }
 
-    toString(){
-        let ratNames = this.unitedRats.map(r => `##${r.name}`)
+    toString() {
+        let ratNames = this.unitedRats.map(r => `##${r.name}`);
+        
         return this.unitedRats.length === 0 ? this.name : this.name + '\n' + ratNames.join('\n');
     }
 }
