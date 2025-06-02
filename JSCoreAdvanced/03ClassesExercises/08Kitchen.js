@@ -1,50 +1,52 @@
-class Kitchen{
-    constructor(budget){
+class Kitchen {
+    constructor(budget) {
         this.budget = budget;
         this.menu = {};
         this.productsInStock = {};
         this.actionsHistory = [];
     }
 
-    loadProducts(products){
-        for(let product of products){
-        let [productName, productQuantity, productPrice] = product.split(' ');
-        productQuantity = Number(productQuantity);
-        productPrice = Number(productPrice);
-        if(this.budget >= productPrice){
-            if(!this.productsInStock.hasOwnProperty(productName)){
-                this.productsInStock[productName] = 0;
-            }
+    loadProducts(products) {
+        for (let product of products) {
+            let [productName, productQuantity, productPrice] = product.split(' ');
+            productQuantity = Number(productQuantity);
+            productPrice = Number(productPrice);
+            if(this.budget >= productPrice) {
+                if(!this.productsInStock.hasOwnProperty(productName)) {
+                    this.productsInStock[productName] = 0;
+                }
 
-            this.productsInStock[productName] += productQuantity;
-            this.budget -= productPrice;
-            this.actionsHistory.push(`Successfully loaded ${productQuantity} ${productName}`);
-        } 
-        else {
-            this.actionsHistory.push(`There was not enough money to load ${productQuantity} ${productName}`);
+                this.productsInStock[productName] += productQuantity;
+                this.budget -= productPrice;
+                this.actionsHistory.push(`Successfully loaded ${productQuantity} ${productName}`);
+            } 
+            else {
+                this.actionsHistory.push(`There was not enough money to load ${productQuantity} ${productName}`);
+            }
         }
-    }
         
         //return this.actionsHistory.join('\n').trim() + '\n';
         //return this.actionsHistory.join('\n') + '\n';
         return this.actionsHistory.join('\n');
     }
 
-    addToMenu(meal, neededProducts, price){        
-        if(!this.menu.hasOwnProperty(meal)){
-            this.menu[meal] = {meal, products: neededProducts, price};
+    addToMenu(meal, neededProducts, price) {        
+        if(!this.menu.hasOwnProperty(meal)) {
+            this.menu[meal] = { meal, products: neededProducts, price };
             let mealsCount = Object.keys(this.menu).length;
+            
             return `Great idea! Now with the ${meal} we have ${mealsCount} meals in the menu, other ideas?`;            
         }
         else {
-            return `The ${meal} is already in our menu, try something different.`;//For Exercise in Judge
-            //return `${meal} is already in our menu, try something different.`;//For Exam in Judge
+            return `The ${meal} is already in our menu, try something different.`;//For the Exercise in Judge
+            //return `${meal} is already in our menu, try something different.`;//For the Exam in Judge
         }
     }
 
-    showTheMenu(){
-        if(Object.keys(this.menu).length > 0){
+    showTheMenu() {
+        if (Object.keys(this.menu).length > 0) {
             let menuList = Object.values(this.menu).map(m => `${m.meal} - $ ${m.price}`);
+            
             //return menuList.join('\n').trim() + '\n';           
             return menuList.join('\n') + '\n';                      
         }
@@ -53,16 +55,16 @@ class Kitchen{
         }
     }
 
-    makeTheOrder(meal){
-        if(!this.menu.hasOwnProperty(meal)){
+    makeTheOrder(meal) {
+        if (!this.menu.hasOwnProperty(meal)) {
             return `There is not ${meal} yet in our menu, do you want to order something else?`
         }
 
         let neededProducts = this.menu[meal].products;
-        for(let neededProduct of neededProducts){
+        for (let neededProduct of neededProducts) {
             let [productName, productQuantity] = neededProduct.split(/\s+/);
             productQuantity = Number(productQuantity);
-            if(!this.productsInStock.hasOwnProperty(productName) || this.productsInStock[productName] < productQuantity){
+            if (!this.productsInStock.hasOwnProperty(productName) || this.productsInStock[productName] < productQuantity) {
                 return `For the time being, we cannot complete your order (${meal}), we are very sorry...`;
             }
         }
