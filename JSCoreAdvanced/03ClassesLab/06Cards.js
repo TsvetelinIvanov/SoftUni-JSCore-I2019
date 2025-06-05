@@ -1,4 +1,4 @@
-let madeCardAndSuits = (function(){
+let madeCardAndSuits = (function() {
     let Suits = {
         SPADES: '\u2660',
         HEARTS: '\u2665',
@@ -8,8 +8,8 @@ let madeCardAndSuits = (function(){
 
     let Faces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-    class Card{
-        constructor(face, suit){
+    class Card {
+        constructor(face, suit) {
             this.face = face;
             this.suit = suit;
         }
@@ -18,25 +18,27 @@ let madeCardAndSuits = (function(){
             return this._face;
         }
 
-        set face(face){
-            if (!Faces.includes(face)){
+        set face(face) {
+            if (!Faces.includes(face)) {
                 throw new Error(`Invalid face ${face}`);
             }
+            
             this._face = face;
         }
 
-        get suit(){
+        get suit() {
             return this._suit;
         }
 
-        set suit(suit){
-            if(!Object.keys(Suits).map(s => Suits[s]).includes(suit)){
+        set suit(suit) {
+            if (!Object.keys(Suits).map(s => Suits[s]).includes(suit)) {
                 throw new Error(`Invalid suit ${suit}`);
             }
 
             this._suit = suit;
         }
     }
+    
     return {
         Suits: Suits,
         Card: Card
