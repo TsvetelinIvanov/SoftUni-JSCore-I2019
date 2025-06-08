@@ -1,8 +1,8 @@
-function extendObject(){
+function extendObject() {
     let objectToExtend = {
-        extend: function(template){            
-            for(let parentProperty of Object.keys(template)){
-                if(typeof template[parentProperty] === 'function'){
+        extend: function(template) {            
+            for (let parentProperty of Object.keys(template)) {
+                if (typeof template[parentProperty] === 'function') {
                     //Object.getPrototypeOf(objectToExtend)[parentProperty] = template[parentProperty];
                     Object.getPrototypeOf(this)[parentProperty] = template[parentProperty];                    
                 }
@@ -13,5 +13,6 @@ function extendObject(){
             }
         }
     };
+    
     return objectToExtend;
 }
