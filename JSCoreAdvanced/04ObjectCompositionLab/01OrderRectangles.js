@@ -4,20 +4,24 @@ function orderRectangles(rectanglesData) {
         let rectangle = makeRectangle(width, height);
         rectangles.push(rectangle);
     }
+    
     rectangles.sort((a, b) => a.compareTo(b));
+    
     return rectangles;
 
-    function makeRectangle(width, height){
+    function makeRectangle(width, height) {
         let rectangle = {
             width: width,
             height,
             area: () => rectangle.width * rectangle.height,
-            compareTo: function(otherRectangle){
+            compareTo: function(otherRectangle) {
                 let areaComparation = otherRectangle.area() - rectangle.area();
                 let widthComparation = otherRectangle.width - rectangle.width;
+                
                 return areaComparation || widthComparation;
             }
         };
+        
         return rectangle;
     }
 }
