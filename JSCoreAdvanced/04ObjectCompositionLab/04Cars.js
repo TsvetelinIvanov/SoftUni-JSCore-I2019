@@ -4,7 +4,8 @@ function createOrModifyObject(inputCommands) {
         function create(name, inherit, parentName) {
             if (inherit === 'inherit') {
                 processedObjects[name] = Object.create(processedObjects[parentName]);
-            } else {
+            }
+            else {
                 processedObjects[name] = {};
             }
         }
@@ -25,7 +26,7 @@ function createOrModifyObject(inputCommands) {
             // }
 
             // let printedObjectPrototype = Object.getPrototypeOf(printedObject);
-            // while(printedObjectPrototype !== null && printedObjectPrototype !== undefined){
+            // while(printedObjectPrototype !== null && printedObjectPrototype !== undefined) {
             // //while (printedObjectPrototype !== null) {
             //     for (let prototypeKey of Object.keys(printedObjectPrototype)) {
             //         printedObjectProperties.push(prototypeKey + ':' + printedObject[prototypeKey]);
@@ -39,6 +40,7 @@ function createOrModifyObject(inputCommands) {
 
         return { create, set, print };
     })();
+    
     for (let inputCommand of inputCommands) {
         let [command, ...parameters] = inputCommand.split(' ');
         objectProcessor[command](...parameters);
