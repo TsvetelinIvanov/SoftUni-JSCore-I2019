@@ -1,23 +1,26 @@
 let processedList = //in Judge must be paste only the IIFE
-(function processLict(){
+(function processLict() {
     let processedArray = [];
     let command = {
-        add: function(processedArray, stringForAdding){
+        add: function(processedArray, stringForAdding) {
             processedArray.push(stringForAdding);
+            
             return processedArray;
         },
-        remove: function(processedArray, stringForRemoving){
+        remove: function(processedArray, stringForRemoving) {
             processedArray = processedArray.filter(s => s !== stringForRemoving);
+            
             return processedArray;
         },
-        print: function(){
+        print: function() {
             console.log(processedArray.join(','));
+            
             return processedArray;
         }
     };
 
-    return function readInputArrayAndApplyCommand(inputArray){
-        for(let stringCommand of inputArray){
+    return function readInputArrayAndApplyCommand(inputArray) {
+        for (let stringCommand of inputArray) {
             let [commandName, commandSubject] = stringCommand.split(' ');
             processedArray = command[commandName](processedArray, commandSubject);
         }
