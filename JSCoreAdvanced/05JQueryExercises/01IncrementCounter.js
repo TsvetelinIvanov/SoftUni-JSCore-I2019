@@ -1,4 +1,4 @@
-function increment(selector){
+function increment(selector) {
     let $container = $(selector);
     let fragment = document.createDocumentFragment();
     let $textAreaCounter = $('<textarea>');
@@ -24,11 +24,11 @@ function increment(selector){
     $ulResults.appendTo(fragment);
     $container.append(fragment);
 
-    function incrementCounter(){        
+    function incrementCounter() {        
         $textAreaCounter.val(Number($textAreaCounter.val()) + 1);
     }
 
-    function addToResults(){
+    function addToResults() {
         let $li = $('<li>');
         $li.text($textAreaCounter.val());
         //let $li = $(`<li>${$textAreaCounter.val()}</li>`);
