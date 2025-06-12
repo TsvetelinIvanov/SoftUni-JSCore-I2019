@@ -1,24 +1,24 @@
 //the first zero test in Judge doesn't past
-function validate(){
+function validate() {
     let $companyCheckBox = $('#company');
-    $companyCheckBox.on('change', showOrHideCompanySubForm);
+    $companyCheckBox.on('change', showOrHideCompanySubmitForm);
     let $submitButton = $('#submit');
     $submitButton.on('click', validateForm);
 
-    function showOrHideCompanySubForm(){
-        if($(this).is(':checked')){
+    function showOrHideCompanySubmitForm() {
+        if ($(this).is(':checked')) {
             $('#companyInfo').css('display', 'block');
         }
-        else{
+        else {
             $('#companyInfo').css('display', 'none');
         }
     }
 
-    function validateForm(event){
+    function validateForm(event) {
         event.preventDefault();
 
         let usernamePattern = /^[A-Za-z0-9]{3,20}$/;
-        //let passwordPattern = /^.{5,15}$/; //one test in Judge don't past
+        //let passwordPattern = /^.{5,15}$/; //one test in Judge doesn't past
         let passwordPattern = /^\w{5,15}$/;
         let emaiPattern = /^.*?@.*?\..*/;
         let companyNumberPattern = /^[1-9][0-9]{3}$/;
@@ -31,7 +31,7 @@ function validate(){
         let $companyCheckbox = $("#company");
         let $validDiv = $("#valid");
 
-        if($username.val().match(usernamePattern)){
+        if ($username.val().match(usernamePattern)) {
             $username.css("border", "none");            
         }
         else {
@@ -39,7 +39,7 @@ function validate(){
             areValidFields = false;
         }
 
-        if($password.val().match(passwordPattern)){
+        if ($password.val().match(passwordPattern)) {
             $password.css("border", "none");
         }
         else {
@@ -47,7 +47,7 @@ function validate(){
             areValidFields = false;
         }
         
-        if($confirmPassowrd.val().match(passwordPattern) && $confirmPassowrd.val() === $password.val()){
+        if ($confirmPassowrd.val().match(passwordPattern) && $confirmPassowrd.val() === $password.val()) {
             $confirmPassowrd.css("border", "none");
         }
         else {
@@ -55,7 +55,7 @@ function validate(){
             areValidFields = false;
         }        
 
-        if($email.val().match(emaiPattern)){
+        if ($email.val().match(emaiPattern)) {
             $email.css("border", "none");
         }
         else {
@@ -63,9 +63,9 @@ function validate(){
             areValidFields = false;
         }
 
-        if($companyCheckbox.is(":checked")){
+        if ($companyCheckbox.is(":checked")) {
             let $companyNumber = $("#companyNumber");
-            if($companyNumber.val().match(companyNumberPattern)){
+            if ($companyNumber.val().match(companyNumberPattern)) {
                 $companyNumber.css("border", "none");
             }
             else {
@@ -74,7 +74,7 @@ function validate(){
             }
         }
 
-        if(areValidFields){
+        if (areValidFields) {
             $validDiv.css("display", "block");
         }
         else {
