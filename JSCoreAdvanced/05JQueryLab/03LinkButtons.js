@@ -1,4 +1,4 @@
-function attachEvents(){
+function attachEvents() {
     let $linkButtons = $('a.button');    
     $linkButtons.on('click', mark);
      
