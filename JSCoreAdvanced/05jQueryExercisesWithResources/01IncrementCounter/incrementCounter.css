@@ -7,6 +7,10 @@ body {
     padding-top: 20px;
 }
 
+div {
+    text-align: center;
+}
+
 textarea.counter {
     background: #afb6d3;
     font-size: 16px;
@@ -20,8 +24,9 @@ textarea.counter {
     margin: 14px auto;
 }
 
-div {
-    text-align: center;
+.results {
+    text-align: left;
+    margin-left: 26%;
 }
 
 #incrementBtn {
@@ -64,9 +69,4 @@ div {
     background: #9e6786;
     border: 1px solid #c5a3b3;
     color: #c5a3b3;
-}
-
-.results {
-    text-align: left;
-    margin-left: 26%;
 }
