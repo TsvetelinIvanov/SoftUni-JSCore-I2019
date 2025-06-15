@@ -1,4 +1,4 @@
-//the first zero test in Judge doesn't past
+//the first zero test in Judge doesn't pass
 function validate() {
     let $companyCheckBox = $('#company');
     $companyCheckBox.on('change', showOrHideCompanySubmitForm);
@@ -18,7 +18,7 @@ function validate() {
         event.preventDefault();
 
         let usernamePattern = /^[A-Za-z0-9]{3,20}$/;
-        //let passwordPattern = /^.{5,15}$/; //one test in Judge doesn't past
+        //let passwordPattern = /^.{5,15}$/; //one test in Judge doesn't pass
         let passwordPattern = /^\w{5,15}$/;
         let emaiPattern = /^.*?@.*?\..*/;
         let companyNumberPattern = /^[1-9][0-9]{3}$/;
