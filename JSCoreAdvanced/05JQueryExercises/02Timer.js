@@ -29,7 +29,7 @@ function timer() {
         
         let minutes = Math.trunc((timeInSeconds % 3600) / 60);
         if (minutes <= 9) {
-            minets = '0' + minets;
+            minutes = '0' + minutes;
         }
         //let seconds = (timeInSeconds % 3600) % 60;
         let seconds = timeInSeconds % 60;
