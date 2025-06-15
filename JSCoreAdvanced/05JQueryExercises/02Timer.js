@@ -38,7 +38,7 @@ function timer() {
         }
 
         $('#hours').text(hours);
-        $('#minutes').text(minets);
+        $('#minutes').text(minutes);
         $('#seconds').text(seconds);
     }
 }
