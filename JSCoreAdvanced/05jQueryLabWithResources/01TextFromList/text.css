@@ -5,7 +5,8 @@ body {
     margin: 0 auto;
     font-family: 'Raleway',sans-serif;
 }
-article{
+
+article {
     background: #d57291;
     border-radius: 20px;
     margin-top: 20px;
@@ -38,7 +39,6 @@ button {
     color: #d57291;
     text-transform: uppercase;
     border: 2px solid white;
-
 }
 
 button:hover {
@@ -46,6 +46,7 @@ button:hover {
     background: #d57291;
     border: 2px solid white;
 }
+
 #result {
     padding: 10px;
     margin: 10px;
