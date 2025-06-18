@@ -9,6 +9,10 @@ a.button {
     margin: 5px;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 a.button.selected {
     color: #111;
     font-weight: bold;
@@ -18,8 +22,4 @@ a.button.selected {
 
 a.button.selected::before {
     content: "\2713\20\20";
-}
-
-a:hover {
-    cursor: pointer;
 }
