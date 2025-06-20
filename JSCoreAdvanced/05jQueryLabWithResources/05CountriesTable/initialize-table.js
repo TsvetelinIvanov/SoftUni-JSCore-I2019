@@ -1,4 +1,4 @@
-function initializeTable(){
+function initializeTable() {
     let $createLinkElement = $('#createLink');
     $createLinkElement.on('click', createCountry);
 
@@ -7,7 +7,7 @@ function initializeTable(){
     addCountryToTable('Russia', 'Moscow');
     fixRowLinks();
 
-    function createCountry(){
+    function createCountry() {
         let $newCountryElement = $('#newCountryText');
         let $newCapitalElement = $('#newCapitalText');
         let country = $newCountryElement.val();
@@ -22,7 +22,7 @@ function initializeTable(){
         fixRowLinks();
     }
 
-    function addCountryToTable(country, capital){
+    function addCountryToTable(country, capital) {
         let $row = $('<tr>');
         let $countryCell = $('<td>');
         $countryCell.text(country);
@@ -50,7 +50,7 @@ function initializeTable(){
         $row.fadeIn();
     }
 
-    function moveRowUp(){
+    function moveRowUp() {
         let $row = $(this).parent().parent();
         $row.fadeOut(function() {
             $row.insertBefore($row.prev());
@@ -59,7 +59,7 @@ function initializeTable(){
         });
     }    
 
-    function moveRowDown(){        
+    function moveRowDown() {        
         let $row = $(this).parent().parent();
         $row.fadeOut(function() {
             $row.insertAfter($row.next());
@@ -68,7 +68,7 @@ function initializeTable(){
         });
     }    
 
-    function deleteRow(){
+    function deleteRow() {
         let $row = $(this).parent().parent();
         $row.fadeOut(function() {
             $row.remove();
@@ -76,7 +76,7 @@ function initializeTable(){
         });
     }    
 
-    function fixRowLinks(){
+    function fixRowLinks() {
         let $coutriesTableLinks = $('#countriesTable a');
         $coutriesTableLinks.css("display", "inline");
 
