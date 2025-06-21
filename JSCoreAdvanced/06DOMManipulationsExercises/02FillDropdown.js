@@ -1,4 +1,4 @@
-function addItem(){
+function addItem() {
     let newItemTextElement = document.getElementById('newItemText');
     let newItemValueElement = document.getElementById('newItemValue');
     let selectMenuElement = document.getElementById('menu');
