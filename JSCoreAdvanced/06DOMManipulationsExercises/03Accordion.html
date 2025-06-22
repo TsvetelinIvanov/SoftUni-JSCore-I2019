@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Accordion</title>
     <style>
-        #accordion {
-            border: 1px solid black;
-            display: inline-block;
-            width: 400px;
-        }
-
-        #accordion p {
-            margin: 1em;
+        .head {
+            background: #ccccff;
+            padding: 1em;
         }
 
         .button {
@@ -22,18 +16,22 @@
             color: white;
             cursor: pointer;
         }
+        
+        #accordion {
+            border: 1px solid black;
+            display: inline-block;
+            width: 400px;
+        }
+
+        #accordion p {
+            margin: 1em;
+        }        
 
         #extra {
             display: none;
-        }
-
-        .head {
-            background: #ccccff;
-            padding: 1em;
-        }
+        }        
     </style>
 </head>
-
 <body>
     <div id="accordion">
         <div class="head">DOM Manipulations Exercise <span class="button" onclick="toggle()">More</span></div>
@@ -61,5 +59,4 @@
         }
     </script>
 </body>
-
 </html>
