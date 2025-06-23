@@ -1,4 +1,4 @@
-function attachEventsListeners(){
+function attachEventsListeners() {
     let daysBtn = document.getElementById('daysBtn');
     let hoursBtn = document.getElementById('hoursBtn');
     let minutesBtn = document.getElementById('minutesBtn');
@@ -16,7 +16,7 @@ function attachEventsListeners(){
         let secondsElement = document.getElementById('seconds');
 
         let timeInSeconds = 0;
-        switch(event.target.id){
+        switch(event.target.id) {
         //switch(this.id){
             case 'daysBtn':
             timeInSeconds = Number(daysElement.value) * 86400;
