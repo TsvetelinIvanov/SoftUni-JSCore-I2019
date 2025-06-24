@@ -6,6 +6,7 @@ function addItem() {
     let ul = document.getElementById('items');
     ul.appendChild(li);
     inputElement.value = '';
+    
     function deleteItem() {
         // let li = this.parentNode;
         // let ul = li.parentNode;
