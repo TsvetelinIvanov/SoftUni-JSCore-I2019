@@ -1,50 +1,51 @@
 <html>
 <head>
-  <title>Mouse in Gradient</title>
-  <link rel="stylesheet" href="gradient.css" />
-  <script src="gradient.js"></script>
+    <title>Mouse in Gradient</title>
+    <link rel="stylesheet" href="gradient.css" />
+    <script src="gradient.js"></script>
 </head>
 <body onload="attachGradientEvents()">
-  <div id="gradient-box">
-    <div id="gradient">Click me!</div>
-  </div>
-  <div id="result"></div>
+    <div id="gradient-box">
+        <div id="gradient">Click me!</div>
+    </div>
+    <div id="result"></div>
 </body>
 <script>
-    function attachGradientEvents(){
+    function attachGradientEvents() {
     let gradientElement = document.getElementById('gradient');
     let resultElement = document.getElementById('result');
     gradientElement.addEventListener('mousemove', showGradient);
     gradientElement.addEventListener('mouseout', hideGradient);
 
-    function showGradient(event){
+    function showGradient(event) {
         let gradient = event.offsetX / (event.target.clientWidth - 1);
         gradient = Math.trunc(gradient * 100);
         resultElement.textContent = gradient + '%';
     }
 
-    function hideGradient(){
+    function hideGradient() {
         resultElement.textContent = '';
     }
 }
 </script>
 <style>
     #gradient-box {
-  width: 300px;
-  border: 2px solid lightgrey;
-}
-#gradient-box:hover {
-  border: 2px solid black;
-}
-#gradient {
-  height: 30px;
-  color: white;
-  text-shadow: 1px 1px 10px black;
-  text-align: center;
-  line-height: 30px;
-  background: linear-gradient(to right, black, white);
-  cursor: crosshair;
-}
+        width: 300px;
+        border: 2px solid lightgrey;
+    }
+    #gradient-box:hover {
+        border: 2px solid black;
+    }
+  
+    #gradient {
+        height: 30px;
+        color: white;
+        text-shadow: 1px 1px 10px black;
+        text-align: center;
+        line-height: 30px;
+        background: linear-gradient(to right, black, white);
+        cursor: crosshair;
+    }
 
 </style>
 </html>
