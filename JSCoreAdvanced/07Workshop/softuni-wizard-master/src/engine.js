@@ -1,4 +1,3 @@
-
 let keys = {};
 
 const initialState = (options) => ({
@@ -26,8 +25,7 @@ const nextScene = s => s.scene;
 const nextClouds = s => s.clouds;
 const nextAttacks = s => s.attacks
     .filter(a => {
-        if (a.x + s.scene.attackWidth > s.scene.areaWidth)
-        {
+        if (a.x + s.scene.attackWidth > s.scene.areaWidth) {
             removeEl(a.el);
             return false;
         } 
@@ -40,6 +38,7 @@ const nextBugs = s => s.bugs
     .filter(b => {
         if (b.x + s.scene.bugWidth <= 0) {
             removeEl(b.el);
+            
             return false;
         }
 
@@ -47,6 +46,7 @@ const nextBugs = s => s.bugs
     })
     .map(b => {
         b.x -= game.speed * 3;
+        
         return b;
     });
 
