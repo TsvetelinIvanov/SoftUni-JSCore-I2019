@@ -78,7 +78,6 @@ function draw(timestamp, state) {
     bugs.forEach(bug => {
         bug.x -= game.speed * 3;
         bug.style.left = bug.x + 'px';
-
         if (bug.x + bugs.offsetWidth <= 0) {
             bug.parentElement.removeChild(bug);
         }
@@ -89,7 +88,6 @@ function draw(timestamp, state) {
     clouds.forEach(cloud => {
         cloud.x -= game.speed;
         cloud.style.left = cloud.x + 'px';
-
         if (cloud.x + clouds.offsetWidth <= 0) {
             cloud.parentElement.removeChild(cloud);
         }
@@ -110,15 +108,19 @@ function draw(timestamp, state) {
     if (keys.ArrowUp && state.player.y > 0) {
         state.player.y -= game.speed * game.movingMultiplier; 
     }
-    if (keys.ArrowDown && isInAir){
+    
+    if (keys.ArrowDown && isInAir) {
         state.player.y += game.speed * game.movingMultiplier;
     }
+    
     if (keys.ArrowLeft && state.player.x > 0) {
         state.player.x -= game.speed * game.movingMultiplier;
     }
+    
     if (keys.ArrowRight && state.player.x + state.player.width < gameArea.offsetWidth) {
         state.player.x += game.speed * game.movingMultiplier;
     }
+    
     if (keys.Space && timestamp - state.player.lastTimeFiredFireball > game.fireInterval) {
         wizard.classList.add('wizard-fire');
         addFireBall(state);
