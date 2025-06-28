@@ -1,12 +1,10 @@
 @charset "UTF-8";
 
 // Default Variables
-
 // Slick icon entity codes outputs the following
 // "\2190" outputs ascii character "←"
 // "\2192" outputs ascii character "→"
 // "\2022" outputs ascii character "•"
-
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
@@ -40,7 +38,6 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 /* Slider */
-
 .slick-list {
     .slick-loading & {
         background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
@@ -59,9 +56,7 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 /* Arrows */
-
-.slick-prev,
-.slick-next {
+.slick-prev, .slick-next {
     position: absolute;
     display: block;
     height: 20px;
@@ -86,9 +81,11 @@ $slick-opacity-not-active: 0.25 !default;
             opacity: $slick-opacity-on-hover;
         }
     }
+    
     &.slick-disabled:before {
         opacity: $slick-opacity-not-active;
     }
+    
     &:before {
         font-family: $slick-font-family;
         font-size: 20px;
@@ -106,6 +103,7 @@ $slick-opacity-not-active: 0.25 !default;
         left: auto;
         right: -25px;
     }
+    
     &:before {
         content: $slick-prev-character;
         [dir="rtl"] & {
@@ -120,6 +118,7 @@ $slick-opacity-not-active: 0.25 !default;
         left: -25px;
         right: auto;
     }
+    
     &:before {
         content: $slick-next-character;
         [dir="rtl"] & {
@@ -129,7 +128,6 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 /* Dots */
-
 .slick-dotted.slick-slider {
     margin-bottom: 30px;
 }
@@ -169,6 +167,7 @@ $slick-opacity-not-active: 0.25 !default;
                     opacity: $slick-opacity-on-hover;
                 }
             }
+            
             &:before {
                 position: absolute;
                 top: 0;
@@ -186,6 +185,7 @@ $slick-opacity-not-active: 0.25 !default;
                 -moz-osx-font-smoothing: grayscale;
             }
         }
+        
         &.slick-active button:before {
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
