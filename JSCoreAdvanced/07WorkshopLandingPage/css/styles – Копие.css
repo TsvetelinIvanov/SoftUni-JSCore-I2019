@@ -5,15 +5,12 @@ body {
     line-height: 1.4;
 }
 
-.let-it-snow {
-    width: 100%;
-    height: 100%;
-    float: left;
-    background: #001e28;
-}
-
 i {
     color: white;
+}
+
+h3 {
+    margin: 0;
 }
 
 nav {
@@ -100,6 +97,13 @@ nav button:hover {
     cursor: pointer;
 }
 
+.let-it-snow {
+    width: 100%;
+    height: 100%;
+    float: left;
+    background: #001e28;
+}
+
 .education {
     background: #d3d3d3;
     padding: 2em;
@@ -110,10 +114,6 @@ nav button:hover {
     display: inline-block;
     width: 27%;
     margin: 15px;
-}
-
-h3 {
-    margin: 0;
 }
 
 .box-head {
@@ -234,7 +234,6 @@ h3 {
     text-align: right;
     padding-right: 30px;
     box-sizing: border-box;
-
 }
 
 .meeting-header p:nth-child(2) {
@@ -258,7 +257,6 @@ h3 {
     right: 0;
     bottom: 0;
     padding-left: 5px;
-
 }
 
 .lecture-meeting form {
@@ -266,7 +264,6 @@ h3 {
     align-items: center;
     flex-direction: column;
     padding: 2em 0 2em 0;
-
 }
 
 .lecture-meeting form p {
@@ -313,7 +310,6 @@ h3 {
     cursor: pointer;
     text-transform: uppercase;
 }
-
 
 /*site-footer*/
 .site-footer {
