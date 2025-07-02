@@ -9,6 +9,10 @@ i {
     color: white;
 }
 
+h3 {
+    margin: 0;
+}
+
 nav {
     background: #2d2e2e;
     padding: 0.2em 5em;
@@ -110,10 +114,6 @@ nav button:hover {
     display: inline-block;
     width: 27%;
     margin: 15px;
-}
-
-h3 {
-    margin: 0;
 }
 
 .box-head {
@@ -234,7 +234,6 @@ h3 {
     text-align: right;
     padding-right: 30px;
     box-sizing: border-box;
-
 }
 
 .meeting-header p:nth-child(2) {
