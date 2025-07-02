@@ -5,13 +5,6 @@ body {
     line-height: 1.4;
 }
 
-.let-it-snow {
-    width: 100%;
-    height: 100%;
-    float: left;
-    background: #001e28;
-}
-
 i {
     color: white;
 }
@@ -98,6 +91,13 @@ nav button {
 
 nav button:hover {
     cursor: pointer;
+}
+
+.let-it-snow {
+    width: 100%;
+    height: 100%;
+    float: left;
+    background: #001e28;
 }
 
 .education {
@@ -258,7 +258,6 @@ h3 {
     right: 0;
     bottom: 0;
     padding-left: 5px;
-
 }
 
 .lecture-meeting form {
@@ -266,7 +265,6 @@ h3 {
     align-items: center;
     flex-direction: column;
     padding: 2em 0 2em 0;
-
 }
 
 .lecture-meeting form p {
@@ -314,9 +312,7 @@ h3 {
     text-transform: uppercase;
 }
 
-
 /*site-footer*/
-
 .site-footer {
     background: #2d2e2e;
     color: white;
@@ -379,7 +375,6 @@ h3 {
 .site-footer .partners {
     flex: 0 0 30%;
 }
-
 
 .site-footer h3 {
     font-size: 18px;
