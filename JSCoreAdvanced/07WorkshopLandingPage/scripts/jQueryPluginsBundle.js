@@ -1,5 +1,5 @@
 // Petals falling animation
-$(window).load(function () {
+$(window).load(function() {
     $('body').sakura();
 });
 
