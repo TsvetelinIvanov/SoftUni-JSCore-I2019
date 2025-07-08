@@ -10,21 +10,26 @@ class Calculator {
     divideNums() {
         let divide;
         for (let i = 0; i < this.expenses.length; i++) {
-            if (typeof (this.expenses[i]) === 'number') {
-                if (i === 0 || divide===undefined) {
+            if (typeof(this.expenses[i]) === 'number') {
+                if (i === 0 || divide === undefined) {
                     divide = this.expenses[i];
-                } else {
+                }
+                else {
                     if (this.expenses[i] === 0) {
                         return 'Cannot divide by zero';
                     }
+                    
                     divide /= this.expenses[i];
                 }
             }
         }
+        
         if (divide !== undefined) {
             this.expenses = [divide];
+            
             return divide;
-        } else {
+        }
+        else {
            throw new Error('There are no numbers in the array!')
         }
     }
@@ -32,7 +37,9 @@ class Calculator {
     toString() {
         if (this.expenses.length > 0)
             return this.expenses.join(" -> ");
-        else return 'empty array';
+        else {
+            return 'empty array';
+        }
     }
 
     orderBy() {
@@ -42,6 +49,7 @@ class Calculator {
                 if (typeof data !== 'number')
                     isNumber = false;
             }
+            
             if (isNumber) {
                 return this.expenses.sort((a, b) => a - b).join(', ');
             }
@@ -49,6 +57,7 @@ class Calculator {
                 return this.expenses.sort().join(', ');
             }
         }
+        
         else return 'empty';
     }
 }
