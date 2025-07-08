@@ -20,37 +20,41 @@ class BookCollection {
     get shelfCondition() { return this.shelfCapacity - this.shelf.length; }
 
     addBook(bookName, bookAuthor, genre) {        
-        //if(this.shelf.length === this.shelfCapacity){
+        //if(this.shelf.length === this.shelfCapacity) {
         if (this.shelfCondition === 0) {
             this.shelf.shift();
         }
-        let book = { bookName, bookAuthor };
-        if (genre){
+        
+        let book = {bookName, bookAuthor};
+        if (genre) {
             book.genre = genre;
         }
+        
         this.shelf.push(book);
         this.shelf.sort((a,b) => a.bookAuthor.localeCompare(b.bookAuthor));
 
         return this;
     }
 
-    throwAwayBook(bookName){
+    throwAwayBook(bookName) {
         this.shelf = this.shelf.filter(b => b.bookName !== bookName);
 
         return this;
     }
 
-    showBooks(genre){
+    showBooks(genre) {
         let genreBooks = this.shelf.filter(b => b.genre === genre).map(b => `\uD83D\uDCD6 ${b.bookAuthor} - "${b.bookName}"`);
+        
         return `Results for search "${genre}":\n` + genreBooks.join('\n');
     }
 
-    toString(){
+    toString() {
         let booksInShelf = "It's an empty shelf";
-        if(this.shelf.length > 0){
+        if (this.shelf.length > 0) {
             let books = this.shelf.map(b => `\uD83D\uDCD6 "${b.bookName}" - ${b.bookAuthor}`);
             booksInShelf = `"${this.shelfGenre}" shelf in ${this.room} contains:\n` + books.join('\n');     
         }
+        
         return booksInShelf;
     }
 }
