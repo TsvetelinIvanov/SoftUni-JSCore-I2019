@@ -8,7 +8,7 @@ function solve() {
  
     $buttonSignMeUp.on('click', addCourses);
  
-    function addCourses(){            
+    function addCourses() {            
        let $ulMyCourses = $('#myCourses div[class="courseBody"] ul');
        let $pCost = $('#myCourses div[class="courseFoot"] p'); 
        
@@ -23,58 +23,58 @@ function solve() {
        // let isCheckedInputJSApplications;
        // let isCheckedInputJSWeb;
  
-       // $inputJSFundamentals.input(function(){
+       // $inputJSFundamentals.input(function() {
        //    if ($(this).is(':checked'))
        //    isCheckedInputJSFundamentals = true;
        //  });
  
-       //  $inputJSAdvanced.change(function(){
+       //  $inputJSAdvanced.change(function() {
        //    if ($(this).is(':checked'))
        //    isCheckedInputJSAdvanced = true;
        //  });      
  
        let cost = 0;
-       if (isCheckedInputJSFundamentals){
+       if (isCheckedInputJSFundamentals) {
           let $li = $('<li>');
           $li.text('JS-Fundamentals');
           $ulMyCourses.append($li);
           cost += 170;
        }
  
-       if (isCheckedInputJSAdvanced){
+       if (isCheckedInputJSAdvanced) {
           let $li = $('<li>');
           $li.text('JS-Advanced');
           $ulMyCourses.append($li);
           cost += 180;
        }
  
-       if (isCheckedInputJSApplications){
+       if (isCheckedInputJSApplications) {
           let $li = $('<li>');
           $li.text('JS-Applications');
           $ulMyCourses.append($li);
           cost += 190;
        }
  
-       if (isCheckedInputJSWeb){
+       if (isCheckedInputJSWeb) {
           let $li = $('<li>');
           $li.text('JS-Web');
           $ulMyCourses.append($li);
           cost += 490;
        }
  
-       if(isCheckedInputJSFundamentals && isCheckedInputJSAdvanced){
+       if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced) {
           cost -= 180 * 0.1;
        }
  
-       if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications){
+       if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications) {
           cost -= 31.32;
        }
        
-       if(isCheckedinputRadioOnline){
+       if (isCheckedinputRadioOnline) {
           cost -= cost * 0.06;
        }
  
-       if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications && isCheckedInputJSWeb){
+       if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications && isCheckedInputJSWeb) {
           let $li = $('<li>');
           $li.text('HTML and CSS');
           $ulMyCourses.append($li);
@@ -83,8 +83,8 @@ function solve() {
        cost = Math.floor(cost);
  
        $pCost.text(`Cost: ${cost}.00 BGN`);
-    }
- 
+    } 
  }
+
  //in Judge must be paste without this below:
  solve();
