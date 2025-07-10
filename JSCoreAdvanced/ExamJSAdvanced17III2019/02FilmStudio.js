@@ -1,37 +1,35 @@
 class FilmStudio {
-
     constructor(studioName) {
         this.name = studioName;
         this.films = [];
     }
 
     casting(actor, role) {
-        let isTheActorIsUnemployed = true;
+        let isTheActorUnemployed = true;
         let output;
 
         if (this.films.length) {
-
             for (let f of this.films) {
-
                 let roles = f.filmRoles.filter((r) => r.role === role);
 
                 if (roles.length) {
                     let filmIndex = this.films.indexOf(f);
-                    let wantedRole = this.films[filmIndex].filmRoles.filter((fR) => fR.role === role)[0];
+                    let wantedRole = this.films[filmIndex].filmRoles.filter((fr) => fr.role === role)[0];
                     let roleIndex = this.films[filmIndex].filmRoles.indexOf(wantedRole);
 
                     this.films[filmIndex].filmRoles[roleIndex].actor = actor;
-                    isTheActorIsUnemployed = false;
+                    isTheActorUnemployed = false;
                     output = `You got the job! Mr. ${actor} you are next ${role} in the ${f.filmName}. Congratz!`;
                     break;
                 }
             }
 
-            if (isTheActorIsUnemployed) {
+            if (isTheActorUnemployed) {
                 output = `${actor}, we cannot find a ${role} role...`;
             }
 
-        } else {
+        }
+        else {
             output = `There are no films yet in ${this.name}.`;
         }
 
@@ -39,21 +37,20 @@ class FilmStudio {
     }
 
     makeMovie(filmName, roles) {
-
         if (arguments.length === 2) {
+            let isFirstArgString = typeof arguments[0] === 'string';
+            let isSecondArgArray = arguments[1] instanceof Array;
 
-            let firstArgIsString = typeof arguments[0] === 'string';
-            let secondArgIsArray = arguments[1] instanceof Array;
-
-            if (firstArgIsString && secondArgIsArray) {
+            if (isFirstArgString && isSecondArgArray) {
                 let findedFilms = this.films.filter((f) => f.filmName.includes(filmName));
-
                 let filmRoles = roles.reduce((acc, cur) => {
                     let curFilmRole = {
                         role: cur,
                         actor: false
                     };
+                    
                     acc.push(curFilmRole);
+                    
                     return acc;
                 }, []);
 
@@ -67,18 +64,20 @@ class FilmStudio {
                 }
 
                 this.films.push(film);
+                
                 return film;
-            } else {
+            }
+            else {
                 throw ('Invalid arguments')
             }
 
-        } else {
+        }
+        else {
             throw ('Invalid arguments count')
         }
     }
 
     lookForProducer(film) {
-
         let f = this.films.filter((f) => f.filmName === film)[0];
         let output;
 
@@ -88,13 +87,15 @@ class FilmStudio {
             Object.keys(f.filmRoles).forEach((role) => {
                 output += `${f.filmRoles[role].actor} as ${f.filmRoles[role].role}\n`;
             });
-        } else {
+        }
+        else {
             throw new Error(`${film} do not exist yet, but we need the money...`)
         }
 
         return output;
     }
 }
+
 module.exports = {FilmStudio};
 
 let filmStudio = new FilmStudio('Verginia');
