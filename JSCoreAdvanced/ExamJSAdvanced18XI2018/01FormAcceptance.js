@@ -7,7 +7,6 @@ function acceptance() {
 
     if (($company.val() && $product.val()) && (Number($quantity.val()) && Number($scrape.val()))) {
         let quantity = Number($quantity.val()) - Number($scrape.val());
-
         if (quantity > 0) {
             let $div = $('<div>');
             let $p = $(`<p>[${$company.val()}] ${$product.val()} - ${quantity} pieces</p>`);
