@@ -84,9 +84,9 @@ function realEstateAgency() {
         }
         else {
             $message.text('We were unable to find you a home, so sorry :(');
-		}
-		//By condition, the imputfields must be cleared after evry click on the FindOffer button, but the last test in Judge did not past when this is done! 
-		// $familyBudget.val('');
+	}
+	//By condition, the imputfields must be cleared after evry click on the FindOffer button, but the last test in Judge does not past when this is done! 
+	// $familyBudget.val('');
         // $familyApartmentType.val('');
         // $familyName.val('');
     }
@@ -96,6 +96,7 @@ function realEstateAgency() {
         if (className) {
             $element.addClass(className);
         }
+	
         return $element;
     }    
 }
