@@ -6,11 +6,12 @@ class Vacation {
         this.kids = {};
     }
 
-    get numberOfChildren(){
+    get numberOfChildren() {
         let kidsCount = 0;
-        for(let grade in this.kids){
+        for (let grade in this.kids) {
             kidsCount += this.kids[grade].length;
         }
+        
         return kidsCount;
     }
     
@@ -36,7 +37,7 @@ class Vacation {
     }
 
     removeChild(name, grade) {
-        if(!this.kids.hasOwnProperty(grade)){
+        if (!this.kids.hasOwnProperty(grade)) {
             return `We couldn't find ${name} in ${grade} grade.`;
         }
 
@@ -46,11 +47,12 @@ class Vacation {
         } 
         else {
             this.kids[grade] = filteredKids;
+            
             return this.kids[grade];
         }
     }
     
-    toString(){
+    toString() {
         if (this.numberOfChildren === 0){
             return `No children are enrolled for the trip and the organization of ${this.organizer} falls out...`;
         }
@@ -70,7 +72,7 @@ class Vacation {
     }
 }
 
-// let vacation = new Vacation('Mr Pesho', 'San diego', 2000);
+// let vacation = new Vacation('Mr Pesho', 'San Diego', 2000);
 // console.log(vacation.registerChild('Gosho', 5, 2000));
 // console.log(vacation.registerChild('Lilly', 6, 2100));
 // console.log(vacation.registerChild('Pesho', 6, 2400));
@@ -78,7 +80,7 @@ class Vacation {
 // console.log(vacation.registerChild('Tanya', 5, 6000));
 // console.log(vacation.registerChild('Mitko', 10, 1590));
 
-// let vacation = new Vacation('Mr Pesho', 'San diego', 2000);
+// let vacation = new Vacation('Mr Pesho', 'San Diego', 2000);
 // vacation.registerChild('Gosho', 5, 2000);
 // vacation.registerChild('Lilly', 6, 2100);
 // console.log(vacation.removeChild('Gosho', 9));
