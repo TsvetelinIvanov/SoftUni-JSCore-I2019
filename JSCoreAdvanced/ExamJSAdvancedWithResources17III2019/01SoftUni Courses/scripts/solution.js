@@ -34,47 +34,47 @@ function solve() {
       //  });      
 
       let cost = 0;
-      if (isCheckedInputJSFundamentals){
+      if (isCheckedInputJSFundamentals) {
          let $li = $('<li>');
          $li.text('JS-Fundamentals');
          $ulMyCourses.append($li);
          cost += 170;
       }
 
-      if (isCheckedInputJSAdvanced){
+      if (isCheckedInputJSAdvanced) {
          let $li = $('<li>');
          $li.text('JS-Advanced');
          $ulMyCourses.append($li);
          cost += 180;
       }
 
-      if (isCheckedInputJSApplications){
+      if (isCheckedInputJSApplications) {
          let $li = $('<li>');
          $li.text('JS-Applications');
          $ulMyCourses.append($li);
          cost += 190;
       }
 
-      if (isCheckedInputJSWeb){
+      if (isCheckedInputJSWeb) {
          let $li = $('<li>');
          $li.text('JS-Web');
          $ulMyCourses.append($li);
          cost += 490;
       }
 
-      if(isCheckedInputJSFundamentals && isCheckedInputJSAdvanced){
+      if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced) {
          cost -= 180 * 0.1;
       }
 
-      if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications){
+      if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications) {
          cost -= 31.32;
       }
       
-      if(isCheckedinputRadioOnline){
+      if (isCheckedinputRadioOnline) {
          cost -= cost * 0.06;
       }
 
-      if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications && isCheckedInputJSWeb){
+      if (isCheckedInputJSFundamentals && isCheckedInputJSAdvanced && isCheckedInputJSApplications && isCheckedInputJSWeb) {
          let $li = $('<li>');
          $li.text('HTML and CSS');
          $ulMyCourses.append($li);
