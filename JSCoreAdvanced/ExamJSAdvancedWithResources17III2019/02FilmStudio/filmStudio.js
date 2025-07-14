@@ -83,7 +83,7 @@ class FilmStudio {
             });
         }
         else {
-            throw new Error(`${film} do not exist yet, but we need the money...`)
+            throw new Error(`${film} has not exist yet, but we need the money...`)
         }
 
         return output;
