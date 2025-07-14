@@ -120,10 +120,10 @@ describe('SoftUniFy', function() {
 
         it('should throw error for not found film', function () {
             filmStudio.makeMovie('The Avengers', ['Iron-Man', 'Thor', 'Hulk', 'Arrow guy']);
-            expect(() => {filmStudio.lookForProducer('The Vilage');}).to.throw(`The Vilage do not exist yet, but we need the money...`);
+            expect(() => {filmStudio.lookForProducer('The Vilage');}).to.throw(`The Vilage does not exist yet, but we need the money...`);
         });
         
-        it('should return correct finded film', function() {
+        it('should return correct found film', function() {
             filmStudio.makeMovie('The Avengers', ['Iron-Man', 'Thor', 'Hulk', 'Arrow guy']);
             expect(filmStudio.lookForProducer('The Avengers')).to.be.equal('Film name: The Avengers\nCast:\nfalse as Iron-Man\nfalse as Thor\nfalse as Hulk\nfalse as Arrow guy\n');
         });
