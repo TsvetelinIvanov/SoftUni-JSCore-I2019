@@ -40,10 +40,10 @@ describe('SoftUniFy', function() {
         });
 
         it('should throw by invalid arguments count', function() {
-            expect(() => {filmStudio.makeMovie('Vanilla scy');}).to.throw('Invalid arguments count');
+            expect(() => {filmStudio.makeMovie('Vanilla sky');}).to.throw('Invalid arguments count');
         });
         it('should throw by invalid arguments count', function() {
-            expect(() => {filmStudio.makeMovie('Vanilla scy', ['roles'], 'wrongArgument');}).to.throw('Invalid arguments count');
+            expect(() => {filmStudio.makeMovie('Vanilla sky', ['roles'], 'wrongArgument');}).to.throw('Invalid arguments count');
         });
         it('should throw by invalid argument filmName', function() {
             expect(() => {filmStudio.makeMovie(9, ['roles']);}).to.throw('Invalid arguments');
@@ -51,9 +51,9 @@ describe('SoftUniFy', function() {
             expect(() => {filmStudio.makeMovie(true, ['roles']);}).to.throw('Invalid arguments');
         });
         it('should throw by invalid argument roles', function () {
-            expect(() => {filmStudio.makeMovie('Vanilla scy', 'roles');}).to.throw('Invalid arguments');
-            expect(() => {filmStudio.makeMovie('Vanilla scy', {'roles': 1});}).to.throw('Invalid arguments');
-            expect(() => { filmStudio.makeMovie('Vanilla scy', 1);}).to.throw('Invalid arguments');
+            expect(() => {filmStudio.makeMovie('Vanilla sky', 'roles');}).to.throw('Invalid arguments');
+            expect(() => {filmStudio.makeMovie('Vanilla sky', {'roles': 1});}).to.throw('Invalid arguments');
+            expect(() => { filmStudio.makeMovie('Vanilla sky', 1);}).to.throw('Invalid arguments');
         });
 
         it('should return corect value for one film ', function() {
@@ -98,14 +98,15 @@ describe('SoftUniFy', function() {
             filmStudio = new FilmStudio('Verginia');
         });
 
-        it('should return notsuccess message for no films', function() {
+        it('should return no success message for no films', function() {
             expect(filmStudio.casting('Leo De Caprio', 'detectiv')).to.be.equal(`There are no films yet in Verginia.`);
         });
-        it('should return notsuccess message for no roles', function() {
+        it('should return no success message for no roles', function() {
             filmStudio.makeMovie('The Avengers', ['Iron-Man', 'Thor', 'Hulk', 'Arrow guy']);
             expect(filmStudio.casting('Leo De Caprio', 'detectiv')).to.be.equal(`Leo De Caprio, we cannot find a detectiv role...`);
         });
-        it('should return success message for finding role', function() {
+        
+        it('should return success message for found role', function() {
             filmStudio.makeMovie('The Avengers', ['Iron-Man', 'Thor', 'Hulk', 'Arrow guy']);
             expect(filmStudio.casting('Leo De Caprio', 'Thor')).to.be.equal(`You got the job! Mr. Leo De Caprio you are next Thor in the The Avengers. Congratz!`);
         });
