@@ -40,9 +40,8 @@ class FilmStudio {
         if (arguments.length === 2) {
             let isFirstArgString = typeof arguments[0] === 'string';
             let isSecondArgArray = arguments[1] instanceof Array;
-
             if (isFirstArgString && isSecondArgArray) {
-                let findedFilms = this.films.filter((f) => f.filmName.includes(filmName));
+                let foundFilms = this.films.filter((f) => f.filmName.includes(filmName));
                 let filmRoles = roles.reduce((acc, cur) => {
                     let curFilmRole = {
                         role: cur,
@@ -59,8 +58,8 @@ class FilmStudio {
                     filmRoles
                 };
 
-                if (findedFilms.length > 0) {
-                    film.filmName += ` ${++findedFilms.length}`;
+                if (foundFilms.length > 0) {
+                    film.filmName += ` ${++foundFilms.length}`;
                 }
 
                 this.films.push(film);
@@ -70,7 +69,6 @@ class FilmStudio {
             else {
                 throw ('Invalid arguments')
             }
-
         }
         else {
             throw ('Invalid arguments count')
@@ -80,7 +78,6 @@ class FilmStudio {
     lookForProducer(film) {
         let f = this.films.filter((f) => f.filmName === film)[0];
         let output;
-
         if (f) {
             output = `Film name: ${f.filmName}\n`;
             output += 'Cast:\n';
@@ -89,7 +86,7 @@ class FilmStudio {
             });
         }
         else {
-            throw new Error(`${film} do not exist yet, but we need the money...`)
+            throw new Error(`${film} has not exist yet, but we need the money...`)
         }
 
         return output;
