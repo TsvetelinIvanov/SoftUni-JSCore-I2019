@@ -12,15 +12,16 @@ function solve() {
         let inputKing = buttonRebuildAKingdom.parentElement.children[1];
         let kingdom = inputKingdom.value;
         let king = inputKing.value;
-
         if (!king instanceof String || king.length < 2) {
             inputKing.value = '';
+            
             return;
         }
 
         let kingdoms = ['castle', 'dungeon', 'fortress', 'inferno', 'necropolis', 'rampart', 'stronghold', 'tower', 'conflux'];
         if (!kingdoms.includes(kingdom.toLowerCase())) {
             inputKingdom.value = '';
+            
             return;
         }
 
@@ -30,6 +31,7 @@ function solve() {
         divCastle.classList.add(kingdom.toLowerCase());
         let h2 = document.createElement('h2');
         h2.innerHTML = king.toUpperCase();
+        
         let fieldset = document.createElement('fieldset');
         let legend = document.createElement('legend');
         legend.innerHTML = 'Army';
@@ -66,20 +68,22 @@ function solve() {
         let inputKingdom = buttonJoin.parentElement.children[1];
         let character = inputCharacter.value;
         let kingdom = inputKingdom.value;
-
         if (!character instanceof String || character.length < 2) {
             inputCharacter.value = '';
+            
             return;
         }
 
         let kingdoms = ['castle', 'dungeon', 'fortress', 'inferno', 'necropolis', 'rampart', 'stronghold', 'tower', 'conflux'];
         if (!kingdoms.includes(kingdom.toLowerCase())) {
             inputKingdom.value = '';
+            
             return;
         }
 
         if (document.getElementById(kingdom.toLowerCase()).style.display === 'none') {
             inputKingdom.value = '';
+            
             return;
         }
 
@@ -117,12 +121,14 @@ function solve() {
         if (!kingdoms.includes(attackerName.toLowerCase()) || !kingdoms.includes(defenderName.toLowerCase())) {
             inputAttacker.value = '';
             inputDefender.value = '';
+            
             return;
         }
         
-        if (document.getElementById(attackerName.toLowerCase()).style.display === 'none' || document.getElementById(defenderName.toLowerCase()).style.display === 'none'){
+        if (document.getElementById(attackerName.toLowerCase()).style.display === 'none' || document.getElementById(defenderName.toLowerCase()).style.display === 'none') {
             inputAttacker.value = '';
             inputDefender.value = '';
+            
             return;
         }
 
