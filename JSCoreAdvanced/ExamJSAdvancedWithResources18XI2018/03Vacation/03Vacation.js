@@ -6,11 +6,12 @@ class Vacation {
         this.kids = {};
     }
 
-    get numberOfChildren(){
+    get numberOfChildren() {
         let kidsCount = 0;
-        for(let grade in this.kids){
+        for (let grade in this.kids) {
             kidsCount += this.kids[grade].length;
         }
+        
         return kidsCount;
     }
     
@@ -36,7 +37,7 @@ class Vacation {
     }
 
     removeChild(name, grade) {
-        if(!this.kids.hasOwnProperty(grade)){
+        if (!this.kids.hasOwnProperty(grade)) {
             return `We couldn't find ${name} in ${grade} grade.`;
         }
 
@@ -50,8 +51,8 @@ class Vacation {
         }
     }
     
-    toString(){
-        if (this.numberOfChildren === 0){
+    toString() {
+        if (this.numberOfChildren === 0) {
             return `No children are enrolled for the trip and the organization of ${this.organizer} falls out...`;
         }
 
