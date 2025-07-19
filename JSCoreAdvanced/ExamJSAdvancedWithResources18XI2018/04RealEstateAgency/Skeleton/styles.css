@@ -11,6 +11,42 @@ section {
     margin-bottom: 3%;
 }
 
+input, button {
+    font-size: 24px;
+    border: none;
+    border-bottom: 1px solid gray;
+    margin: 7px;
+}
+
+button {
+    margin: 15px;
+    color: #010138;
+    background: transparent;
+    border: 3px solid #010138;
+    border-radius: 10px;
+    padding: 1px 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background: #010138;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+.apartment {
+    width: 188px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: 2px solid green;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
 div#roof {
     width: 100%;
     height: 390px;
@@ -33,6 +69,15 @@ div#offerManager {
     border: 1px solid #010138;
 }
 
+#offerManager div#notifications p#message {
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 18px;
+    color: orangered;
+    font-weight: bold;
+}
+
 #regOffer, #findOffer {
     display: inline-block;
     width: 41%;
@@ -47,49 +92,3 @@ div#offerManager {
 #offerManager input {
     width: 100%;
 }
-
-input, button {
-    font-size: 24px;
-    border: none;
-    border-bottom: 1px solid gray;
-    margin: 7px;
-}
-
-#offerManager div#notifications p#message {
-    margin-top: 10px;
-    text-align: center;
-    text-decoration: underline;
-    font-size: 18px;
-    color: orangered;
-    font-weight: bold;
-}
-
-.apartment {
-    width: 188px;
-    margin-left: 5px;
-    margin-bottom: 5px;
-    border: 2px solid green;
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    word-wrap: break-word;
-}
-
-button {
-    margin: 15px;
-    color: #010138;
-    background: transparent;
-    border: 3px solid #010138;
-    border-radius: 10px;
-    padding: 1px 11px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-button:hover {
-    background: #010138;
-    color: white;
-    cursor: pointer;
-    outline: none;
-}
-
