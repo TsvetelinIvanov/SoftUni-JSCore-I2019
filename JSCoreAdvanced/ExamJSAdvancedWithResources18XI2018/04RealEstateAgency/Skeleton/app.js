@@ -16,7 +16,6 @@ function realEstateAgency() {
             let $rent = createHTMLElement('p', `Rent: ${$rentInput.val()}`);
             let $type = createHTMLElement('p', `Type: ${$apartmentInput.val()}`);
             let $commission = createHTMLElement('p', `Commission: ${$commissionInput.val()}`);
-
             $div.append($rent, $type, $commission);
             $building.append($div);
             $message.text('Your offer was created successfully.');
@@ -38,14 +37,12 @@ function realEstateAgency() {
         let budget = Number($familyBudget.val());
         let isBudgetValid = !isNaN(budget) && budget > 0;
         let areFamilyNameAndApartmentTypeValid = $familyApartmentType.val() && $familyName.val();
-
         if (isBudgetValid && areFamilyNameAndApartmentTypeValid) {
             let $totalAgencyProfit = $('#roof h1');
             let isHomeless = true;
             for (let apartment of Array.from($('.apartment'))) {
                 let $type = $(apartment).children().eq(1);
-                let type = $type.text().split(': ')[1];
-                
+                let type = $type.text().split(': ')[1];                
                 if ($familyApartmentType.val() === type) {
                     let $rent = $(apartment).children().eq(0);
                     let rent = $rent.text().split(': ')[1];
@@ -65,8 +62,7 @@ function realEstateAgency() {
                             $message.text(`They had found cockroaches in ${$familyName.val()}\'s apartment`);
                         });
                         $(apartment).append($button);
-                        $(apartment).css('border', '2px solid red');
-                        
+                        $(apartment).css('border', '2px solid red');                        
                         $message.text('Enjoy your new home! :))');
                         isHomeless = false;
 
@@ -84,9 +80,9 @@ function realEstateAgency() {
         }
         else {
             $message.text('We were unable to find you a home, so sorry :(');
-		}
-		//By condition, the imputfields must be cleared after evry click on the FindOffer button, but the last test in Judge did not past when this is done! 
-		// $familyBudget.val('');
+	}
+	//By condition, the imputfields must be cleaned after evry click on the FindOffer button, but the last test in Judge does not past when this is done! 
+	// $familyBudget.val('');
         // $familyApartmentType.val('');
         // $familyName.val('');
     }
@@ -96,6 +92,7 @@ function realEstateAgency() {
         if (className) {
             $element.addClass(className);
         }
+	
         return $element;
     }    
 }
