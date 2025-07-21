@@ -1,32 +1,30 @@
 function solution() {
-	let addButton = $('button')[0];//in Judge must be paste without this line
-	addButton.addEventListener('click', addToShop);//in Judge must be paste without this line
+    let addButton = $('button')[0];//It must be paste in Judge without this line
+    addButton.addEventListener('click', addToShop);//It must be paste in Judge without this line
 
-	function addToShop() {//in Judge must be paste without this line
-		let $christmasGiftShop = $('#christmasGiftShop');
+    function addToShop() {//It must be paste in Judge without this line
+	let $christmasGiftShop = $('#christmasGiftShop');
+	let $toyType = $('#toyType');
+	let $toyPrice = $('#toyPrice');
+	let $toyDescription = $('#toyDescription');
+	if ($toyType.val() && Number($toyPrice.val()) && $toyDescription.val()) {
+	    let $giftDiv = $('<div>');
+	    $giftDiv.addClass('gift');
+	    let $img = $('<img src="gift.png"/>');
+	    let $h2 = $('<h2>');
+	    $h2.text($toyType.val());
+	    let $p = $('<p>');
+	    $p.text($toyDescription.val());
+	    let $button = $('<button>');
+	    $button.text(`Buy it for $${$toyPrice.val()}`);
+	    $button.on('click', () => $giftDiv.remove());
 
-		let $toyType = $('#toyType');
-		let $toyPrice = $('#toyPrice');
-		let $toyDescription = $('#toyDescription');
+	    $giftDiv.append($img, $h2, $p, $button);
+	    $christmasGiftShop.append($giftDiv);
+	}
 
-		if ($toyType.val() && Number($toyPrice.val()) && $toyDescription.val()) {
-			let $giftDiv = $('<div>');
-			$giftDiv.addClass('gift');
-			let $img = $('<img src="gift.png"/>');
-			let $h2 = $('<h2>');
-			$h2.text($toyType.val());
-			let $p = $('<p>');
-			$p.text($toyDescription.val());
-			let $button = $('<button>');
-			$button.text(`Buy it for $${$toyPrice.val()}`);
-			$button.on('click', () => $giftDiv.remove());
-
-			$giftDiv.append($img, $h2, $p, $button);
-			$christmasGiftShop.append($giftDiv);
-		}
-
-		$toyType.val('');
-		$toyPrice.val('');
-		$toyDescription.val('');
-	}//in Judge must be paste without this line
+	$toyType.val('');
+	$toyPrice.val('');
+	$toyDescription.val('');
+    }//It must be paste in Judge without this line
 }
