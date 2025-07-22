@@ -129,7 +129,7 @@ describe('Warehouse', function() {
     });
 
     describe('scrapeAProduct', function() {        
-        it('should throw for non existing type', function() {
+        it('should throw for non-existent type', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 6);
