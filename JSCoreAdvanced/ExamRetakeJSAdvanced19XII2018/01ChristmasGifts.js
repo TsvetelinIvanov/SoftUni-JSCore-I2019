@@ -4,7 +4,6 @@ function solution() {
     let $toyType = $('#toyType');
     let $toyPrice = $('#toyPrice');
     let $toyDescription = $('#toyDescription');
-
     if ($toyType.val() && Number($toyPrice.val()) && $toyDescription.val()) {
         let $giftDiv = $('<div>');
         $giftDiv.addClass('gift');
