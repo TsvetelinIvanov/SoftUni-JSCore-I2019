@@ -129,7 +129,7 @@ describe('Warehouse', function() {
     });
 
     describe('scrapeAProduct', function() {        
-        it('should throw for non existing type', function() {
+        it('should throw for non-existent type', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 6);
@@ -294,7 +294,7 @@ describe('Warehouse', function() {
             warehouse.addProduct("Food", "apple", 1);
         });        
         
-        it('should throw for non existing type', function() {
+        it('should throw for non-existent type', function() {
             expect(() => {                
                 warehouse.scrapeAProduct('orange', 1)
             }).to.throw('orange do not exists');
