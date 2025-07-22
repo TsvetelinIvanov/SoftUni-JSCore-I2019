@@ -39,18 +39,18 @@ describe('SoftUniFy', function() {
             filmStudio = new FilmStudio('Verginia');
         });
 
-        it('should throw by invalid arguments count', function() {
-            expect(() => { filmStudio.makeMovie('Vanilla sky'); }).to.throw('Invalid arguments count');
+        it('should throw if invalid arguments count', function() {
+            expect(() => {filmStudio.makeMovie('Vanilla sky');}).to.throw('Invalid arguments count');
         });
-        it('should throw by invalid arguments count', function() {
+        it('should throw if invalid arguments count', function() {
             expect(() => {filmStudio.makeMovie('Vanilla sky', ['roles'], 'wrongArgument');}).to.throw('Invalid arguments count');
         });
-        it('should throw by invalid argument filmName', function() {
+        it('should throw if invalid argument filmName', function() {
             expect(() => {filmStudio.makeMovie(9, ['roles']);}).to.throw('Invalid arguments');
             expect(() => {filmStudio.makeMovie([], ['roles']);}).to.throw('Invalid arguments');
             expect(() => {filmStudio.makeMovie(true, ['roles']);}).to.throw('Invalid arguments');
         });
-        it('should throw by invalid argument roles', function() {
+        it('should throw if invalid argument roles', function() {
             expect(() => {filmStudio.makeMovie('Vanilla sky', 'roles');}).to.throw('Invalid arguments');
             expect(() => {filmStudio.makeMovie('Vanilla sky', {'roles': 1}); }).to.throw('Invalid arguments');
             expect(() => {filmStudio.makeMovie('Vanilla sky', 1);}).to.throw('Invalid arguments');
