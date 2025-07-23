@@ -22,7 +22,7 @@ function dart() {
     function onPlayBoardClick(event) {
         event.stopPropagation();
 
-		let points = getScore(event.target.id);
+	let points = getScore(event.target.id);
 		
         selectPlayer(points);
     }
@@ -45,18 +45,18 @@ function dart() {
         let $pointsElement = $(selector).children().eq(0);
         $pointsElement.text((i, t) => Number(t) + score);
         
-        if(isHome){
+        if (isHome) {
             $('#turns').children().eq(0).text('Turn on Away');
             $('#turns').children().eq(1).text('Next is Home');
         }
-        else{
+        else {
             $('#turns').children().eq(0).text('Turn on Home');
             $('#turns').children().eq(1).text('Next is Away');
         }
 
         let currentPoints = Number($pointsElement.text());
-        if (currentPoints >= maxScore){
-            if(isHome){
+        if (currentPoints >= maxScore) {
+            if (isHome) {
                 $('#Home').children().eq(1).css({
                     backgroundColor: 'green'
                 });
@@ -74,7 +74,8 @@ function dart() {
             }
             
             $('#playBoard').off('click');
-        } 
+        }
+	    
         isHome = !isHome;     
     } 
 }
