@@ -297,7 +297,7 @@ describe('Warehouse', function() {
         it('should throw for non-existent type', function() {
             expect(() => {                
                 warehouse.scrapeAProduct('orange', 1)
-            }).to.throw('orange do not exists');
+            }).to.throw('orange does not exist');
         });
 
         it('should give correct result for less than available quantity', function() {            
