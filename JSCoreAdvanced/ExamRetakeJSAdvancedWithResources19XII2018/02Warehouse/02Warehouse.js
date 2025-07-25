@@ -27,7 +27,6 @@ class Warehouse {
 
             this.availableProducts[type][product] += quantity;
             output = this.availableProducts[type];
-
         }
         else {
             throw `There is not enough space or the warehouse is already full`;
@@ -102,7 +101,7 @@ class Warehouse {
             output = this.availableProducts[type];
         }
         else {
-            throw `${product} do not exists`;
+            throw `${product} does not exist`;
         }
 
         return output;
