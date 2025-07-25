@@ -101,7 +101,7 @@ class Warehouse {
             output = this.availableProducts[type];
         }
         else {
-            throw `${product} do not exists`;
+            throw `${product} does not exist`;
         }
 
         return output;
