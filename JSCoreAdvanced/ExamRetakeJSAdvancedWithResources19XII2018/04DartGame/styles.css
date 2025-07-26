@@ -1,125 +1,125 @@
-*{
-	margin: 0;
-	padding: 0;
-	font-family: Calibri;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
 }
 
-body{
-	background: white;
-	margin-top: 0.5%;
+body {
+    background: white;
+    margin-top: 0.5%;
 }
 
-#playBoard, #scoreBoard{
-	margin: 0.5%;
-	width: 48.5%;
-	border:1px solid black;
-	height: 95vh;
-	display: inline-block;
-	vertical-align: top;
+h1 {
+    text-align: center;
+    font-size: 3em;
 }
 
-h1{
-	text-align: center;
-	font-size: 3em;
+div {
+    margin: 0 auto;
+    border:2px solid black;
 }
 
-div{
-	margin: 0 auto;
-	border:2px solid black;
+table {
+    margin: 0 auto;
+    width: 30%;
+    font-size: 1em;
+    margin-bottom: 1%;
 }
 
-#firstLayer{
-	background: green;
-	width: 90%;
-	height: 78vh;
-	border-radius: 50%;
-	padding-top:5%;
+td {
+    width: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
 }
 
-#secondLayer{
-	background: yellow;
-	width: 80%;
-	height: 65vh;
-	border-radius: 50%;
-	padding-top:7%;
+#playBoard, #scoreBoard {
+    margin: 0.5%;
+    width: 48.5%;
+    border:1px solid black;
+    height: 95vh;
+    display: inline-block;
+    vertical-align: top;
 }
 
-#thirdLayer{
-	background: darkorange;
-	width: 77%;
-	height:50vh;
-	border-radius: 50%;
-	padding-top: 10%;
+#firstLayer {
+    background: green;
+    width: 90%;
+    height: 78vh;
+    border-radius: 50%;
+    padding-top:5%;
 }
 
-#fourthLayer{
-	background: red;
-	width: 75%;
-	height:37vh;
-	border-radius: 50%;
-	padding-top: 10%;
+#secondLayer {
+    background: yellow;
+    width: 80%;
+    height: 65vh;
+    border-radius: 50%;
+    padding-top:7%;
 }
 
-#fifthLayer{
-	background: purple;
-	width:70%;
-	height: 20vh;
-	border-radius: 50%;
-	padding-top:24%
+#thirdLayer {
+    background: darkorange;
+    width: 77%;
+    height:50vh;
+    border-radius: 50%;
+    padding-top: 10%;
 }
 
-#sixthLayer{
-	background: darkblue;
-	width:35%;
-	height: 10vh;
-	border-radius: 50%;
+#fourthLayer {
+    background: red;
+    width: 75%;
+    height:37vh;
+    border-radius: 50%;
+    padding-top: 10%;
 }
 
-table{
-	margin: 0 auto;
-	width: 30%;
-	font-size: 1em;
-	margin-bottom: 1%;
+#fifthLayer {
+    background: purple;
+    width:70%;
+    height: 20vh;
+    border-radius: 50%;
+    padding-top:24%
 }
 
-td{
-	width: 10px;
-	border-bottom: 1px solid black;
-	text-align: center;
+#sixthLayer {
+    background: darkblue;
+    width:35%;
+    height: 10vh;
+    border-radius: 50%;
 }
 
-#points{
-	width: 90%;
-	height: 50vh;
-	border:2px solid black;
-	margin: 0 auto;
-	padding-top: 5%;
+#points {
+    width: 90%;
+    height: 50vh;
+    border:2px solid black;
+    margin: 0 auto;
+    padding-top: 5%;
 }
 
-#Home, #Away{
-	width: 49%;
-	height: 25vh;
-	border:1px solid black;
-	display: inline-block;
-	text-align: center;
-	padding-top:3%;
+#Home, #Away {
+    width: 49%;
+    height: 25vh;
+    border:1px solid black;
+    display: inline-block;
+    text-align: center;
+    padding-top:3%;
 }
 
-#Home p:nth-child(1), #Away p:nth-child(1){
-	font-size: 7em;
+#Home p:nth-child(1), #Away p:nth-child(1) {
+    font-size: 7em;
 }
 
 
-#turns{
-	margin-top:7%;
-	border:1px dotted black;
-	width: 90%;
-	height: 10vh;
-	font-size:1.5em;
-	text-align: center;
+#turns {
+    margin-top:7%;
+    border:1px dotted black;
+    width: 90%;
+    height: 10vh;
+    font-size:1.5em;
+    text-align: center;
 }
 
-#turns p:nth-child(1){
-	text-decoration: underline;
-	font-weight: bold;
+#turns p:nth-child(1) {
+    text-decoration: underline;
+    font-weight: bold;
 }
