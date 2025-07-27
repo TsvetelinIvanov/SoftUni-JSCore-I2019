@@ -29,5 +29,5 @@ function solve() {
         $(`#${enable}`).attr('disabled', false);
     }
 
-    return { depart, arrive };
+    return {depart, arrive};
 }
