@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Bus Schedule</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+        body {
+            margin: auto;
+            width: 25%;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Open Sans', serif;
+        }
+
+        input {
+            width: 120px;
+        }
 
         input[type=text] {
             padding: 12px 20px;
@@ -23,21 +34,14 @@
             cursor: pointer;
         }
 
-        body {
-            margin: auto;
-            width: 25%;
-            text-align: center;
-            padding: 20px;
-            font-family: 'Open Sans', serif;
+        .info {
+            font-size: 1.5em;
+            padding: 0.25em;
         }
 
         #schedule {
             text-align: center;
             width: 400px;
-        }
-
-        input {
-            width: 120px;
         }
 
         #info {
@@ -46,15 +50,9 @@
             border-radius: 4px;
             margin: 0.25em;
         }
-
-        .info {
-            font-size: 1.5em;
-            padding: 0.25em;
-        }
     </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
-
 <body>
     <div id="schedule">
         <div id="info"><span class="info">Not Connected</span></div>
@@ -97,8 +95,8 @@
 
             return { depart, arrive };
         }
+        
         let result = solve();
     </script>
 </body>
-
 </html>
