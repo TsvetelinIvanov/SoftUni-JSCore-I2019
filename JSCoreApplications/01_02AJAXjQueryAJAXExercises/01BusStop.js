@@ -1,4 +1,4 @@
-function getInfo(){
+function getInfo() {
     const baseServiceUrl = 'https://judgetests.firebaseio.com/businfo/';
     let $inputStopId = $('#stopId');
     let $divStopName = $('#stopName');
@@ -9,18 +9,18 @@ function getInfo(){
 
     let busStopId = $inputStopId.val();
     $.get(baseServiceUrl + busStopId + '.json')
-    .then(loadBuses)
-    .catch(displayError);
+        .then(loadBuses)
+        .catch(displayError);
 
     function loadBuses(stopId){
         $divStopName.text(stopId.name);
-        for(let [busId, time] of Object.entries(stopId.buses)){
+        for (let [busId, time] of Object.entries(stopId.buses)) {
             let $li = $('<li>').text(`Bus ${busId} arrives in ${time} minutes`);
             $ulBuses.append($li);
         }
     }
 
-    function displayError(){
+    function displayError() {
         $divStopName.text('Error');
     }
 }
