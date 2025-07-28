@@ -10,7 +10,7 @@ function attachEvents() {
         let author = $('#author').val();
         let content = $('#content').val();
         let timestamp = Date.now();
-        let message = { author, content, timestamp };
+        let message = {author, content, timestamp};
         $.post(baseUrl + '.json', JSON.stringify(message)).then(loadMessages);
     }
 
