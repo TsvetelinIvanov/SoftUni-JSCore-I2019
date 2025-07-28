@@ -1,15 +1,18 @@
-function attachEvents(){
-    $('#btnLoad').click(loadContacts);
-    $('#btnCreate').click(createContact);
+function attachEvents() {
     let baseServiceUrl = 'https://phonebook-nakov-c90d5.firebaseio.com/phonebook';
     
-    function loadContacts(){
+    $('#btnLoad').click(loadContacts);
+    $('#btnCreate').click(createContact);    
+    
+    function loadContacts() {
         $('#phonebook').empty();
-        $.get(baseServiceUrl + '.json').then(displayContacts).catch(displayError);
+        $.get(baseServiceUrl + '.json')
+            .then(displayContacts)
+            .catch(displayError);
     }
     
-    function displayContacts(contacts){
-        for(let key in contacts){
+    function displayContacts(contacts) {
+        for (let key in contacts) {
             let person = contacts[key]['person'];
             let phone = contacts[key]['phone'];
             let $li = $('<li>');
@@ -28,7 +31,11 @@ function attachEvents(){
             person: $('#person').val(),
             phone: $('#phone').val()
         });
-        $.post(baseServiceUrl + '.json', newContactJSON).then(loadContacts).catch(displayError);
+         
+        $.post(baseServiceUrl + '.json', newContactJSON)
+            .then(loadContacts)
+            .catch(displayError);
+         
         $('#person').val('');
         $('#phone').val('');
     }
@@ -38,7 +45,7 @@ function attachEvents(){
             method: 'DELETE',
             url: baseServiceUrl + '/' + key + '.json'
         };
+        
         $.ajax(request).then(loadContacts).catch(displayError);
     }
 }
-
