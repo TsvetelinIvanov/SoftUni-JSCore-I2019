@@ -1,3 +1,3 @@
-function loadTitle(){
+function loadTitle() {
     $('#text').load('text.html');
 }
