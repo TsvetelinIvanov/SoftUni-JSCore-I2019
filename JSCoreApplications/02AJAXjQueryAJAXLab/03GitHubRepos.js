@@ -13,7 +13,6 @@ function loadRepos() {
             $('#repos').append($li);
            // $('#repos').append($('<li>').append($link));
         }
-
     }
 
     function displayError(error) {
