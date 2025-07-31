@@ -1,15 +1,17 @@
-$(function(){
+$(function() {
     $('#btnLoad').click(loadContacts);
     $('#btnCreate').click(createContact);
     let baseServiceUrl = 'https://phonebook-nakov-c90d5.firebaseio.com/phonebook';
     
-    function loadContacts(){
+    function loadContacts() {
         $('#phonebook').empty();
-        $.get(baseServiceUrl + '.json').then(displayContacts).catch(displayError);
+        $.get(baseServiceUrl + '.json')
+            .then(displayContacts)
+            .catch(displayError);
     }
     
-    function displayContacts(contacts){
-        for(let key in contacts){
+    function displayContacts(contacts) {
+        for (let key in contacts) {
             let person = contacts[key]['person'];
             let phone = contacts[key]['phone'];
             let $li = $('<li>');
@@ -19,25 +21,29 @@ $(function(){
         }
     }
     
-    function displayError(e){
+    function displayError(e) {
         $('#phonebook').append($('<li>Error</li>'));
     }
     
-     function createContact(){
+     function createContact() {
         let newContactJSON = JSON.stringify({
             person: $('#person').val(),
             phone: $('#phone').val()
         });
-        $.post(baseServiceUrl + '.json', newContactJSON).then(loadContacts).catch(displayError);
+        $.post(baseServiceUrl + '.json', newContactJSON)
+            .then(loadContacts)
+            .catch(displayError);
+         
         $('#person').val('');
         $('#phone').val('');
     }
     
-    function deleteContact(key){
+    function deleteContact(key) {
         let request = {
             method: 'DELETE',
             url: baseServiceUrl + '/' + key + '.json'
         };
+        
         $.ajax(request).then(loadContacts).catch(displayError);
     }
 });
@@ -45,8 +51,7 @@ $(function(){
 // $(function () {
 //     $('#btnLoad').click(loadContacts);
 //     $('#btnCreate').click(createContact);
-//     let baseServiceUrl =
-//         'https://phonebook-nakov-c90d5.firebaseio.com/phonebook';
+//     let baseServiceUrl = 'https://phonebook-nakov-c90d5.firebaseio.com/phonebook';
 
 //     function loadContacts() {
 //         $("#phonebook").empty();
@@ -62,8 +67,7 @@ $(function(){
 //             let li = $("<li>");
 //             li.text(person + ': ' + phone + ' ');
 //             $("#phonebook").append(li);
-//             li.append($("<button>Delete</button>")
-//                 .click(deleteContact.bind(this, key)));
+//             li.append($("<button>Delete</button>").click(deleteContact.bind(this, key)));
 //         }
 //     }
 
@@ -76,9 +80,11 @@ $(function(){
 //             person: $('#person').val(),
 //             phone: $('#phone').val()
 //         });
+
 //         $.post(baseServiceUrl + '.json', newContactJSON)
 //             .then(loadContacts)
 //             .catch(displayError);
+
 //         $('#person').val('');
 //         $('#phone').val('');
 //     }
@@ -88,9 +94,9 @@ $(function(){
 //             method: 'DELETE',
 //             url: baseServiceUrl + '/' + key + '.json'
 //         };
+
 //         $.ajax(request)
 //             .then(loadContacts)
 //             .catch(displayError);
 //     }
-
 // });
