@@ -1,13 +1,13 @@
-function attachEvents(){
+function attachEvents() {
     const baseUrl = 'https://judgetests.firebaseio.com/';
     $('#submit').click(getWeather);
 
-    function getWeather(){
+    function getWeather() {
         $.get(baseUrl + 'locations.json')
             .then(loadForecast)
             .catch(displayError);
         
-        function loadForecast(locations){
+        function loadForecast(locations) {
             let locationName = $('#location').val();
             let location = locations.find(l => l.name === locationName);
             //let location = locations.filter(l => l.name === locationName)[0];
@@ -18,7 +18,7 @@ function attachEvents(){
                 .then(displayForecast)
                 .catch(displayError);
 
-            function displayForecast([today, upcoming]){
+            function displayForecast([today, upcoming]) {
                 let symbols = {
                     'Sunny': '&#x2600',
                     'Partly sunny': '&#x26C5',
@@ -26,6 +26,7 @@ function attachEvents(){
                     'Rain': '&#x2614',
                     'Degrees': '&#176'
                 };
+                
                 $('#forecast').css('display', 'block');
                 let $spanSymbol = $('<span>').addClass('condition symbol').html(symbols[today.forecast.condition]);                
                 let $spanConditionContainer = $('<span>').addClass('condition');
@@ -36,7 +37,7 @@ function attachEvents(){
                 $('#current').append($spanSymbol, $spanConditionContainer);
 
                 let $divUpcoming = $('#upcoming');
-                for (let forecast of upcoming.forecast){
+                for (let forecast of upcoming.forecast) {
                     let $spanUpcoming = $('<span>').addClass('upcoming');
                     let $spanUpcomingSymbol = $('<span>').addClass('symbol').html(symbols[forecast.condition]);
                     let $spanUpcomingTemperature = $('<span>').addClass('forecast-data').html(forecast.low + symbols.Degrees + '/' + forecast.high + symbols.Degrees);
@@ -46,7 +47,8 @@ function attachEvents(){
                 }
             }
         }
-        function displayError(){
+        
+        function displayError() {
             let $divForecast = $('#forecast');
             $divForecast.css('display', 'block');
             $divForecast.text('Error');
