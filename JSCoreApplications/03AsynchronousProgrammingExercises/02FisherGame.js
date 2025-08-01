@@ -1,4 +1,4 @@
-function attachEvents(){
+function attachEvents() {
     //const baseUrl = 'https://baas.kinvey.com/appdata/kid_rkxScVJGe/biggestCatches';
     //const baseUrl = 'https://baas.kinvey.com/appdata/kid_Sy3cFMu9G/biggestCatches';
     const baseUrl = 'https://baas.kinvey.com/appdata/kid_H1y9kL-_N/biggestCatches';
@@ -11,19 +11,20 @@ function attachEvents(){
     $('.load').click(loadCatches);
     $('.add').click(addCatch);
     
-    function loadCatches(){
+    function loadCatches() {
         let request = {
             url: baseUrl,
             method: 'GET',
             headers: authHeaders
         };
 
-        $.ajax(request).then(displayCatches);
+        $.ajax(request)
+            .then(displayCatches);
 
-        function displayCatches(catches){
+        function displayCatches(catches) {
             let $divCatches = $('#catches');
             $divCatches.empty();
-            for (let catche of catches){
+            for (let catche of catches) {
                 let $divCatch = $('<div>').addClass('catch').attr('data-id', catche._id);
                 let $labelAngler = $('<label>').text('Angler');
                 let $inputAngler = $('<input>').attr('type', 'text').addClass('angler').val(catche.angler);
@@ -45,7 +46,7 @@ function attachEvents(){
         }
     }
     
-    function addCatch(){
+    function addCatch() {
         let inputs = $(this).parent().find('input');
         let request = {
             url: baseUrl,
@@ -62,12 +63,12 @@ function attachEvents(){
         };
 
         $.ajax(request).then(loadCatches);
-        for (let input of inputs){
+        for (let input of inputs) {
             $(input).val('');
         }
     }
    
-    function updateCatch(){
+    function updateCatch() {
         let inputs = $(this).parent().find('input');
         let catchId = $(this).parent().attr('data-id');
         let request = {
@@ -83,16 +84,20 @@ function attachEvents(){
                 captureTime: $(inputs[5]).val()
             })
         };
-        $.ajax(request).then(loadCatches);
+        
+        $.ajax(request)
+            .then(loadCatches);
     }
     
-    function deleteCatch(){
+    function deleteCatch() {
         let catchId = $(this).parent().attr('data-id');
         let request = {
             url: baseUrl + '/' + catchId,
             method: 'DELETE',
             headers: authHeaders
         };
-        $.ajax(request).then(loadCatches);
+        
+        $.ajax(request)
+            .then(loadCatches);
     }
 }
