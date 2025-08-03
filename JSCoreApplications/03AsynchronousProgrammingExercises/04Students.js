@@ -1,12 +1,14 @@
-function createStudentAndListStudents(){
+function createStudentAndListStudents() {
     let baseUrl = "https://baas.kinvey.com/appdata/kid_BJXTsSi-e/students";
     let kinveyUsername = "guest";
     let kinveyPassword = "guest";
     let base64Auth = btoa(kinveyUsername + ":" + kinveyPassword);
+    
     loadStudents();
+    
     $("#addStudent").click(addStudent);
 
-    function loadStudents(){
+    function loadStudents() {
         let request = {
             url: baseUrl,
             method: "GET",
@@ -22,7 +24,7 @@ function createStudentAndListStudents(){
         let $tableResults = $("#results");
         $tableResults.find("tr").nextAll().remove();
         students = students.sort((a, b) => a.ID - b.ID);
-        for (let student of students){
+        for (let student of students) {
             let $tr = $("<tr>");
             let $tdID = $("<td>").text(student.ID);
             let $tdFirstName = $("<td>").text(student.FirstName);
@@ -34,7 +36,7 @@ function createStudentAndListStudents(){
         }        
     }
 
-    function addStudent(event){
+    function addStudent(event) {
         event.preventDefault();
         let id = Number($("#ID").val());
         let firstName = $("#firstName").val();
@@ -42,7 +44,7 @@ function createStudentAndListStudents(){
         let facultyNumber = $("#facultyNumber").val();
         let grade = Number($("#grade").val());
         let facultyNumberPattern = /^\d+$/;
-        if (firstName.trim() != "" && lastName.trim() != "" && facultyNumberPattern.test(facultyNumber)){
+        if (firstName.trim() != "" && lastName.trim() != "" && facultyNumberPattern.test(facultyNumber)) {
             let request = {
                 url: baseUrl,
                 method: "POST",
