@@ -1,24 +1,27 @@
-function operateWithCountriesAndTowns(){
+function operateWithCountriesAndTowns() {
     let baseUrl = "https://baas.kinvey.com/appdata/kid_H1y9kL-_N/";
     let kinveyUsername = "guest";
     let kinveyPassword = "guest";
     let base64Auth = btoa(kinveyUsername + ":" + kinveyPassword);
+    
     attachEvents();
     loadCountries();
     
-    function attachEvents(){
+    function attachEvents() {
         $('#btnAddCountry').click(addCountry);
         $('#btnDeleteCountry').click(deleteCountry);
         $('#btnEditCountry').click(editCountry);
+        
         $('#btnListTowns').click(loadTowns);
-        $('#addCountry').click(fadeInNewCountry);
-        $('#addTown').click(fadeInNewTown);
         $('#btnAddTown').click(addTown);
         $('#btnDeleteTown').click(deleteTown);
-        $('#btnEditTown').click(editTown);               
+        $('#btnEditTown').click(editTown);
+        
+        $('#addCountry').click(fadeInNewCountry);
+        $('#addTown').click(fadeInNewTown);                       
     }
 
-    function loadCountries(){
+    function loadCountries() {
         let request = {
             method: 'GET',
             url: baseUrl + 'countries',
@@ -28,19 +31,19 @@ function operateWithCountriesAndTowns(){
         $.ajax(request).then(displayCountries);
     }
 
-    function displayCountries(countries){
+    function displayCountries(countries) {
         let $countriesSelect = $('#countries');
         $countriesSelect.empty();
-        for (let country of countries){
+        for (let country of countries) {
             let $option = $('<option>').val(country._id).text(country.name);
             $countriesSelect.append($option);
         }
     }
 
-    function addCountry(){
+    function addCountry() {
         let $newCountry = $('#newCountry');
         let countryName = $newCountry.val();
-        if (!$('#countries option').toArray().some(c => $(c).text() == countryName)){
+        if (!$('#countries option').toArray().some(c => $(c).text() == countryName)) {
             let request = {
                 method: 'POST',
                 url: baseUrl + 'countries',
@@ -54,7 +57,7 @@ function operateWithCountriesAndTowns(){
             };
 
             $.ajax(request)
-                .then(function(){
+                .then(function() {
                     $('.add:first').fadeOut();
                     loadCountries();
                     $newCountry.val('');
@@ -65,14 +68,15 @@ function operateWithCountriesAndTowns(){
             $errorDiv.text('This country exist already in the list!');
             $errorDiv.fadeIn();
             $('.sdd:first').fadeOut();
-            setTimeout(function () {
+            setTimeout(function() {
                 $errorDiv.fadeOut()
             }, 3000);
+            
             $newCountry.val('');
         }
     }
 
-    function deleteCountry(){
+    function deleteCountry() {
         let countryToDeleteId = $('#countries option:selected').val();
         let request = {
             method: 'DELETE',
@@ -92,7 +96,7 @@ function operateWithCountriesAndTowns(){
         $inputEditCountry.val($countryToEditOption.text());
         $divEditCountry.fadeIn();
 
-        $('#btnEditCountryName').click(function () {
+        $('#btnEditCountryName').click(function() {
             let request = {
                 method: "PUT",
                 url: baseUrl + "countries/" + countryToEditId,
@@ -106,7 +110,7 @@ function operateWithCountriesAndTowns(){
             };
 
             $.ajax(request)
-                .then(function () {
+                .then(function() {
                     loadCountries();
                     $inputEditCountry.val('');
                     $divEditCountry.fadeOut();
@@ -114,7 +118,7 @@ function operateWithCountriesAndTowns(){
         })
     }    
 
-    function loadTowns(){
+    function loadTowns() {
         let country = $('#countries option:selected').text();
         let request = {
             method: 'GET',
@@ -127,27 +131,19 @@ function operateWithCountriesAndTowns(){
                 let $townsSelect = $('#towns');
                 $townsSelect.empty();
                 let townsInCountry = towns.filter(t => t.country == country);
-                for (let town of townsInCountry){
+                for (let town of townsInCountry) {
                     let $option = $('<option>').val(town._id).text(town.name);
                     $townsSelect.append($option);
                 }
             });
     }
-
-    function fadeInNewCountry(){
-        $('.add:first').fadeIn();
-    }
-
-    function fadeInNewTown(){
-        $('.add:last').fadeIn();
-    } 
     
-    function addTown(){
+    function addTown() {
         let $newTownCountry = $('#newTownCountry');
         let $newTown = $('#newTown');
         let countryName = $newTownCountry.val();
         let townName = $newTown.val();
-        if ($('#countries option').toArray().some(c => $(c).text() == countryName)){
+        if ($('#countries option').toArray().some(c => $(c).text() == countryName)) {
             let request = {
                 method: 'POST',
                 url: baseUrl + 'towns',
@@ -162,7 +158,7 @@ function operateWithCountriesAndTowns(){
             };
 
             $.ajax(request)
-                .then(function(){
+                .then(function() {
                     loadTowns();
                     $('.add:last').fadeOut();
                     $newTownCountry.val('');
@@ -174,7 +170,7 @@ function operateWithCountriesAndTowns(){
             $errorDiv.text('This country does not exist in the list!');
             $errorDiv.fadeIn();
             $('.add:last').fadeOut();
-            setTimeout(function () {
+            setTimeout(function() {
                 $errorDiv.fadeOut()
             }, 3000);
             $newTownCountry.val('');
@@ -182,7 +178,7 @@ function operateWithCountriesAndTowns(){
         }
     }
 
-    function deleteTown(){
+    function deleteTown() {
         let townToDeleteId = $('#towns option:selected').val();
         let request = {
             method: 'DELETE',
@@ -193,7 +189,7 @@ function operateWithCountriesAndTowns(){
         $.ajax(request).then(loadTowns);
     }
 
-    function editTown(){
+    function editTown() {
         let $townToEditOption = $('#towns option:selected');
         let $inpupEditTownName = $('#inputEditTownName');
         let $inputEditTownCountry = $('#inputEditTownCountry');
@@ -203,7 +199,7 @@ function operateWithCountriesAndTowns(){
         $inpupEditTownName.val($townToEditOption.text());
         $inputEditTownCountry.val('');
         $divEditTown.fadeIn();
-        $('#btnEditTownName').click(function(){
+        $('#btnEditTownName').click(function() {
             let request = {
                 method: 'PUT',
                 url: baseUrl + 'towns/' + townToEditId,
@@ -218,12 +214,20 @@ function operateWithCountriesAndTowns(){
             };
 
             $.ajax(request)
-                .then(function(){
+                .then(function() {
                     loadTowns();
                     $inpupEditTownName.val('');
                     $inputEditTownCountry.val('');
                     $divEditTown.fadeOut();
                 });
         });
+    }
+
+    function fadeInNewCountry() {
+        $('.add:first').fadeIn();
+    }
+
+    function fadeInNewTown() {
+        $('.add:last').fadeIn();
     }
 }
