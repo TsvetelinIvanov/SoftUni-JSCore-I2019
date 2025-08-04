@@ -72,14 +72,14 @@ function attachEvents() {
 
         $('#venue-info').html(`<span class="head">Confirm purchase</span>
         <div class="purchase-info">
-          <span>${name}</span>
-          <span>${quantity} x ${price.toFixed(2)}</span>
-          <span>Total: ${(quantity * price).toFixed(2)} lv</span>
-          <input type="button" value="Confirm">
+            <span>${name}</span>
+            <span>${quantity} x ${price.toFixed(2)}</span>
+            <span>Total: ${(quantity * price).toFixed(2)} lv</span>
+            <input type="button" value="Confirm">
         </div>`
         );
 
-        $('#venue-info input').click(function () {
+        $('#venue-info input').click(function() {
             let request = {
                 method: 'POST',
                 url: baseUrl + "rpc/" + appId + "/custom/purchase?venue=" + id + "&qty=" + quantity,
