@@ -65,7 +65,8 @@ function attachEvents() {
 
             if (id) {
                 selectedPlayer = allPlayers.filter(player => player._id == id)[0];
-            } else {
+            }
+            else {
                 selectedPlayer = allPlayers[0];
             }
 
@@ -74,14 +75,14 @@ function attachEvents() {
         }).catch(error => console.log(error));
     }
 
-    function reload(){
-        if (selectedPlayer.money >= reloadCost){
+    function reload() {
+        if (selectedPlayer.money >= reloadCost) {
             selectedPlayer.money -= reloadCost;
             selectedPlayer.bullets += reloadBulletsCount;
         }
     }
 
-    async function saveGame(){
+    async function saveGame() {
         try {
             await $.ajax({
                 method: "PUT",
@@ -89,12 +90,13 @@ function attachEvents() {
                 headers,
                 data: JSON.stringify(selectedPlayer)
             })
-        } catch(error) {
+        }
+        catch(error) {
             console.log(error);
         }
     }
 
-    async function addPlayer(){
+    async function addPlayer() {
         try {
             let name = $("#addName").val();
             await $.ajax({
@@ -107,20 +109,21 @@ function attachEvents() {
                     money: startMoneyCount
                 })
             })
-        } catch (error){
+        }
+        catch (error) {
             console.log(error);
         }
 
         allPlayers();
     }
 
-    function selectPlayer(){
+    function selectPlayer() {
         let id = $(this).parent().data("id");
         clearInterval(canvas.intervalId);
         loadGame(id);
     }
 
-    async function deletePlayer(){
+    async function deletePlayer() {
         let id = $(this).parent().data("id");
         try {
             await $.ajax({
@@ -128,7 +131,8 @@ function attachEvents() {
                 url: baseUrl + "appdata/" + appKey + "/" + endpoint + '/' + id,
                 headers
             });
-        } catch (error){
+        }
+        catch (error) {
             console.log(error);
         }
     }
