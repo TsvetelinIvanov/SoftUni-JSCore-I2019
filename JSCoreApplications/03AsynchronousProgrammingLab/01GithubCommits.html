@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Github Commits</title>
@@ -12,14 +11,6 @@
             font-family: "Open Sans", serif;
         }
 
-        input[type=text] {
-            padding: 5px 10px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
         button {
             background-color: #4caf50;
             color: white;
@@ -29,9 +20,16 @@
             border-radius: 4px;
             cursor: pointer;
         }
+
+        input[type=text] {
+            padding: 5px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }        
     </style>
 </head>
-
 <body>
     GitHub username:
     <input type="text" id="username" value="nakov" /> <br>
@@ -57,7 +55,6 @@
                     $('#commits').append($li);
                     //$('#commits').append($('<li>').text(commit.commit.author.name + ': ' + commit.commit.message));
                 }
-
             }
 
             function displayError(error) {
@@ -66,5 +63,4 @@
         }
     </script>
 </body>
-
 </html>
