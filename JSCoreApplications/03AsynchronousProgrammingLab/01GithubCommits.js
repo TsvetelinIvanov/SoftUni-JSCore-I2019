@@ -16,7 +16,6 @@ function loadCommits() {
             $('#commits').append($li);
             //$('#commits').append($('<li>').text(commit.commit.author.name + ': ' + commit.commit.message));
         }
-
     }
 
     function displayError(error) {
