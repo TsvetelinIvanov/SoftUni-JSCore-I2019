@@ -1,7 +1,7 @@
 function attachEvent() {
     $('#submitBtn').click(submit);
 
-    $('.hyperlink-notification').click(function (e) {
+    $('.hyperlink-notification').click(function(e) {
         e.preventDefault(); // Prevent the href from redirecting directly
         var linkURL = $(this).attr("href");
         warnBeforeRedirect(linkURL);
@@ -38,4 +38,3 @@ function warnBeforeSend() {
 attachEvent();
 
 $('.dropify').dropify();
-
