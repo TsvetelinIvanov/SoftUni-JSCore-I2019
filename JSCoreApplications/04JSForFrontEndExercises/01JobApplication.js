@@ -1,7 +1,7 @@
 function attachEvent() {
     $('#submitBtn').click(submit);
 
-    $('.hyperlink-notification').click(function (e) {
+    $('.hyperlink-notification').click(function(e) {
         e.preventDefault(); // Prevent the href from redirecting directly
         var linkURL = $(this).attr("href");
         warnBeforeRedirect(linkURL);
@@ -25,7 +25,7 @@ function warnBeforeRedirect(linkURL) {
         text: "If you click 'OK', you will be redirected to " + linkURL,
         type: "warning",
         showCancelButton: true
-    }, function () {
+    }, function() {
         // Redirect the user
         window.location.href = linkURL;
     });
