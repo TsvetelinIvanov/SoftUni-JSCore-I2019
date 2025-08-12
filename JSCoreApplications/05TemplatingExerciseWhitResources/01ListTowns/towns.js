@@ -13,7 +13,6 @@ function attachEvents() {
             let context = {towns};
 
             let html = template(context);
-
             $('#root').html(html);
             $towns.val('');
         }
