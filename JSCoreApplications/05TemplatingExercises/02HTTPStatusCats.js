@@ -13,6 +13,6 @@ $(() => {
     }    
 })
 
-function showInfo(id){
-    $(`#${id}`).toggle();        
+function showInfo(id) {
+    $(`#${id}`).toggle();
 }
