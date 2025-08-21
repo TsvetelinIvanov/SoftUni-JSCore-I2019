@@ -1,4 +1,4 @@
-$(async () => {
+$(async() => {
     try {
         //this.use('Handlebars', 'hbs');
         const contactListHtml = await $.get('/templates/contact-list.hbs');
@@ -10,7 +10,7 @@ $(async () => {
         const context = {contacts};
         const renderedHtml = template(context);
         $('body').append(renderedHtml);
-    } catch (error){
+    } catch (error) {
         console.log(error);
     }
 });
