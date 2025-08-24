@@ -1,4 +1,4 @@
-$(async () => {
+$(async() => {
     try {
         //this.use('Handlebars', 'hbs');
         const contactListHtml = await $.get('/templates/contact-list.hbs');
