@@ -101,11 +101,13 @@ let authService = (() => {
 
     function register(username, password) {
         let body = {username: username, password: password};
+        
         return requestService.post(module, '', basicAuth, body);
     }
 
     function login(username, password) {
         let body = {username: username, password: password};
+        
         return requestService.post(module, loginConst, basicAuth, body);
     }
 
