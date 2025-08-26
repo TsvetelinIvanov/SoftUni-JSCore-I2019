@@ -5,9 +5,7 @@
 
 //     // Creates the authentication header
 //     function makeAuth(type) {
-//         return type === 'basic'
-//             ?  'Basic ' + btoa(kinveyAppKey + ':' + kinveyAppSecret)
-//             :  'Kinvey ' + sessionStorage.getItem('authtoken');
+//         return type === 'basic' ?  'Basic ' + btoa(kinveyAppKey + ':' + kinveyAppSecret) :  'Kinvey ' + sessionStorage.getItem('authtoken');
 //     }
 
 //     // Creates request object to kinvey
