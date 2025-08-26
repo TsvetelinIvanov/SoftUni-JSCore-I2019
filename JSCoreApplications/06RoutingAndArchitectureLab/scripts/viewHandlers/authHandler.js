@@ -14,7 +14,7 @@ handlers.registerPostHandler = function(context) {
     let username = context.params.username;
     let password = context.params.password;
     let repeatPassword = context.params.repeatPassword;
-    if (password !== repeatPassword){
+    if (password !== repeatPassword) {
         notifications.showError('Passwords do not match!');
     }
     else {
@@ -48,7 +48,8 @@ handlers.loginPostHandler = function(context) {
             authService.saveSession(response);
             notifications.showInfo('Login successfull.');
             context.redirect('#/home');
-        }).catch(notifications.handleError);
+        })
+        .catch(notifications.handleError);
 };
 
 handlers.logoutHandler = function(context) {
@@ -57,5 +58,6 @@ handlers.logoutHandler = function(context) {
             authService.clearSession();
             notifications.showInfo('Logout successfull.');
             context.redirect('#/home');
-        }).catch(notifications.handleError);
+        })
+        .catch(notifications.handleError);
 };
