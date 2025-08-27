@@ -39,6 +39,7 @@ handlers.teamDetailsHandler = function(context) {
             this.partial('./templates/catalog/details.hbs');
         });
     }).catch(notifications.handleError);
+    
     async function getTeamInfo() {
         let [teamDetails, teamMembers] = await Promise.all([
             crudService.loadTeamDetails(teamId),
