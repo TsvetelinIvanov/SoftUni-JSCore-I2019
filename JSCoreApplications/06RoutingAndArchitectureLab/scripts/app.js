@@ -1,5 +1,5 @@
 // $(() => {
-//     const app = Sammy('#main', function () {
+//     const app = Sammy('#main', function() {
 //         this.use('Handlebars', 'hbs');
 
 //         this.get('#/home', function(){
@@ -13,7 +13,7 @@
 //             });            
 //         });
 
-//         this.get('#/about', function(){
+//         this.get('#/about', function() {
 //             this.loadPartials({
 //                 header: './templates/common/header.hbs',
 //                 footer: './templates/common/footer.hbs'
@@ -22,7 +22,7 @@
 //             });            
 //         });
 
-//         this.get('#/login', function(){
+//         this.get('#/login', function() {
 //             this.loadPartials({
 //                 header: './templates/common/header.hbs',
 //                 footer: './templates/common/footer.hbs',
@@ -39,7 +39,7 @@
 //             this.redirect('#/home');
 //         });
 
-//         this.get('#/register', function(){
+//         this.get('#/register', function() {
 //             this.loadPartials({
 //                 header: './templates/common/header.hbs',
 //                 footer: './templates/common/footer.hbs',
@@ -49,7 +49,7 @@
 //             });            
 //         });
 
-//         this.post('#/register', function(context){
+//         this.post('#/register', function(context) {
 //             let that = this;
 //             let {username, password, repeatPassword} = context.params;
 //             auth.register(username, password, repeatPassword)
