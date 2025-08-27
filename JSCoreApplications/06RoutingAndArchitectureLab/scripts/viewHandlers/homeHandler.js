@@ -1,7 +1,7 @@
 handlers.homeHandler = function(context) {
     context.loggedIn = authService.isAuth();
     context.username = sessionStorage.getItem('username');
-    if (authService.hasTeam()){
+    if (authService.hasTeam()) {
         context.hasTeam = authService.hasTeam();
         context.teamId = sessionStorage.getItem('teamId');
     }
