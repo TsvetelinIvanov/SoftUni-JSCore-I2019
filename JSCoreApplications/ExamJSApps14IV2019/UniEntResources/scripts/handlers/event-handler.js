@@ -1,4 +1,4 @@
-handlers.getCreateEvent = function(context){
+handlers.getCreateEvent = function(context) {
     context.isAuth = userService.isAuth();
     context.username = sessionStorage.getItem('username');
     context.loadPartials({
@@ -15,23 +15,27 @@ handlers.createEvent = function(context) {
     context.isAuth = userService.isAuth();
     context.username = sessionStorage.getItem('username');
     let data = {...context.params, peopleInterestedIn: 0, organizer: context.username};
-    if (data.name.length < 6){
+    if (data.name.length < 6) {
         notifications.showError('The name of the event should be at least 6 characters long!');
+        
         return;
     }
 
-    if (!data.dateTime.match(/^[0-9]{1,2} [A-z][a-z]+( - [0-9]{1,2} (AM|PM))?$/)){
+    if (!data.dateTime.match(/^[0-9]{1,2} [A-z][a-z]+( - [0-9]{1,2} (AM|PM))?$/)) {
         notifications.showError('The date should be in format: "24 February" or "24 March - 10 PM"');
+        
         return;
     }
 
-    if (data.description.length < 10){
+    if (data.description.length < 10) {
         notifications.showError('The description of the event should be at least 10 characters long!');
+        
         return;
     }
 
     if (!data.imageURL.startsWith('http://') && !data.imageURL.startsWith('https://')) {
         notifications.showError('The URL of the image should starts with "http://" or "https://"');
+        
         return;
     }
 
@@ -101,23 +105,27 @@ handlers.editEvent = function(context) {
     let id = context.params.id;
     let data = {...context.params};
     delete data.id;
-    if (data.name.length < 6){
+    if (data.name.length < 6) {
         notifications.showError('The name of the event should be at least 6 characters long!');
+        
         return;
     }
 
-    if (!data.dateTime.match(/^[0-9]{1,2} [A-z][a-z]+( - [0-9]{1,2} (AM|PM))?$/)){
+    if (!data.dateTime.match(/^[0-9]{1,2} [A-z][a-z]+( - [0-9]{1,2} (AM|PM))?$/)) {
         notifications.showError('The date should be in format: "24 February" or "24 March - 10 PM"');
+        
         return;
     }
 
-    if (data.description.length < 10){
+    if (data.description.length < 10) {
         notifications.showError('The description of the event should be at least 10 characters long!');
+        
         return;
     }
 
     if (!data.imageURL.startsWith('http://') && !data.imageURL.startsWith('https://')) {
         notifications.showError('The URL of the image should starts with "http://" or "https://"');
+        
         return;
     }
 
