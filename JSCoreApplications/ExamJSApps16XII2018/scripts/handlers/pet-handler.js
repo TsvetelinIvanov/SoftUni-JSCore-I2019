@@ -58,11 +58,13 @@ handlers.createPet = function(context) {
     let data = {...context.params, likes: 0};
     if (data.name === '' || data.description === "") {
         notifications.showError('All fields should be non-empty!');
+        
         return;        
     }
 
     if (!data.imageURL.startsWith('http')) {
         notifications.showError('Image URL should start with "http"!');
+        
         return;
     }
 
