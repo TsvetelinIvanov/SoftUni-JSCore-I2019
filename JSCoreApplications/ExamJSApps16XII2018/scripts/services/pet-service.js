@@ -1,6 +1,7 @@
 const petService = (() => {
     function getAllPets(filter) {
         let query = filter && filter != 'All' ? JSON.stringify({category:filter}) : JSON.stringify({});
+        
         return kinvey.get('appdata', `pets?query=${query}&sort={"likes": -1}`, 'kinvey');
     }
 
