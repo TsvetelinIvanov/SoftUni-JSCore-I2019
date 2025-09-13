@@ -42,8 +42,25 @@ form label {
 	font-weight: bold;
 }
 
-.field {}
+form textarea {
+	border-radius: 0.5rem;
+	padding: 0.8rem;
+}
 
+form textarea:focus {
+	outline: none;
+	border-color: #090;
+}
+
+.description {
+	width: 17rem;
+	height: 10vh;
+	padding: 2rem;
+	overflow: auto;
+}
+
+.field {	
+}
 
 .field .input {
 	display: flex;
@@ -55,7 +72,6 @@ form label {
 	display: block;
 	content: '';
 }
-
 
 .field .input input {
 	border: none;
@@ -94,21 +110,4 @@ form label {
 
 .field .input input:focus+.actions+.fas {
 	color: #090;
-}
-
-form textarea {
-	border-radius: 0.5rem;
-	padding: 0.8rem;
-}
-
-form textarea:focus {
-	outline: none;
-	border-color: #090;
-}
-
-.description {
-	width: 17rem;
-	height: 10vh;
-	padding: 2rem;
-	overflow: auto;
 }
