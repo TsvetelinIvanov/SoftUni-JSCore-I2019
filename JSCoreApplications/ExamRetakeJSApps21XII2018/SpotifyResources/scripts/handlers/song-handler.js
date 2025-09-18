@@ -38,16 +38,19 @@ handlers.createSong = function(context) {
     let data = {...context.params, likeCounter: 0, listenCounter: 0};
     if (data.title.length < 6) {
         notify.showError('The title should be at least 6 characters long!');
+        
         return;
     }
 
-    if (data.artist.length < 3){
+    if (data.artist.length < 3) {
         notify.showError('The artist should be at least 3 characters long!');
+        
         return;
     }
 
-    if (!data.imageURL.startsWith('http://') && !data.imageURL.startsWith('https://')){
+    if (!data.imageURL.startsWith('http://') && !data.imageURL.startsWith('https://')) {
         notify.showError('The image URL should start with "http://" or "https//"');
+        
         return;
     }
 
