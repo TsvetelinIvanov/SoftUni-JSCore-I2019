@@ -1,13 +1,13 @@
-handlers.getHome = function (context) {
+handlers.getHome = function(context) {
     context.isAuth = userService.isAuth();
     context.username = sessionStorage.getItem('username');
   
     context.loadPartials({
-      header: './templates/common/header.hbs',
-      footer: './templates/common/footer.hbs'
+        header: './templates/common/header.hbs',
+        footer: './templates/common/footer.hbs'
     }).then(function () {
-      this.partial('./templates/home.hbs');
+        this.partial('./templates/home.hbs');
     }).catch(function (error) {
-      notify.handleError(error);
+        notify.handleError(error);
     });
-  }
+}
