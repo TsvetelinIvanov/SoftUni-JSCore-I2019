@@ -56,5 +56,4 @@ const kinvey = (() => {
         update,
         remove
     }
-
 })();
