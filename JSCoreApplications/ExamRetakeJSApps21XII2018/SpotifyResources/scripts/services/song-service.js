@@ -1,5 +1,5 @@
 const songService = (() => {
-    function getAllSongs(){
+    function getAllSongs() {
         return kinvey.get('appdata', 'songs', 'kinvey', `?query={}&sort={"likeCounter": -1, "listenCounter": -1}`);
     }    
 
