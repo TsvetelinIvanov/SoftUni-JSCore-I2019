@@ -24,4 +24,4 @@ function getArgumentsInfo() {
     }
 }
 
-getArgumentsInfo('cat', 42, function () { console.log('Hello world!'); }, 19)
+getArgumentsInfo('cat', 42, function() { console.log('Hello world!'); }, 19)
