@@ -6,7 +6,7 @@ function add(number) {
         return sumNumbers;
     }
 
-    sumNumbers.toString = function () {
+    sumNumbers.toString = function() {
         return sum;
     };    
 
@@ -15,3 +15,4 @@ function add(number) {
 
 console.log(add(1).toString())
 console.log(add(1)(6)(-3).toString())
+
