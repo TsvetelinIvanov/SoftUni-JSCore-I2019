@@ -5,11 +5,11 @@ function sortArray(inputArray, sortOrder) {
     //     return inputArray.sort((a, b) => b - a);
     // }
 
-    let ascendingComparator = function (a, b) {
+    let ascendingComparator = function(a, b) {
         return a - b;
     }
 
-    let descendingComparator = function (a, b) {
+    let descendingComparator = function(a, b) {
         return b - a;
     }
 
@@ -23,3 +23,4 @@ function sortArray(inputArray, sortOrder) {
 
 console.log(sortArray([14, 7, 17, 6, 8], 'asc'))
 console.log(sortArray([14, 7, 17, 6, 8], 'desc'))
+
