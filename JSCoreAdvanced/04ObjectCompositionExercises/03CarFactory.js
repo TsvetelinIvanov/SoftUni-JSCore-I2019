@@ -12,7 +12,7 @@ function assembleCar(carRequirements) {
 
     return car;
 
-    function takeEngine(power){
+    function takeEngine(power) {
         let engine = {};
         if (power <= 90) {
             engine = {
@@ -20,7 +20,7 @@ function assembleCar(carRequirements) {
                 volume: 1800
             }         
         }
-        else if (power <= 120){
+        else if (power <= 120) {
             engine = {
                 power: 120,
                 volume: 2400
