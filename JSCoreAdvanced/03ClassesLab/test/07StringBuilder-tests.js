@@ -25,7 +25,7 @@ describe('StringBuilder', function() {
         it('should has all properties', function() {
             expect(builder.hasOwnProperty('_stringArray')).to.equal(true, 'Missing _stringArray property!');
         });
-        it('should has all functions attached to prototype', function(){
+        it('should has all functions attached to prototype', function() {
             expect(Object.getPrototypeOf(builder).hasOwnProperty('append')).to.equal(true, 'Missing append function!');
             expect(Object.getPrototypeOf(builder).hasOwnProperty('prepend')).to.equal(true, 'Missing prepend function!');
             expect(Object.getPrototypeOf(builder).hasOwnProperty('insertAt')).to.equal(true, 'Missing insertAt function!');
@@ -39,7 +39,7 @@ describe('StringBuilder', function() {
     });
 
     describe('StringBuilber initialization with constructor with parameters', function() {
-        beforeEach(function(){
+        beforeEach(function() {
             let startString = 'Parameter';
             builder = new StringBuilder(startString);
         });
