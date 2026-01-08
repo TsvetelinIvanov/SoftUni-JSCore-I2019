@@ -2,31 +2,31 @@
 let expect = require('chai').expect;
 let Warehouse = require('../09Warehouse').Warehouse;
 //In Judge must be paste without this above
-describe('Warehouse', function () {
-    describe('constructor', function () {        
-        it('should have correct capacity', function () {
+describe('Warehouse', function() {
+    describe('constructor', function() {        
+        it('should have correct capacity', function() {
             let warehouse = new Warehouse(10);
             expect(warehouse.capacity).to.be.equal(10);
         });        
 
-        it('should throw on negative capacity', function () {
+        it('should throw on negative capacity', function() {
             expect(() => { new Warehouse(-10); }).to.throw('Invalid given warehouse space');
         });
-        it('should throw on 0 capacity', function () {
+        it('should throw on 0 capacity', function() {
             expect(() => { new Warehouse(0); }).to.throw('Invalid given warehouse space');
         });
-        it('should throw on string instead number for capacity', function () {
+        it('should throw on string instead number for capacity', function() {
             expect(() => { new Warehouse('10'); }).to.throw('Invalid given warehouse space');
         });
     });
 
-    describe('addProduct', function () {
-        it('should add product correctly', function () {
+    describe('addProduct', function() {
+        it('should add product correctly', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 9);
             expect(Object.keys(warehouse.availableProducts['Food']).length).to.be.equal(1);
         });
-        it('should add products correctly', function () {
+        it('should add products correctly', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 3);
             warehouse.addProduct('Food', 'orange', 3);
@@ -34,13 +34,13 @@ describe('Warehouse', function () {
             expect(Object.keys(warehouse.availableProducts['Food']).length).to.be.equal(3);
         });
 
-        it('should throw on not enough capacity for one product', function () {
+        it('should throw on not enough capacity for one product', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 11);
             }).to.throw('There is not enough space or the warehouse is already full');
         });
-        it('should throw on not enough capacity for more products', function () {
+        it('should throw on not enough capacity for more products', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 4);
@@ -50,8 +50,8 @@ describe('Warehouse', function () {
         });        
     });
 
-    describe('orderProducts', function () {
-        it('should order products for food with correct values', function () {
+    describe('orderProducts', function() {
+        it('should order products for food with correct values', function() {
             let warehouse = new Warehouse(1000);
             warehouse.addProduct('Drink', 'tea', 10);
             warehouse.addProduct('Food', 'bannana', 10);
@@ -75,7 +75,7 @@ describe('Warehouse', function () {
             }
         });
 
-        it('should order products for drink with correct values', function () {
+        it('should order products for drink with correct values', function() {
             let warehouse = new Warehouse(1000);
             warehouse.addProduct('Drink', 'tea', 10);
             warehouse.addProduct('Food', 'bannana', 10);
@@ -100,26 +100,26 @@ describe('Warehouse', function () {
         });
     });
     
-    describe('occupiedCapacity', function () {
-        it('should return 0 capacity for empty space', function () {
+    describe('occupiedCapacity', function() {
+        it('should return 0 capacity for empty space', function() {
             let warehouse = new Warehouse(10);
             expect(warehouse.occupiedCapacity()).to.be.equal(0);
         });
-        it('should return correct capacity for full space with food', function () {
+        it('should return correct capacity for full space with food', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
             warehouse.addProduct('Food', 'orange', 1);
             expect(warehouse.occupiedCapacity()).to.be.equal(10);
         });
-        it('should return correct capacity for full space with drink', function () {
+        it('should return correct capacity for full space with drink', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Drink', 'milk', 6);
             warehouse.addProduct('Drink', 'coffee', 3);
             warehouse.addProduct('Drink', 'tea', 1);
             expect(warehouse.occupiedCapacity()).to.be.equal(10);
         });
-        it('should return correct capacity for full space with food and drink', function () {
+        it('should return correct capacity for full space with food and drink', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Drink', 'tea', 3);
@@ -128,8 +128,8 @@ describe('Warehouse', function () {
         });
     });
 
-    describe('scrapeAProduct', function () {        
-        it('should throw for inexistant type', function () {
+    describe('scrapeAProduct', function() {        
+        it('should throw for inexistant type', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 6);
@@ -152,13 +152,13 @@ describe('Warehouse', function () {
         });
     });
 
-    describe('revision', function () {
-        it('should return correct message for empty warehouse', function () {
+    describe('revision', function() {
+        it('should return correct message for empty warehouse', function() {
             let warehouse = new Warehouse(10);
             expect(warehouse.revision()).to.be.equal('The warehouse is empty');
         });
 
-        it('should return correct value for warehouse with food', function () {
+        it('should return correct value for warehouse with food', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
@@ -174,7 +174,7 @@ describe('Warehouse', function () {
             let expectedString = 'Product type - [Food]\nProduct type - [Drink]\n- milk 6\n- coffee 3\n- tea 1';
             expect(warehouse.revision()).to.be.equal(expectedString);
         });
-        it('should return correct value for warehouse with food and drink', function () {
+        it('should return correct value for warehouse with food and drink', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Drink', 'tea', 3);
@@ -184,30 +184,30 @@ describe('Warehouse', function () {
         });
     }); 
     
-    describe('constructor', function () {        
+    describe('constructor', function() {        
         it('should have correct capacity', function () {
             let warehouse = new Warehouse(10);
             expect(warehouse.capacity).to.be.equal(10);
         });        
 
-        it('should throw on negative capacity', function () {
+        it('should throw on negative capacity', function() {
             expect(() => { new Warehouse(-10); }).to.throw('Invalid given warehouse space');
         });
-        it('should throw on 0 capacity', function () {
+        it('should throw on 0 capacity', function() {
             expect(() => { new Warehouse(0); }).to.throw('Invalid given warehouse space');
         });
-        it('should throw on string instead number for capacity', function () {
+        it('should throw on string instead number for capacity', function() {
             expect(() => { new Warehouse('10'); }).to.throw('Invalid given warehouse space');
         });
     });
 
-    describe('addProduct', function () {
-        it('should add product correctly', function () {
+    describe('addProduct', function() {
+        it('should add product correctly', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 9);
             expect(Object.keys(warehouse.availableProducts['Food']).length).to.be.equal(1);
         });
-        it('should add products correctly', function () {
+        it('should add products correctly', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 3);
             warehouse.addProduct('Food', 'orange', 3);
@@ -215,13 +215,13 @@ describe('Warehouse', function () {
             expect(Object.keys(warehouse.availableProducts['Food']).length).to.be.equal(3);
         });
 
-        it('should throw on not enough capacity for one product', function () {
+        it('should throw on not enough capacity for one product', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 11);
             }).to.throw('There is not enough space or the warehouse is already full');
         });
-        it('should throw on not enough capacity for more products', function () {
+        it('should throw on not enough capacity for more products', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 4);
@@ -231,8 +231,8 @@ describe('Warehouse', function () {
         });        
     });
 
-    describe('orderProducts', function () {
-        it('should order products for food with correct values', function () {
+    describe('orderProducts', function() {
+        it('should order products for food with correct values', function() {
             let warehouse = new Warehouse(1000);
             warehouse.addProduct('Drink', 'tea', 10);
             warehouse.addProduct('Food', 'bannana', 10);
@@ -257,28 +257,28 @@ describe('Warehouse', function () {
         });        
     });
 
-    describe('occupiedCapacity', function () {
+    describe('occupiedCapacity', function() {
         let warehouse;
         beforeEach(function() {
             warehouse = new Warehouse(10);
         });
 
-        it('should return 0 capacity for empty space', function () {            
+        it('should return 0 capacity for empty space', function() {            
             expect(warehouse.occupiedCapacity()).to.be.equal(0);
         });
-        it('should return correct capacity for full space with food', function () {            
+        it('should return correct capacity for full space with food', function() {            
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
             warehouse.addProduct('Food', 'orange', 1);
             expect(warehouse.occupiedCapacity()).to.be.equal(10);
         });
-        it('should return correct capacity for full space with drink', function () {           
+        it('should return correct capacity for full space with drink', function() {           
             warehouse.addProduct('Drink', 'milk', 6);
             warehouse.addProduct('Drink', 'coffee', 3);
             warehouse.addProduct('Drink', 'tea', 1);
             expect(warehouse.occupiedCapacity()).to.be.equal(10);
         });
-        it('should return correct capacity for full space with food and drink', function () {           
+        it('should return correct capacity for full space with food and drink', function() {           
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Drink', 'tea', 3);
             warehouse.addProduct('Food', 'orange', 1);
@@ -286,7 +286,7 @@ describe('Warehouse', function () {
         });
     });
 
-    describe('scrapeAProduct', function () {
+    describe('scrapeAProduct', function() {
         let warehouse;
         beforeEach(function() {
             warehouse = new Warehouse(5);
@@ -294,7 +294,7 @@ describe('Warehouse', function () {
             warehouse.addProduct("Food", "apple", 1);
         });        
         
-        it('should throw for non existing type', function () {
+        it('should throw for non existing type', function() {
             expect(() => {                
                 warehouse.scrapeAProduct('orange', 1)
             }).to.throw('orange do not exists');
@@ -308,30 +308,30 @@ describe('Warehouse', function () {
         });
     });
     
-    describe('revision', function () {
+    describe('revision', function() {
         let warehouse;
         beforeEach(function(){
             warehouse = new Warehouse(10);
         });
-        it('should return correct message for empty warehouse', function () {            
+        it('should return correct message for empty warehouse', function() {            
             expect(warehouse.revision()).to.be.equal('The warehouse is empty');
         });
 
-        it('should return correct value for warehouse with food', function () {            
+        it('should return correct value for warehouse with food', function() {            
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
             warehouse.addProduct('Food', 'orange', 1);
             let expectedString = 'Product type - [Food]\n- bannana 6\n- apple 3\n- orange 1\nProduct type - [Drink]';
             expect(warehouse.revision()).to.be.equal(expectedString);
         });
-        it('should return correct value for warehouse with drink', function () {            
+        it('should return correct value for warehouse with drink', function() {            
             warehouse.addProduct('Drink', 'milk', 6);
             warehouse.addProduct('Drink', 'coffee', 3);
             warehouse.addProduct('Drink', 'tea', 1);
             let expectedString = 'Product type - [Food]\nProduct type - [Drink]\n- milk 6\n- coffee 3\n- tea 1';
             expect(warehouse.revision()).to.be.equal(expectedString);
         });
-        it('should return correct value for warehouse with food and drink', function () {            
+        it('should return correct value for warehouse with food and drink', function() {            
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Drink', 'tea', 3);
             warehouse.addProduct('Food', 'orange', 1);
