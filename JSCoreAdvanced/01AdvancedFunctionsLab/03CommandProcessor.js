@@ -1,5 +1,5 @@
 function manipulateString(inputArray) {   
-    let closure = (function () {
+    let closure = (function() {
         let outputString = '';
         return {
             append: (str) => outputString += str,
