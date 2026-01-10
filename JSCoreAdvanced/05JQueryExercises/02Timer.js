@@ -8,7 +8,7 @@ function timer() {
     let timerInterval;
     let timeInSeconds = 0;
 
-    function startTimer(){
+    function startTimer() {
         if (!isRunning) {
             timerInterval = setInterval(runTime, 1000);
             isRunning = true;
