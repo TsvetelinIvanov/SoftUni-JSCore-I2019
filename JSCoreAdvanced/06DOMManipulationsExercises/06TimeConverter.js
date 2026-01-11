@@ -9,7 +9,7 @@ function attachEventsListeners() {
     minutesBtn.addEventListener('click', convertTime);
     secondsBtn.addEventListener('click', convertTime);
 
-    function convertTime(event){
+    function convertTime(event) {
         let daysElement = document.getElementById('days');
         let hoursElement = document.getElementById('hours');
         let minutesElement = document.getElementById('minutes');
