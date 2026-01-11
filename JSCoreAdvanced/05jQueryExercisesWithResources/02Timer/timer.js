@@ -8,7 +8,7 @@ function timer() {
    let timerInterval;
    let timeInSeconds = 0;
 
-   function startTimer(){
+   function startTimer() {
        if (!isRunning) {
            timerInterval = setInterval(runTime, 1000);
            isRunning = true;
@@ -28,7 +28,7 @@ function timer() {
        }
       
        let minutes = Math.trunc((timeInSeconds % 3600) / 60);
-       if (minutes <= 9){
+       if (minutes <= 9) {
            minutes = '0' + minets;
        }
        //let seconds = (timeInSeconds % 3600) % 60;
