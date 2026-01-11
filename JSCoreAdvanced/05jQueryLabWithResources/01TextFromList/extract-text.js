@@ -1,4 +1,4 @@
-function extractText () {
+function extractText() {
    let $itemElements = $('#items li');
    let itemElementsArray = $itemElements.toArray();
    let itemTexts = itemElementsArray.map(li => li.textContent);
