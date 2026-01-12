@@ -325,7 +325,7 @@
 
     Slick.prototype.getNavTarget = function() {
         var _ = this, asNavFor = _.options.asNavFor;
-        if ( asNavFor && asNavFor !== null ) {
+        if (asNavFor && asNavFor !== null) {
             asNavFor = $(asNavFor).not(_.$slider);
         }
 
@@ -364,8 +364,8 @@
     Slick.prototype.autoPlay = function() {
         var _ = this;
         _.autoPlayClear();
-        if ( _.slideCount > _.options.slidesToShow ) {
-            _.autoPlayTimer = setInterval( _.autoPlayIterator, _.options.autoplaySpeed );
+        if (_.slideCount > _.options.slidesToShow) {
+            _.autoPlayTimer = setInterval( _.autoPlayIterator, _.options.autoplaySpeed);
         }
     };
 
@@ -378,29 +378,29 @@
 
     Slick.prototype.autoPlayIterator = function() {
         var _ = this, slideTo = _.currentSlide + _.options.slidesToScroll;
-        if ( !_.paused && !_.interrupted && !_.focussed ) {
+        if (!_.paused && !_.interrupted && !_.focussed) {
             if ( _.options.infinite === false ) {
-                if ( _.direction === 1 && ( _.currentSlide + 1 ) === ( _.slideCount - 1 )) {
+                if (_.direction === 1 && ( _.currentSlide + 1 ) === ( _.slideCount - 1)) {
                     _.direction = 0;
                 }
-                else if ( _.direction === 0 ) {
+                else if (_.direction === 0) {
                     slideTo = _.currentSlide - _.options.slidesToScroll;
-                    if ( _.currentSlide - 1 === 0 ) {
+                    if (_.currentSlide - 1 === 0) {
                         _.direction = 1;
                     }
                 }
             }
 
-            _.slideHandler( slideTo );
+            _.slideHandler(slideTo);
         }
     };
 
     Slick.prototype.buildArrows = function() {
         var _ = this;
-        if (_.options.arrows === true ) {
+        if (_.options.arrows === true) {
             _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow');
             _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow');
-            if ( _.slideCount > _.options.slidesToShow ) {
+            if (_.slideCount > _.options.slidesToShow) {
                 _.$prevArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
                 _.$nextArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
                 if (_.htmlExpr.test(_.options.prevArrow)) {
@@ -595,7 +595,7 @@
             }
 
             // only trigger breakpoints during an actual break. not on initialize.
-            if( !initial && triggerBreakpoint !== false ) {
+            if(!initial && triggerBreakpoint !== false) {
                 _.$slider.trigger('breakpoint', [_, triggerBreakpoint]);
             }
         }
