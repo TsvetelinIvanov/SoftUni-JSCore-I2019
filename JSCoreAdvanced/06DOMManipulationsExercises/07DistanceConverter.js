@@ -2,7 +2,7 @@ function attachEventsListeners() {
     let convertButton = document.getElementById('convert');
     convertButton.addEventListener('click', convertDistance);
 
-    function convertDistance(){
+    function convertDistance() {
         let inputDistanceElement = document.getElementById('inputDistance');
         let inputUnitsSelectElement = document.getElementById('inputUnits');
         let outputDistanceElement = document.getElementById('outputDistance');
