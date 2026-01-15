@@ -5,13 +5,13 @@
 \__ \ | | (__|   < _ | \__ \
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
- Version: 1.8.0
-  Author: Ken Wheeler
- Website: http://kenwheeler.github.io
-    Docs: http://kenwheeler.github.io/slick
-    Repo: http://github.com/kenwheeler/slick
-  Issues: http://github.com/kenwheeler/slick/issues
- */
+Version: 1.8.0
+Author: Ken Wheeler
+Website: http://kenwheeler.github.io
+Docs: http://kenwheeler.github.io/slick
+Repo: http://github.com/kenwheeler/slick
+Issues: http://github.com/kenwheeler/slick/issues
+*/
 /* global window, document, define, jQuery, setInterval, clearInterval */
 ;(function(factory) {
     'use strict';
@@ -282,13 +282,11 @@
                     step: function(now) {
                         now = Math.ceil(now);
                         if (_.options.vertical === false) {
-                            animProps[_.animType] = 'translate(' +
-                                now + 'px, 0px)';
+                            animProps[_.animType] = 'translate(' + now + 'px, 0px)';
                             _.$slideTrack.css(animProps);
                         }
                         else {
-                             animProps[_.animType] = 'translate(0px,' +
-                                 now + 'px)';
+                             animProps[_.animType] = 'translate(0px,' + now + 'px)';
                             _.$slideTrack.css(animProps);
                         }
                     },
@@ -397,6 +395,7 @@
                     }
                 }
             }
+             
             _.slideHandler( slideTo );
         }
     };
@@ -407,7 +406,7 @@
             _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow');
             _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow');
 
-            if( _.slideCount > _.options.slidesToShow ) {
+            if(_.slideCount > _.options.slidesToShow) {
                 _.$prevArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
                 _.$nextArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
 
@@ -606,7 +605,7 @@
             }
 
             // only trigger breakpoints during an actual break. not on initialize.
-            if( !initial && triggerBreakpoint !== false ) {
+            if(!initial && triggerBreakpoint !== false) {
                 _.$slider.trigger('breakpoint', [_, triggerBreakpoint]);
             }
         }
@@ -919,7 +918,7 @@
         else if (_.options.centerMode === true) {
             pagerQty = _.slideCount;
         }
-        else if(!_.options.asNavFor) {
+        else if (!_.options.asNavFor) {
             pagerQty = 1 + Math.ceil((_.slideCount - _.options.slidesToShow) / _.options.slidesToScroll);
         }
         else {
@@ -1358,7 +1357,7 @@
 
                          image
                              .attr('src', imageSource)
-                              .animate({ opacity: 1 }, 200, function() {
+                             .animate({ opacity: 1 }, 200, function() {
                                   image
                                       .removeAttr('data-lazy data-srcset data-sizes')
                                       .removeClass('slick-loading');
@@ -1370,11 +1369,11 @@
 
                  imageToLoad.onerror = function() {
                      image
-                        .removeAttr( 'data-lazy' )
-                        .removeClass( 'slick-loading' )
-                        .addClass( 'slick-lazyload-error' );
+                        .removeAttr('data-lazy')
+                        .removeClass('slick-loading')
+                        .addClass('slick-lazyload-error');
 
-                     _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+                     _.$slider.trigger('lazyLoadError', [_, image, imageSource]);
                  };
 
                  imageToLoad.src = imageSource;
@@ -1645,7 +1644,7 @@
             }
 
             _.breakpoints.sort(function(a, b) {
-                return ( _.options.mobileFirst ) ? a-b : b-a;
+                return (_.options.mobileFirst) ? a-b : b-a;
             });
         }
     };
@@ -1850,13 +1849,13 @@
          * accepts arguments in format of:
          *
          *  - for changing a single option's value:
-         *     .slick("setOption", option, value, refresh )
+         *        .slick("setOption", option, value, refresh )
          *
          *  - for changing a set of responsive options:
-         *     .slick("setOption", 'responsive', [{}, ...], refresh )
+         *        .slick("setOption", 'responsive', [{}, ...], refresh )
          *
          *  - for updating multiple values at once (not responsive)
-         *     .slick("setOption", { 'option': value, ... }, refresh )
+         *        .slick("setOption", { 'option': value, ... }, refresh )
          */
 
         var _ = this, l, item, option, value, refresh = false, type;
@@ -1866,14 +1865,14 @@
             refresh = arguments[1];
             type = 'multiple';
         }
-        else if ($.type( arguments[0]) === 'string' ) {
+        else if ($.type( arguments[0]) === 'string') {
             option =  arguments[0];
             value = arguments[1];
             refresh = arguments[2];
-            if ( arguments[0] === 'responsive' && $.type( arguments[1] ) === 'array' ) {
+            if (arguments[0] === 'responsive' && $.type(arguments[1]) === 'array') {
                 type = 'responsive';
             }
-            else if ( typeof arguments[1] !== 'undefined' ) {
+            else if (typeof arguments[1] !== 'undefined') {
                 type = 'single';
             }
         }
@@ -1881,12 +1880,12 @@
         if (type === 'single') {
             _.options[option] = value;
         }
-        else if ( type === 'multiple' ) {
-            $.each( option , function( opt, val ) {
+        else if (type === 'multiple') {
+            $.each(option , function( opt, val) {
                 _.options[opt] = val;
             });
         }
-        else if ( type === 'responsive' ) {
+        else if (type === 'responsive') {
             for (item in value) {
                 if( $.type(_.options.responsive) !== 'array') {
                     _.options.responsive = [value[item]];
@@ -1948,7 +1947,7 @@
 
         if (_.options.fade) {
             if (typeof _.options.zIndex === 'number') {
-                if(_.options.zIndex < 3) {
+                if (_.options.zIndex < 3) {
                     _.options.zIndex = 3;
                 }
             }
@@ -2233,7 +2232,7 @@
 
         _.setSlideClasses(_.currentSlide);
 
-        if ( _.options.asNavFor ) {
+        if (_.options.asNavFor) {
             navTarget = _.getNavTarget();
             navTarget = navTarget.slick('getSlick');
             if (navTarget.slideCount <= navTarget.options.slidesToShow) {
@@ -2346,15 +2345,15 @@
 
         if (_.touchObject.swipeLength >= _.touchObject.minSwipe) {
             direction = _.swipeDirection();
-            switch ( direction ) {
+            switch (direction) {
                 case 'left':
                 case 'down':
-                    slideCount = _.options.swipeToSlide ? _.checkNavigable( _.currentSlide + _.getSlideCount() ) : _.currentSlide + _.getSlideCount();
+                    slideCount = _.options.swipeToSlide ? _.checkNavigable(_.currentSlide + _.getSlideCount()) : _.currentSlide + _.getSlideCount();
                     _.currentDirection = 0;
                     break;
                 case 'right':
                 case 'up':
-                    slideCount = _.options.swipeToSlide ? _.checkNavigable( _.currentSlide - _.getSlideCount() ) : _.currentSlide - _.getSlideCount();
+                    slideCount = _.options.swipeToSlide ? _.checkNavigable(_.currentSlide - _.getSlideCount()) : _.currentSlide - _.getSlideCount();
                     _.currentDirection = 1;
                     break;
                 default:
