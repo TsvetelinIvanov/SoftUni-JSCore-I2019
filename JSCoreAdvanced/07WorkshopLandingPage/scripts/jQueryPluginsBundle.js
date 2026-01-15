@@ -4,7 +4,7 @@ $(window).load(function() {
 });
 
 // Slick slider
-$(document).on('ready', function () {
+$(document).on('ready', function() {
     $(".regular").slick({
         dots: true,
         infinite: true,
