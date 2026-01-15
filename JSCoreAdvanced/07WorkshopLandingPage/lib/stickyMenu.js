@@ -3,7 +3,6 @@ $(document).ready(function() {
 
     var stickyNav = function() {
         var scrollTop = $(window).scrollTop();
-
         if (scrollTop > stickyNavTop) {
             $('.nav').addClass('sticky');
         }
