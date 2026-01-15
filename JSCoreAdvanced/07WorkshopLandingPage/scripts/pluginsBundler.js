@@ -7,7 +7,7 @@ $(document).on('ready', function() {
     });
 });
 
-$(window).load(function () {
+$(window).load(function() {
     $('body').sakura();
 });
 
