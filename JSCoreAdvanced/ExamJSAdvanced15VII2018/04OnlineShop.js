@@ -74,7 +74,7 @@ function onlineShop(selector) {
         resetInputFields();
     }
 
-    function disableInputFields(){
+    function disableInputFields() {
         $inputProduct.attr('disabled', true);
         $inputPrice.attr('disabled', true);
         $inputQuantity.attr('disabled', true);
