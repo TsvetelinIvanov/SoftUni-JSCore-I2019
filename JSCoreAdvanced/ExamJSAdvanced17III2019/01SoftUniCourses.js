@@ -24,13 +24,15 @@ function solve() {
        // let isCheckedInputJSWeb;
  
        // $inputJSFundamentals.input(function() {
-       //    if ($(this).is(':checked'))
-       //    isCheckedInputJSFundamentals = true;
-       //  });
+       //     if ($(this).is(':checked')) {
+       //         isCheckedInputJSFundamentals = true;
+       //     }
+       //     });
  
        //  $inputJSAdvanced.change(function() {
-       //    if ($(this).is(':checked'))
-       //    isCheckedInputJSAdvanced = true;
+       //      if ($(this).is(':checked')) {
+       //         isCheckedInputJSAdvanced = true;
+       //      }
        //  });      
  
        let cost = 0;
