@@ -114,7 +114,7 @@ describe('SoftUniFy', function() {
 
     describe('lookForProducer(film)', function() {
         let filmStudio;
-        beforeEach(function () {
+        beforeEach(function() {
             filmStudio = new FilmStudio('Verginia');
         });
 
