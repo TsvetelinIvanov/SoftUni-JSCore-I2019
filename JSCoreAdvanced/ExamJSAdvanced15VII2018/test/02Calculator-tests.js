@@ -1,8 +1,8 @@
 let expect = require('chai').expect;
 let Calculator = require('../02Calculator').Calculator;
 //It must be paste in Judge without this above
-describe('Calculator', function(){
-    describe('constructor', function(){
+describe('Calculator', function() {
+    describe('constructor', function() {
         it('should have property expenses', function() {
             let calculator = new Calculator();
             expect(calculator).to.haveOwnProperty('expenses');
