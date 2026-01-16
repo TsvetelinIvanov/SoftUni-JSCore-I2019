@@ -8,7 +8,9 @@ class BookCollection {
         return this;
     }
 
-    get room() { return this._room; }
+    get room() {
+        return this._room;
+    }
     set room(room) {
         if (room !== 'livingRoom' && room !== 'bedRoom' && room != 'closed') {
             throw `Cannot have book shelf in ${room}`;
@@ -17,7 +19,9 @@ class BookCollection {
         this._room = room;
     }
 
-    get shelfCondition() { return this.shelfCapacity - this.shelf.length; }
+    get shelfCondition() {
+        return this.shelfCapacity - this.shelf.length;
+    }
 
     addBook(bookName, bookAuthor, genre) {        
         //if(this.shelf.length === this.shelfCapacity) {
