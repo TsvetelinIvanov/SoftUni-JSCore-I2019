@@ -118,7 +118,7 @@ describe('SoftUniFy', function() {
             filmStudio = new FilmStudio('Verginia');
         });
 
-        it('should throw error for not found film', function () {
+        it('should throw error for not found film', function() {
             filmStudio.makeMovie('The Avengers', ['Iron-Man', 'Thor', 'Hulk', 'Arrow guy']);
             expect(() => {filmStudio.lookForProducer('The Vilage');}).to.throw(`The Vilage has not exist yet, but we need the money...`);
         });
