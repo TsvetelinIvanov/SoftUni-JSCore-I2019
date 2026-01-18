@@ -1,4 +1,4 @@
-//  100/100 in Judge but the second zero test doesn't past - local all is OK
+//  100/100 in Judge, but the second zero test doesn't past - local everything is OK
 let expect = require('chai').expect;
 let Warehouse = require('../02Warehouse').Warehouse;
 //It must be paste in Judge without this above
@@ -40,7 +40,7 @@ describe('Warehouse', function() {
                 warehouse.addProduct('Food', 'bannana', 11);
             }).to.throw('There is not enough space or the warehouse is already full');
         });
-        it('should throw if not enough capacity for more products', function () {
+        it('should throw if not enough capacity for more products', function() {
             expect(() => {
                 let warehouse = new Warehouse(10);
                 warehouse.addProduct('Food', 'bannana', 4);
@@ -105,7 +105,7 @@ describe('Warehouse', function() {
             let warehouse = new Warehouse(10);
             expect(warehouse.occupiedCapacity()).to.be.equal(0);
         });
-        it('should return correct capacity for full space with food', function () {
+        it('should return correct capacity for full space with food', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
