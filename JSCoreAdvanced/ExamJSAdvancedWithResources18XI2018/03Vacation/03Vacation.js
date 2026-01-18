@@ -47,6 +47,7 @@ class Vacation {
         } 
         else {
             this.kids[grade] = filteredKids;
+            
             return this.kids[grade];
         }
     }
