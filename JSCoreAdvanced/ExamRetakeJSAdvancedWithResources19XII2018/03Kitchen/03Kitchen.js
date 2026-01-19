@@ -77,6 +77,7 @@ class Kitchen {
 
         let price = this.menu[meal].price;
         this.budget += price;
+        
         return `Your order (${meal}) will be completed in the next 30 minutes and will cost you ${price}.`
     }   
 }
