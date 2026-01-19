@@ -105,7 +105,7 @@ describe('Warehouse', function() {
             let warehouse = new Warehouse(10);
             expect(warehouse.occupiedCapacity()).to.be.equal(0);
         });
-        it('should return correct capacity for full space with food', function () {
+        it('should return correct capacity for full space with food', function() {
             let warehouse = new Warehouse(10);
             warehouse.addProduct('Food', 'bannana', 6);
             warehouse.addProduct('Food', 'apple', 3);
