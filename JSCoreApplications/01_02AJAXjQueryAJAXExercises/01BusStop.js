@@ -12,7 +12,7 @@ function getInfo() {
         .then(loadBuses)
         .catch(displayError);
 
-    function loadBuses(stopId){
+    function loadBuses(stopId) {
         $divStopName.text(stopId.name);
         for (let [busId, time] of Object.entries(stopId.buses)) {
             let $li = $('<li>').text(`Bus ${busId} arrives in ${time} minutes`);
