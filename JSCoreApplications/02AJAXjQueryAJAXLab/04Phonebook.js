@@ -48,7 +48,7 @@ $(function() {
     }
 });
 
-// $(function () {
+// $(function() {
 //     $('#btnLoad').click(loadContacts);
 //     $('#btnCreate').click(createContact);
 //     let baseServiceUrl = 'https://phonebook-nakov-c90d5.firebaseio.com/phonebook';
