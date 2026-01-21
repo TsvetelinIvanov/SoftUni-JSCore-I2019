@@ -22,11 +22,11 @@ function attachEvents() {
         }
     }
     
-    function displayError(e){
+    function displayError(e) {
         $('#phonebook').append($('<li>Error</li>'));
     }
     
-     function createContact(){
+     function createContact() {
         let newContactJSON = JSON.stringify({
             person: $('#person').val(),
             phone: $('#phone').val()
@@ -40,7 +40,7 @@ function attachEvents() {
         $('#phone').val('');
     }
     
-    function deleteContact(key){
+    function deleteContact(key) {
         let request = {
             method: 'DELETE',
             url: baseServiceUrl + '/' + key + '.json'
