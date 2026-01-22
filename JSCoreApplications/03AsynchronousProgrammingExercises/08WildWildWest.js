@@ -110,7 +110,7 @@ function attachEvents() {
                 })
             })
         }
-        catch (error) {
+        catch(error) {
             console.log(error);
         }
 
@@ -132,7 +132,7 @@ function attachEvents() {
                 headers
             });
         }
-        catch (error) {
+        catch(error) {
             console.log(error);
         }
     }
