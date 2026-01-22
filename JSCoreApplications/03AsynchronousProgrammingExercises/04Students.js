@@ -20,7 +20,7 @@ function createStudentAndListStudents() {
         $.get(request).then(displayStudents);
     }
 
-    function displayStudents(students){
+    function displayStudents(students) {
         let $tableResults = $("#results");
         $tableResults.find("tr").nextAll().remove();
         students = students.sort((a, b) => a.ID - b.ID);
@@ -66,7 +66,7 @@ function createStudentAndListStudents() {
                 .then(clearInputs);
         }
 
-        function clearInputs(){
+        function clearInputs() {
             $("#ID").val("");
             $("#firstName").val("");
             $("#lastName").val("");
