@@ -12,7 +12,7 @@ function attachEvents() {
         let request = {
             url: baseUrl + "rpc/" + appId + "/custom/calendar?query=" + date,
             method: "POST",
-            headers: { "Authorization": "Basic " + base64Auth }
+            headers: {"Authorization": "Basic " + base64Auth}
         };
 
         $.ajax(request).then(function (venueIds) {
@@ -20,7 +20,7 @@ function attachEvents() {
                 let request = {
                     method: "GET",
                     url: baseUrl + "appdata/" + appId + "/venues/" + venueId,
-                    headers: { "Authorization": "Basic " + base64Auth }
+                    headers: {"Authorization": "Basic " + base64Auth}
                 };
 
                 $.ajax(request).then(displayVenue);
@@ -83,9 +83,9 @@ function attachEvents() {
             let request = {
                 method: 'POST',
                 url: baseUrl + "rpc/" + appId + "/custom/purchase?venue=" + id + "&qty=" + quantity,
-                headers: { "Authorization": "Basic " + base64Auth }
+                headers: {"Authorization": "Basic " + base64Auth}
             };            
-            $.ajax(request).then(function (data) {                
+            $.ajax(request).then(function(data) {                
                 $('#venue-info').html("You may print this page as your ticket" + data.html);
             });
         });
