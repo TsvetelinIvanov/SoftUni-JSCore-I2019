@@ -10,7 +10,7 @@ function manipulateSortedList() {
         };
         
         let remove = function(index) {
-            if (index < 0 || index >= this.size){
+            if (index < 0 || index >= this.size) {
                 //return;
                 throw new Error('Incorrect index!')
             }
