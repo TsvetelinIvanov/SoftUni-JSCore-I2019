@@ -127,7 +127,7 @@ function operateWithCountriesAndTowns() {
         };
 
         $.ajax(request)
-            .then(function(towns){
+            .then(function(towns) {
                 let $townsSelect = $('#towns');
                 $townsSelect.empty();
                 let townsInCountry = towns.filter(t => t.country == country);
