@@ -1,7 +1,7 @@
 $(() => {
     loadMonkeys();
 
-    async function loadMonkeys(){
+    async function loadMonkeys() {
         let allMonkeysHtml = await $.ajax({
             url: './allMonkeys.html'
         });
