@@ -1,4 +1,4 @@
-(function () {
+(function() {
     class Cat {
         constructor(id, statusCode, statusMessage, imageLocation) {
             this.id = id;
@@ -23,4 +23,5 @@
     ];
 
     window.cats = cats;
+
 })()
