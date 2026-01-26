@@ -10,7 +10,7 @@ $(async() => {
         const context = {contacts};
         const renderedHtml = template(context);
         $('body').append(renderedHtml);
-    } catch (error) {
+    } catch(error) {
         console.log(error);
     }
 });
