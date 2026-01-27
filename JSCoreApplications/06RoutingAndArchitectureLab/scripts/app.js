@@ -2,7 +2,7 @@
 //     const app = Sammy('#main', function() {
 //         this.use('Handlebars', 'hbs');
 
-//         this.get('#/home', function(){
+//         this.get('#/home', function() {
 //             this.loggedIn = !!sessionStorage.getItem('authtoken');
 //             this.username = sessionStorage.getItem('username');
 //             this.loadPartials({
