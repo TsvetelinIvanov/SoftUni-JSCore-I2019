@@ -46,7 +46,7 @@ handlers.getLogin = function(context) {
         footer: './templates/common/footer.hbs'
     }).then(function() {
         this.partial('./templates/login.hbs');
-    }).catch(function (error) {
+    }).catch(function(error) {
         notifications.handleError(error);
     });
 }
@@ -64,7 +64,7 @@ handlers.loginUser = function(context) {
         userService.saveSession(response);
         notifications.showSuccess('Login successful.');
         context.redirect('#/home');
-    }).catch(function (error) {
+    }).catch(function(error) {
         notifications.handleError(error);
     });
 }
