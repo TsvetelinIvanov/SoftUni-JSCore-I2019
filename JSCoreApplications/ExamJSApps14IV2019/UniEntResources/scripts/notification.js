@@ -38,7 +38,7 @@ const notifications = (() => {
 //         ajaxStop: () => $('#loadingBox').fadeOut()
 //     });
 
-//     function showSuccess (message) {
+//     function showSuccess(message) {
 //         let infoBox = $('#successBox');
 //         infoBox.text(message);
 //         infoBox.fadeIn();
@@ -52,7 +52,7 @@ const notifications = (() => {
 //         setTimeout(() => errorBox.fadeOut(), 3000)
 //     }
 
-//     function handleError (reason) {
+//     function handleError(reason) {
 //         showError(reason.responseJSON.description)
 //     }
 
