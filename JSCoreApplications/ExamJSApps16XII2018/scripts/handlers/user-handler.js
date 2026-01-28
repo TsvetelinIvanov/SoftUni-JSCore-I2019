@@ -63,7 +63,7 @@ handlers.loginUser = function(ctx) {
         userService.saveSession(res);
         notifications.showInfo('Login successful.');
         ctx.redirect('#/home');
-    }).catch(function (error) {
+    }).catch(function(error) {
         notifications.handleError(error);
     });
 }
