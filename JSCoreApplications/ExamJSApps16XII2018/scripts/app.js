@@ -26,5 +26,6 @@ $(() => {
         this.get('#/details/:id', handlers.getPetDetails);
         this.post('#/details/:id', handlers.editPetInfo);    
     });
+    
     app.run('#/home');
 });
