@@ -15,7 +15,7 @@ handlers.getLogin = function(context) {
         footer: './templates/common/footer.hbs'
     }).then(function() {
         this.partial('./templates/login.hbs');
-    }).catch(function (error) {
+    }).catch(function(error) {
         notify.handleError(error);
     });
 }
