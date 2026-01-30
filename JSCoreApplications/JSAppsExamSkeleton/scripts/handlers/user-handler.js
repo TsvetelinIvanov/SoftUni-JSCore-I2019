@@ -2,9 +2,9 @@ handlers.getRegister = function(ctx) {
     ctx.loadPartials({
         header: '../templates/common/header.hbs',
         footer: '../templates/common/footer.hbs'
-    }).then(function () {
+    }).then(function() {
         this.partial('../../templates/register.hbs');
-    }).catch(function (err) {
+    }).catch(function(err) {
         console.log(err);
     });
 }
@@ -13,14 +13,14 @@ handlers.getLogin = function(ctx) {
     ctx.loadPartials({
         header: '../templates/common/header.hbs',
         footer: '../templates/common/footer.hbs'
-    }).then(function () {
+    }).then(function() {
         this.partial('../../templates/login.hbs');
-    }).catch(function (err) {
+    }).catch(function(err) {
         console.log(err);
     });
 }
 
-handlers.registerUser = function (ctx) {
+handlers.registerUser = function(ctx) {
     let username = ctx.params.username;
     let password = ctx.params.password;
     let repeatPassword = ctx.params.repeatPassword;
@@ -34,7 +34,7 @@ handlers.registerUser = function (ctx) {
         userService.saveSession(res);
         notifications.showSuccess('User registered successfully');
         ctx.redirect('#/home');
-    }).catch(function (err) {
+    }).catch(function(err) {
         notifications.showError(err.responseJSON.description);
     });
 }
@@ -54,7 +54,7 @@ handlers.loginUser = function(ctx) {
         userService.saveSession(res);
         notifications.showSuccess('User logged in successfully');
         ctx.redirect('#/home');
-    }).catch(function (err) {
+    }).catch(function(err) {
         notifications.showError(err.responseJSON.description);
     });
 }
