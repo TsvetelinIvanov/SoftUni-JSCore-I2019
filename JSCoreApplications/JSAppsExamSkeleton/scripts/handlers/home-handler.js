@@ -5,9 +5,9 @@ handlers.getHome = function(ctx) {
     ctx.loadPartials({
         header: '../templates/common/header.hbs',
         footer: '../templates/common/footer.hbs'
-    }).then(function () {
+    }).then(function() {
         this.partial('templates/home.hbs');
-    }).catch(function (err) {
+    }).catch(function(err) {
         console.log(err);
     });
 }
