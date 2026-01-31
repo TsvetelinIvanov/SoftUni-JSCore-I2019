@@ -1,13 +1,13 @@
-function showServicePrice(weekDay, service, hourString){
+function showServicePrice(weekDay, service, hourString) {
     let hour = Number(hourString);    
-    if (hour < 8.0 || hour > 22.0){
-        console.log('The gym does not work in this time!')
+    if (hour < 8.0 || hour > 22.0) {
+        console.log('The gym does not work in this time!');
         
         return;
    }
     
     let price = 0;
-    switch(weekDay){
+    switch(weekDay) {
         case 'Monday':
         case 'Tuesday':
         case 'Wednesday':
@@ -16,7 +16,7 @@ function showServicePrice(weekDay, service, hourString){
             if (hour > 15.0) {
             price += 2.5;
         }
-            switch(service){
+            switch(service) {
             case 'Fitness':
                     price += 5;
                     break;
@@ -31,7 +31,7 @@ function showServicePrice(weekDay, service, hourString){
             break;
         case 'Saturday':
         case 'Sunday':
-            switch(service){
+            switch(service) {
             case 'Fitness':
                     price = 8;
                     break;
