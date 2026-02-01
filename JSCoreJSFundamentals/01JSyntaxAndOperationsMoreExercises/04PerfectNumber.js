@@ -4,17 +4,17 @@ function extractPerfectNumbers(numbers) {
         let lastDivisor = Math.floor(number / 2);
         let divisorsSum = 0;
         for (let i = 1; i <= lastDivisor; i++) {
-            if (number % i === 0){
+            if (number % i === 0) {
                 divisorsSum += i;
             }
         }
 
-        if (number === divisorsSum){
+        if (number === divisorsSum) {
             perfectNumbers.push(number);
         }
     }
 
-    if (perfectNumbers.length >= 1){
+    if (perfectNumbers.length >= 1) {
         console.log(perfectNumbers.join(", "));
     }
     else {
