@@ -14,13 +14,13 @@ function solve() {
         let leftSpan = spans[0];
         let rightSpan = spans[2];
 
-        if (parent.id === 'player1Div'){
+        if (parent.id === 'player1Div') {
             leftSpan.textContent = card.name;
         } else if (parent.id === 'player2Div') {
             rightSpan.textContent = card.name;
         }
        
-        if (spans[0].textContent && spans[2].textContent){
+        if (spans[0].textContent && spans[2].textContent) {
         let winner;
         let looser;
             if (+leftSpan.textContent > +rightSpan.textContent) {
