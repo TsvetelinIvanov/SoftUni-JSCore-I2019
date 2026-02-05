@@ -9,7 +9,7 @@ function solve() {
             studentDataRow.classList.remove('select');
             let studentDataCells = Array.from(studentDataRow.cells);
             studentDataCells.forEach(cell => {
-                if (cell.textContent.toLowerCase().includes(searchedWord)){
+                if (cell.textContent.toLowerCase().includes(searchedWord)) {
                     studentDataRow.classList.add('select');
                 }
             })
