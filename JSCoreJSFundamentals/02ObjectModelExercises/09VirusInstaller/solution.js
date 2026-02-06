@@ -10,7 +10,7 @@ function solve() {
     cancelButton.addEventListener('click', hideExerciseContainer);
     nextButton.addEventListener('click', showFirstStep);
 
-    function hideExerciseContainer(){
+    function hideExerciseContainer() {
         //let exerciseContainer = document.getElementById('exercise'); - one test in Judge didn't get with this
         let exerciseContainer = document.querySelector('#exercise>section');
 
@@ -31,8 +31,9 @@ function solve() {
         let inputs = document.querySelectorAll('input');
         let agreeInput = inputs[0];
         let disagreeInput = inputs[1];
-        if (disagreeInput.checked){
-        } else if (agreeInput.checked) {
+        if (disagreeInput.checked) {
+        }
+        else if (agreeInput.checked) {
             firstStepDiv.style.display = 'none';
             secondStepDiv.style.display = 'block';
             nextButton.removeEventListener('click', showSecondStep);
