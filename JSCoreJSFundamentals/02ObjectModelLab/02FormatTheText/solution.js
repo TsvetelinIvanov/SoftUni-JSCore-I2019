@@ -1,11 +1,11 @@
 function solve() {
     let input = document.getElementById('input').textContent;  
     let separatedInput = input.split('.');
-    console.log(separatedInput.length)
+    console.log(separatedInput.length);
   
     let output = document.getElementById('output');
     let p = document.createElement('p');
-    for(let i = 0; i < separatedInput.length; i++) {
+    for (let i = 0; i < separatedInput.length; i++) {
         if (separatedInput[i].length > 0) {
             p.textContent += separatedInput[i] + '.';
         }
