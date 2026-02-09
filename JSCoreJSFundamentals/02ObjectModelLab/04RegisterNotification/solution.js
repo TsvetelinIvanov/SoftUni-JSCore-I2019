@@ -1,19 +1,19 @@
 function register() {
-     let usernameElement = document.getElementById('username');
-     let emailElement = document.getElementById('email');
-     let passwordElement = document.getElementById('password');   
+    let usernameElement = document.getElementById('username');
+    let emailElement = document.getElementById('email');
+    let passwordElement = document.getElementById('password');   
 
-     let usernameInput = usernameElement.value;   
-     let emailInput = emailElement.value;
-     let passwordInput = passwordElement.value;
+    let usernameInput = usernameElement.value;   
+    let emailInput = emailElement.value;
+    let passwordInput = passwordElement.value;
   
-     let pattrn = /(.+)@(.+).(com|bg)/gm;
-     if (usernameInput.length > 0 && passwordInput.length > 0 && emailInput.match(pattrn)) {
-         let resultElement = document.getElementById('result');
+    let pattrn = /(.+)@(.+).(com|bg)/gm;
+    if (usernameInput.length > 0 && passwordInput.length > 0 && emailInput.match(pattrn)) {
+        let resultElement = document.getElementById('result');
     
-         let h1Element = document.createElement('h1');
-         h1Element.textContent = 'Successful Registration!'
-         resultElement.appendChild(h1Element);
+        let h1Element = document.createElement('h1');
+        h1Element.textContent = 'Successful Registration!'
+        resultElement.appendChild(h1Element);
         //  let pElementUsername = document.createElement('p');
         //  pElementUsername.textContent = `Username: ${usernameInput}`;
         //  resultElement.appendChild(pElementUsername);
@@ -37,5 +37,5 @@ function register() {
         setTimeout(() => {
             resultElement.innerHTML = '';
         }, 5000);
-     }
- }
+    }
+}
