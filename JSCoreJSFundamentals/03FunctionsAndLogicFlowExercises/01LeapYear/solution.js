@@ -9,7 +9,7 @@ function leapYear() {
             outputText = 'Leap Year';
         } 
         else {
-            outputText = 'Not Leap Year'
+            outputText = 'Not Leap Year';
         }
 
         console.log(checkLeapYear(Number(input.value)));
