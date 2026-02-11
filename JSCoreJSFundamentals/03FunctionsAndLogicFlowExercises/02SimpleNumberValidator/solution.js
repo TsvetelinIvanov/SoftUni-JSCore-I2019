@@ -13,7 +13,7 @@ function validate() {
         }
 
         let reminder = sum % 11;
-        if (reminder === 10){
+        if (reminder === 10) {
             reminder = 0;
         }
 
