@@ -6,7 +6,7 @@ function validate() {
         let weights = [2, 4, 8, 5, 10, 9, 7, 3, 6];
         let year = document.getElementById('year').value;
         let yearEnding = year.slice(2);
-        let months = { January: '01', February: '02', March: '03', April: '04', May: '05', June: '06', July: '07', August: '08', September: '09', October: '10', November: '11', December: '12' };
+        let months = {January: '01', February: '02', March: '03', April: '04', May: '05', June: '06', July: '07', August: '08', September: '09', October: '10', November: '11', December: '12'};
         let month = months[document.getElementById('month').value];
         let day = document.getElementById('date').value;
         if (day.length === 1) {
