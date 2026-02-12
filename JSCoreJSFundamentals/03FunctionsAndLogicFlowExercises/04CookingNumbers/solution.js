@@ -8,33 +8,33 @@ function solve() {
     let outputElement = document.getElementById('output');
     let currentNumber;
 
-    function updateNumber(){
+    function updateNumber() {
         let inputNumber = Number(inputElement.value);
         return Number(currentNumber) || inputNumber;
         //return Number(currentNumber) || Number(inputElement.value);
     }
 
-    function chop(){
+    function chop() {
         currentNumber = updateNumber() / 2;
         outputElement.textContent = currentNumber;
     }
 
-    function dice(){
+    function dice() {
         currentNumber = Math.sqrt(updateNumber());
         outputElement.textContent = currentNumber;
     }
 
-    function spice(){
+    function spice() {
         currentNumber = updateNumber() + 1;
         outputElement.textContent = currentNumber;
     }
 
-    function bake(){
+    function bake() {
         currentNumber = updateNumber() * 3;
         outputElement.textContent = currentNumber;
     }
 
-    function fillet(){
+    function fillet() {
         currentNumber = updateNumber() * 0.8;
         outputElement.textContent = currentNumber;
     }
