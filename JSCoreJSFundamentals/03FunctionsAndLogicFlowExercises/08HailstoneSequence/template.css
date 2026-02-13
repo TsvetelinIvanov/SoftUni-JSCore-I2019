@@ -21,7 +21,7 @@ body {
     flex-wrap: wrap;
 }
 
-input[type="button" ]{
+input[type="button" ] {
     padding: 0.3rem 0.5rem;
     font-size: 0.7em;
     margin: 1rem 0 1rem 0;
