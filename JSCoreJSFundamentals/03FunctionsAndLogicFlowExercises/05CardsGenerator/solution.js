@@ -14,11 +14,14 @@ function solve() {
         let cardSuit = '';
         if (cardSuitSelectElement.value.includes('Hearts')) {
             cardSuit = '&hearts;';
-        } else if(cardSuitSelectElement.value.includes('Spades')) {
+        }
+        else if(cardSuitSelectElement.value.includes('Spades')) {
             cardSuit = '&spades;';
-        } else if(cardSuitSelectElement.value.includes('Diamonds')) {
+        }
+        else if(cardSuitSelectElement.value.includes('Diamonds')) {
             cardSuit = '&diamond;';
-        } else if(cardSuitSelectElement.value.includes('Clubs')) {
+        }
+        else if(cardSuitSelectElement.value.includes('Clubs')) {
             cardSuit = '&clubs;';
         }
 
