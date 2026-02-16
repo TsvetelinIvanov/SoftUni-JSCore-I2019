@@ -18,14 +18,14 @@ function solve() {
             convertedTemperature = ((degreeNumber * 9) / 5) + 32;
             isTypeCorrect = true;
         }
-  }
+    }
 
-  function showResult() {
-      if (isTypeCorrect) {
-          result = Math.round(convertedTemperature);
-      }
-      else {
-          result = 'Error!';
-      }
-   }
+    function showResult() {
+        if (isTypeCorrect) {
+            result = Math.round(convertedTemperature);
+        }
+        else {
+            result = 'Error!';
+        }
+    }
 }
