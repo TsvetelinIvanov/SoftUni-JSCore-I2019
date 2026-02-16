@@ -6,7 +6,7 @@ function solve() {
     let isTypeCorrect = false;
 
     convert();
-    showResult()
+    showResult();
     document.getElementById('result').innerHTML = result;
 
     function convert() {
