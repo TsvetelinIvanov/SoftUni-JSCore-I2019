@@ -4,7 +4,7 @@ function solve() {
     calculate();
     document.getElementById('result').innerHTML = result.join(' x ');
 
-    function calculate(){
+    function calculate() {
         inputArray.forEach((element, index) => {
             if (index % 2 === 0) {
                 result.push(element);
