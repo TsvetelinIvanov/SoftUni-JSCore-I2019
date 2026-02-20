@@ -18,7 +18,7 @@ function solve() {
         }
     } 
 
-    for(let row of resultArray) {
+    for (let row of resultArray) {
         let p = document.createElement('p');
         p.textContent = row;
         resultElement.appendChild(p);
