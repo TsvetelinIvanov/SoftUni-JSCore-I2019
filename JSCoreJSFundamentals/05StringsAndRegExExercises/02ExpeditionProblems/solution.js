@@ -10,7 +10,7 @@ function solve() {
     let northCoordinate = '';
     let eastCoordinate = '';
     let match;
-    while((match = coordinatesPattern.exec(inputText)) !== null) {
+    while ((match = coordinatesPattern.exec(inputText)) !== null) {
         if (match[1].toLowerCase() === 'north') {
             northCoordinate = `${match[2]}.${match[3]} N`;
         }
