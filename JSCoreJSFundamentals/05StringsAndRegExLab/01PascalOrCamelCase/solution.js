@@ -24,7 +24,7 @@ function solve() {
                  output += word;
              }
            
-             output = output.replace(output[0], output[0].toLowerCase())
+             output = output.replace(output[0], output[0].toLowerCase());
         }
         else {
             output = 'Error!'
