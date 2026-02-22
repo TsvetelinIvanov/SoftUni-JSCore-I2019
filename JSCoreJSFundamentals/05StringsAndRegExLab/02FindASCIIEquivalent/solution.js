@@ -19,11 +19,11 @@ function solve() {
                 let p = document.createElement('p');
                 p.textContent = numbersFromCharacters.join(' ');
                 resultElement.appendChild(p);
-           }
-       }
+            }
+        }
       
-       let p = document.createElement('p');
-       p.textContent = output;
-       resultElement.appendChild(p);
+        let p = document.createElement('p');
+        p.textContent = output;
+        resultElement.appendChild(p);
     }
 }
