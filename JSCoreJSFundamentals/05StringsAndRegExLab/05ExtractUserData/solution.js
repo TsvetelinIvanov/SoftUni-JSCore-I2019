@@ -6,9 +6,9 @@ function solve() {
         let resultElement = document.getElementById('result');
         let pattern = /^([A-Z][a-z]* [A-Z][a-z]*) (\+359 \d{1} \d{3} \d{3}|\+359-\d{1}-\d{3}-\d{3}) ([a-z0-9]+@[a-z]+\.[a-z]{2,3})$/;
         let match;
-        for(let data of arr) {
+        for (let data of arr) {
             match = pattern.exec(data);
-            if(match) {
+            if (match) {
                 let p1 = document.createElement('p');
                 p1.textContent = `Name: ${match[1]}`;
                 resultElement.appendChild(p1);
