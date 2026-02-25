@@ -11,10 +11,10 @@ function solve() {
   
     let logTextarea = document.getElementsByTagName('textarea')[2];
 
-    function load(){
+    function load() {
         let loadedProducts = JSON.parse(document.getElementsByTagName('textarea')[0].value);
-        for(let product of loadedProducts) {
-            if(!storage.hasOwnProperty(product.name)) {
+        for (let product of loadedProducts) {
+            if (!storage.hasOwnProperty(product.name)) {
                 storage[product.name] = {
                     price: product.price,
                     quantity: product.quantity
@@ -30,7 +30,7 @@ function solve() {
 
     function buy() {
         let product = JSON.parse(document.getElementsByTagName('textarea')[1].value);
-        if(storage.hasOwnProperty(product.name) && storage[product.name].quantity >= product.quantity) {
+        if (storage.hasOwnProperty(product.name) && storage[product.name].quantity >= product.quantity) {
             storage[product.name].quantity -= product.quantity;
             document.getElementsByTagName('textarea')[2].value += `${product.quantity} ${product.name} sold for ${product.quantity * storage[product.name].price}.\n`;
             profit += product.quantity * storage[product.name].price;
@@ -40,7 +40,7 @@ function solve() {
         }
     }
 
-    function endDay(){
+    function endDay() {
         logTextarea.value += `Profit: ${profit.toFixed(2)}.\n`;
     
         loadButton.removeEventListener('click', load);
