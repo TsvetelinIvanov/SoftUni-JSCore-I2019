@@ -20,6 +20,11 @@ main {
     z-index: 0;
 }
 
+footer {
+    background: #234465;
+    padding: 10px 0;
+}
+
 textarea {
     width: 100%;
     padding: 12px 20px;
@@ -109,13 +114,6 @@ main:after {
     width: 65%;
     float: left;
     padding: 1rem 0 1rem 1rem;
-}
-
-
-
-footer {
-    background: #234465;
-    padding: 10px 0;
 }
 
 #footer-text {
