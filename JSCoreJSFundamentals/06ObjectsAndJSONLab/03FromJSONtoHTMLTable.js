@@ -2,7 +2,7 @@ function makeFromJSONtoHTMLTable(inputString) {
     let inputObjectsArray = JSON.parse(inputString);
     let outputString = '<table>\n';
     for (let object of inputObjectsArray) {
-        outputString += '<tr>'
+        outputString += '<tr>';
         for (let key in object) {
             outputString += `<th>${key}</th>`;
         }
@@ -12,7 +12,7 @@ function makeFromJSONtoHTMLTable(inputString) {
     }
 
     for (let object of inputObjectsArray) {
-        outputString += '<tr>'
+        outputString += '<tr>';
         for (let key in object) {
             let value = object[key];            
             if (!Number(value)) {
