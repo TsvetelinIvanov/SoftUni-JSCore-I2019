@@ -9,7 +9,7 @@ function showTownsPopulation(inputArray) {
         towns[townName] += Number(population);
     }
 
-    for(let key in towns) {
+    for (let key in towns) {
         console.log(key + ' : ' + towns[key]);
     }
 }
