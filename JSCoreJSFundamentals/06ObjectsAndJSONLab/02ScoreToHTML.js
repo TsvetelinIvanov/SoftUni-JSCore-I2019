@@ -9,10 +9,10 @@ function takeScoreInHTMLTable(inputString) {
         name = name.replace(/"/g, '&quot;');
         name = name.replace(/'/g, '&#39;');
         let score = object.score;
-        outputString += `<tr><td>${name}</td><td>${score}</td></tr>\n`
+        outputString += `<tr><td>${name}</td><td>${score}</td></tr>\n`;
     }
 
-    outputString += '</table>'
+    outputString += '</table>';
 
     console.log(outputString);
 }
