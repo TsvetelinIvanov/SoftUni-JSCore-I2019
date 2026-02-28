@@ -12,7 +12,7 @@ function countAndShowWords(text) {
     }
 
     let outputArray = [];
-    for (let key in wordCounts){
+    for (let key in wordCounts) {
         outputArray.push(`'${key}' -> ${wordCounts[key]} times`);
     }
 
