@@ -16,7 +16,7 @@ function findTheLowestPrice(priceArray) {
         let lowestPriceTown = '';
 
         for (let town in products[product]) {
-            if(products[product][town] < lowestPrice){
+            if(products[product][town] < lowestPrice) {
                 lowestPrice = products[product][town];
                 lowestPriceTown = town;
             }
