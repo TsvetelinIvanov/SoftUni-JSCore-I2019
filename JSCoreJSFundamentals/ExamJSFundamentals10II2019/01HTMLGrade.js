@@ -8,7 +8,7 @@ function calculateGrade(examPoints, homeworkPoints, totalHomework) {
         grade = 6;
     }
 
-    if(grade < 3) {
+    if (grade < 3) {
         grade = 2;
     }
     else if (grade >= 6) {
