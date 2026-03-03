@@ -42,7 +42,7 @@ function showWantedData(matrixTable, command) {
             for (let i = 0; i < table.length; i++) {
                 if (i !== 0) {                
                     table[i].forEach((v, index) => {                    
-                        if (index === searchedHeadingIndex && v === sortingValue){                     
+                        if (index === searchedHeadingIndex && v === sortingValue) {                     
                             newTable.push(table[i]);
                         }
                     })
