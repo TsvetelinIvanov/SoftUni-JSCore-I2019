@@ -12,8 +12,8 @@ function solve() {
     let trucksFieldset = fieldsets[4];
     let outputTextarea = document.querySelector('textarea');
 
-    //let truckObject = { 'backupTireSets': [] };
-    let truckObject = { backupTireSets: [] };
+    //let truckObject = {'backupTireSets': []};
+    let truckObject = {backupTireSets: []};
 
     addNewTruckButton.addEventListener('click', addNewTruck);
     addNewTiresButton.addEventListener('click', addNewTires);
@@ -25,7 +25,7 @@ function solve() {
         let tires = document.getElementById('newTruckTiresCondition').value.split(' ').map(Number);
         
         //if(!truckObject[plateNumber]) {
-        if(!truckObject.hasOwnProperty(plateNumber)) {
+        if (!truckObject.hasOwnProperty(plateNumber)) {
             truckObject[plateNumber] = {tires, distance: 0};
         }
 
@@ -46,7 +46,7 @@ function solve() {
     function goToWork() {
         let plateNumber = document.getElementById('workPlateNumber').value;
         let distance = Number(document.getElementById('distance').value);
-        if(truckObject.hasOwnProperty(plateNumber)) {
+        if (truckObject.hasOwnProperty(plateNumber)) {
             let results = areTiresGoodEnough(truckObject[plateNumber].tires, distance);
             if (results.finalResult){
                 truckObject[plateNumber].distance += distance;
